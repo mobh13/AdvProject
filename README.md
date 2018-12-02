@@ -1,5 +1,5 @@
-# AdvProject
-# This is the Advance programming Project 
+# AdvProject DDL
+# This is the Advance programming Project DDL
 
 # Mohamed Madan
 # Abdullah Ali
