@@ -6,7 +6,57 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-	class Item
+	public class Item
 	{
+		private string id;
+		private bool valid;
+		private string errorMessage;
+
+		public Item(string id)
+		{
+			this.id = id;
+			valid = true;
+		}
+
+		public Item()
+		{
+			valid = true;
+		}
+
+		public string getID()
+		{
+			return id;
+		}
+
+		public void setID(string id)
+		{
+			this.id = id;
+		}
+
+
+		public void setValid(bool valid)
+		{
+			this.valid = valid;
+		}
+
+		public bool getValid()
+		{
+			return valid;
+		}
+
+		public void setErrorMessage(string errorMessage)
+		{
+			this.errorMessage = errorMessage;
+		}
+
+		public string geterrorMessage()
+		{
+			return errorMessage;
+		}
+
+		public override string ToString()
+		{
+			return id;
+		}
 	}
 }
