@@ -1,6 +1,6 @@
 ﻿namespace Desktop
 {
-	partial class Form1
+	partial class InstructorsForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,13 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			this.SuspendLayout();
+			// 
+			// InstructorsForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.ClientSize = new System.Drawing.Size(725, 412);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.Name = "InstructorsForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Instructors";
+			this.ResumeLayout(false);
+			this.PerformLayout();
+
 		}
 
 		#endregion
 	}
 }
-

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-	public partial class Form1 : Form
+	public partial class Template : Form
 	{
-		public Form1()
+		public Template()
 		{
 			InitializeComponent();
+		}
+
+		private void Template_Load(object sender, EventArgs e)
+		{
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 		}
 	}
 }
