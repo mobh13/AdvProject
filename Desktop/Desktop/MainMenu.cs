@@ -31,5 +31,11 @@ this.MaximizeBox = false;
 			label4.Text = DateTime.Now.ToLongDateString();
 		}
 
-	}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form instructorsForm = new Instructors();
+            instructorsForm.Show();
+            instructorsForm.Location = this.Location;
+        }
+    }
 }
