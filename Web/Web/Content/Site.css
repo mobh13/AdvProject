@@ -1,0 +1,52 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+	padding-top:10px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+	.body-content {
+		padding: 0;
+		padding-top: 10px;
+	}
+}
+/*My css*/
+.diffrentColor {
+	background: #eee;
+}
+.tableHead{
+	background-color:black;
+	color:white;
+}
+.center-block {
+	margin: 0 auto;
+	float:none;
+}
+.loginBox {
+	background: #4C688B;
+	color:white;
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
