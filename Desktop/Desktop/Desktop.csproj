@@ -67,6 +67,12 @@
     <Compile Include="AddInstructor.Designer.cs">
       <DependentUpon>AddInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditInstructor.Designer.cs">
+      <DependentUpon>EditInstructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instructors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="AddInstructor.resx">
       <DependentUpon>AddInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditInstructor.resx">
+      <DependentUpon>EditInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructors.resx">
       <DependentUpon>Instructors.cs</DependentUpon>

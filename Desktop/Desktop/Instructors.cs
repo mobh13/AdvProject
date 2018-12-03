@@ -23,5 +23,12 @@ namespace Desktop
             addInstructorForm.Show();
             addInstructorForm.Location = this.Location;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form editInstructorForm = new EditInstructor();
+            editInstructorForm.Show();
+            editInstructorForm.Location = this.Location;
+        }
     }
 }

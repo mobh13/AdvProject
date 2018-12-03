@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -63,6 +64,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Edit Instructor";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -76,11 +78,27 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Instructor";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.button3.ForeColor = System.Drawing.Color.LightCyan;
+            this.button3.Location = new System.Drawing.Point(376, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(176, 35);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // Instructors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 131);
+            this.ClientSize = new System.Drawing.Size(560, 131);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -96,5 +114,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
     }
 }
