@@ -30,5 +30,12 @@ namespace Desktop
             editStudentForm.Show();
             editStudentForm.Location = this.Location;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form deleteStudentForm = new DeleteStudent();
+            deleteStudentForm.Show();
+            deleteStudentForm.Location = this.Location;
+        }
     }
 }

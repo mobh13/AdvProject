@@ -72,5 +72,19 @@ this.MaximizeBox = false;
             schedulesForm.Show();
             schedulesForm.Location = this.Location;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form locationsForm = new Locations();
+            locationsForm.Show();
+            locationsForm.Location = this.Location;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form reportsForm = new Reports();
+            reportsForm.Show();
+            reportsForm.Location = this.Location;
+        }
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="AddInstructor.Designer.cs">
       <DependentUpon>AddInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLocation.Designer.cs">
+      <DependentUpon>AddLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +103,47 @@
     <Compile Include="AddTaughtCourse.Designer.cs">
       <DependentUpon>AddTaughtCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="AverageGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AverageGrade.Designer.cs">
+      <DependentUpon>AverageGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Courses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Courses.Designer.cs">
       <DependentUpon>Courses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteInstructor.Designer.cs">
+      <DependentUpon>DeleteInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSchedule.Designer.cs">
+      <DependentUpon>DeleteSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSection.Designer.cs">
+      <DependentUpon>DeleteSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteStudent.Designer.cs">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteTaughtCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteTaughtCourse.Designer.cs">
+      <DependentUpon>DeleteTaughtCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="EditCourse.cs">
       <SubType>Form</SubType>
@@ -114,6 +156,12 @@
     </Compile>
     <Compile Include="EditInstructor.Designer.cs">
       <DependentUpon>EditInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditLocation.Designer.cs">
+      <DependentUpon>EditLocation.cs</DependentUpon>
     </Compile>
     <Compile Include="EditSchedule.cs">
       <SubType>Form</SubType>
@@ -145,6 +193,12 @@
     <Compile Include="Instructors.Designer.cs">
       <DependentUpon>Instructors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Locations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locations.Designer.cs">
+      <DependentUpon>Locations.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +207,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Schedules.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +243,12 @@
     <Compile Include="Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
+    <Compile Include="TotalHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalHours.Designer.cs">
+      <DependentUpon>TotalHours.cs</DependentUpon>
+    </Compile>
     <Compile Include="_College_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddInstructor.resx">
       <DependentUpon>AddInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLocation.resx">
+      <DependentUpon>AddLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSchedule.resx">
       <DependentUpon>AddSchedule.cs</DependentUpon>
@@ -206,14 +275,35 @@
     <EmbeddedResource Include="AddTaughtCourse.resx">
       <DependentUpon>AddTaughtCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AverageGrade.resx">
+      <DependentUpon>AverageGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Courses.resx">
       <DependentUpon>Courses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteInstructor.resx">
+      <DependentUpon>DeleteInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSchedule.resx">
+      <DependentUpon>DeleteSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSection.resx">
+      <DependentUpon>DeleteSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStudent.resx">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteTaughtCourse.resx">
+      <DependentUpon>DeleteTaughtCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCourse.resx">
       <DependentUpon>EditCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditInstructor.resx">
       <DependentUpon>EditInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditLocation.resx">
+      <DependentUpon>EditLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditSchedule.resx">
       <DependentUpon>EditSchedule.cs</DependentUpon>
@@ -230,6 +320,9 @@
     <EmbeddedResource Include="Instructors.resx">
       <DependentUpon>Instructors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Locations.resx">
+      <DependentUpon>Locations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +335,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Schedules.resx">
       <DependentUpon>Schedules.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalHours.resx">
+      <DependentUpon>TotalHours.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -30,5 +30,12 @@ namespace Desktop
             editScheduleForm.Show();
             editScheduleForm.Location = this.Location;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form deleteScheduleForm = new DeleteSchedule();
+            deleteScheduleForm.Show();
+            deleteScheduleForm.Location = this.Location;
+        }
     }
 }

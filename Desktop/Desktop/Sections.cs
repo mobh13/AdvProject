@@ -31,5 +31,12 @@ namespace Desktop
             editSectionForm.Location = this.Location;
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form deleteSectionForm = new DeleteSection();
+            deleteSectionForm.Show();
+            deleteSectionForm.Location = this.Location;
+        }
     }
 }
