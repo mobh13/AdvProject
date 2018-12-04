@@ -37,5 +37,40 @@ this.MaximizeBox = false;
             instructorsForm.Show();
             instructorsForm.Location = this.Location;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form coursesForm = new Courses();
+            coursesForm.Show();
+            coursesForm.Location = this.Location;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form taughtCoursesForm = new TaughtCourses();
+            taughtCoursesForm.Show();
+            taughtCoursesForm.Location = this.Location;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form sectionsForm = new Sections();
+            sectionsForm.Show();
+            sectionsForm.Location = this.Location;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form studentsForm = new Students();
+            studentsForm.Show();
+            studentsForm.Location = this.Location;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form schedulesForm = new Schedules();
+            schedulesForm.Show();
+            schedulesForm.Location = this.Location;
+        }
     }
 }

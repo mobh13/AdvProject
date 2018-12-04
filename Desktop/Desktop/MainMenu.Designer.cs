@@ -92,6 +92,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Courses";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -105,6 +106,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Sections";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -116,8 +118,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(177, 35);
             this.button4.TabIndex = 6;
-            this.button4.Text = "students";
+            this.button4.Text = "Students";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -131,6 +134,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "Schedules";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -157,6 +161,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Taught Courses";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
