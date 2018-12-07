@@ -40,6 +40,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -92,6 +94,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Courses";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -105,6 +108,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Sections";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -116,8 +120,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(177, 35);
             this.button4.TabIndex = 6;
-            this.button4.Text = "students";
+            this.button4.Text = "Students";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -131,6 +136,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "Schedules";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -144,6 +150,7 @@
             this.button6.TabIndex = 8;
             this.button6.Text = "Locations";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -157,6 +164,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Taught Courses";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -170,6 +178,7 @@
             this.button8.TabIndex = 10;
             this.button8.Text = "Reports";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label3
             // 
@@ -188,11 +197,23 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox1.Image = global::Desktop.Properties.Resources.kisspng_computer_icons_student_icon_design_college_vector_students_5ada87512ed101_3670843215242709291918;
+            this.pictureBox1.Location = new System.Drawing.Point(504, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 441);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
@@ -210,6 +231,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACEM College 2018";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +251,7 @@
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-	}
+        private System.Windows.Forms.PictureBox pictureBox1;
+    }
 }
 

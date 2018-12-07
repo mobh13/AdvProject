@@ -10,33 +10,32 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class Instructors : Form
+    public partial class Schedules : Form
     {
-        public Instructors()
+        public Schedules()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form addInstructorForm = new AddInstructor();
-            addInstructorForm.Show();
-            addInstructorForm.Location = this.Location;
+            Form addScheduleForm = new AddSchedule();
+            addScheduleForm.Show();
+            addScheduleForm.Location = this.Location;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form editInstructorForm = new EditInstructor();
-            editInstructorForm.Show();
-            editInstructorForm.Location = this.Location;
+            Form editScheduleForm = new EditSchedule();
+            editScheduleForm.Show();
+            editScheduleForm.Location = this.Location;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form deleteInstructorForm = new DeleteInstructor();
-            deleteInstructorForm.Show();
-            deleteInstructorForm.Location = this.Location;
-
+            Form deleteScheduleForm = new DeleteSchedule();
+            deleteScheduleForm.Show();
+            deleteScheduleForm.Location = this.Location;
         }
     }
 }

@@ -10,33 +10,33 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class Instructors : Form
+    public partial class Sections : Form
     {
-        public Instructors()
+        public Sections()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form addInstructorForm = new AddInstructor();
-            addInstructorForm.Show();
-            addInstructorForm.Location = this.Location;
+            Form addSectionForm = new AddSection();
+            addSectionForm.Show();
+            addSectionForm.Location = this.Location;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form editInstructorForm = new EditInstructor();
-            editInstructorForm.Show();
-            editInstructorForm.Location = this.Location;
+            Form editSectionForm = new EditSection();
+            editSectionForm.Show();
+            editSectionForm.Location = this.Location;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form deleteInstructorForm = new DeleteInstructor();
-            deleteInstructorForm.Show();
-            deleteInstructorForm.Location = this.Location;
-
+            Form deleteSectionForm = new DeleteSection();
+            deleteSectionForm.Show();
+            deleteSectionForm.Location = this.Location;
         }
     }
 }
