@@ -52,7 +52,7 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 			connection =
-				new SqlConnection("Data Source=studsql;Initial Catalog=Northwind;Integrated Security=True");
+				new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\admin\\Source\\Repos\\AdvProject\\DB\\DB\\College.mdf;Integrated Security=True;Connect Timeout=30");
 			command = connection.CreateCommand();
 			dataTable = new DataTable();
 
@@ -289,5 +289,18 @@ namespace DB
 			}
 			connection.Close();
 		}
+
+        public int GetMaxID()
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.CommandText = "SELECT MAX (" + idField + ") FROM " + table;
+            Reader = command.ExecuteReader();
+            Reader.Read();
+            int maxID = Int32.Parse(Reader.GetValue(0).ToString());
+            Reader.Close();
+            Connection.Close();
+            return maxID + 1;
+        }
 	}
 }
