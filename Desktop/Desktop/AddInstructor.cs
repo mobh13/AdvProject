@@ -22,7 +22,7 @@ namespace Desktop
         private void AddInstructor_Load(object sender, EventArgs e)
         {
             instructorList = new InstructorList();
-            textBoxID.Text = instructorList.GetMaxID().ToString();
+            textBoxID.Text = (instructorList.GetMaxID() + 1).ToString();
             textBoxHdate.Text = DateTime.Now.ToString();
         }
 

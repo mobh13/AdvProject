@@ -300,7 +300,7 @@ namespace DB
             int maxID = Int32.Parse(Reader.GetValue(0).ToString());
             Reader.Close();
             Connection.Close();
-            return maxID + 1;
+            return maxID;
         }
 	}
 }
