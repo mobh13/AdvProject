@@ -289,18 +289,5 @@ namespace DB
 			}
 			connection.Close();
 		}
-
-        public int GetMaxID()
-        {
-            connection.Open();
-            command.Parameters.Clear();
-            command.CommandText = "SELECT MAX (" + idField + ") FROM " + table;
-            Reader = command.ExecuteReader();
-            Reader.Read();
-            int maxID = Int32.Parse(Reader.GetValue(0).ToString());
-            Reader.Close();
-            Connection.Close();
-            return maxID + 1;
-        }
 	}
 }
