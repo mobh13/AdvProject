@@ -286,17 +286,72 @@ namespace DB
 			connection.Close();
 		}
 
-        public int GetMaxID()
-        {
-            connection.Open();
-            command.Parameters.Clear();
-            command.CommandText = "SELECT MAX (" + idField + ") FROM " + table;
-            Reader = command.ExecuteReader();
-            Reader.Read();
-            int maxID = Int32.Parse(Reader.GetValue(0).ToString());
-            Reader.Close();
-            Connection.Close();
-            return maxID;
-        }
+		//start of the design document Methods
+
+		// Start of Madan Methods
+		public int GetMAxID()
+		{
+			connection.Open();
+			command.CommandText = "Select Max(" + idField + ") from " + table;
+			reader = command.ExecuteReader();
+			reader.Read();
+			int maxId = Convert.ToInt32(reader.GetValue(0));
+			connection.Close();
+			reader.Close();
+			return maxId;
+
+		}
+		public bool Exist(string column1, string value1, string column2, string value2, string column, string value)
+		{
+			connection.Open();
+			command.Parameters.Clear();
+			command.Parameters.AddWithValue("@value1", value1);
+			command.Parameters.AddWithValue("@value2", value2);
+			command.Parameters.AddWithValue("@value", value);
+			command.CommandText = "Select Count(" + idField + ") FROM " + table +
+				" WHERE " + column1 + " = @value1" +
+				" And" + column2 + " = @value2" +
+				" And" + column + " = @value";
+			reader = command.ExecuteReader();
+			reader.Read();
+			int count = Convert.ToInt32(reader.GetValue(0));
+			reader.Close();
+			connection.Close();
+			if (count == 0)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		public int TotalValue(string sumColumn, string column, string value)
+		{
+			connection.Open();
+			command.Parameters.Clear();
+			command.Parameters.AddWithValue("@value", value);
+			command.CommandText = "Select Sum(" + sumColumn + ") FROM " + table + " Where " + column + " = @value";
+			reader = command.ExecuteReader();
+			reader.Read();
+			int sum = Convert.ToInt32(reader.GetValue(0));
+			reader.Close();
+			connection.Close();
+			return sum;
+		}
+		// End of Madan Methods
+		public double AverageValue(string sumColumn, string table1, string key1, string key2, string column, string value)
+		{
+			connection.Open();
+			command.Parameters.Clear();
+			command.Parameters.AddWithValue("@value", value);
+			command.CommandText = "Select AVG(" + sumColumn + ") FROM " + table + " Where " + key1 + " in( select "+ key1 + " From ";
+			reader = command.ExecuteReader();
+			reader.Read();
+			double avg = Convert.ToInt64(reader.GetValue(0));
+			reader.Close();
+			connection.Close();
+			return avg;
+		}
 	}
 }

@@ -80,15 +80,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="College.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="College_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>College.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="CollegeDataSet.xsc">
       <DependentUpon>CollegeDataSet.xsd</DependentUpon>

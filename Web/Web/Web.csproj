@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DB">
+      <HintPath>..\..\DB\DB\bin\Debug\DB.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -129,6 +132,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="instructor\ClassList.aspx" />
+    <Content Include="instructor\MarkClass.aspx" />
     <Content Include="instructor\TimeTable.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Masters\InstructorMaster.Master" />
@@ -188,6 +192,13 @@
     </Compile>
     <Compile Include="instructor\ClassList.aspx.designer.cs">
       <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\MarkClass.aspx.cs">
+      <DependentUpon>MarkClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructor\MarkClass.aspx.designer.cs">
+      <DependentUpon>MarkClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructor\TimeTable.aspx.cs">
       <DependentUpon>TimeTable.aspx</DependentUpon>
