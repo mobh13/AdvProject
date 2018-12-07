@@ -29,7 +29,7 @@ namespace Desktop
         private void button1_Click(object sender, EventArgs e)
         {
             Instructor instructor = new Instructor();
-            instructor.InstructorID = textBoxID.Text;
+            instructor.InstructorID = textBoxID.Text.ToString();
             instructor.FirstName = textBoxFname.Text;
             instructor.LastName = textBoxlName.Text;
             instructor.HireDate = textBoxHdate.Text;

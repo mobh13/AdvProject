@@ -52,15 +52,11 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 			connection =
-				new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\admin\\Source\\Repos\\AdvProject\\DB\\DB\\College.mdf;Integrated Security=True;Connect Timeout=30");
+				new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 			command = connection.CreateCommand();
 			dataTable = new DataTable();
 
 		}
-
-
-
-
 
 		//protected as used only by subclasses
 		protected SqlConnection Connection
@@ -218,19 +214,19 @@ namespace DB
 			//add each item property name to the string
 			foreach (PropertyInfo property in properties)
 			{
-				if (!schemaTable.Rows[count]["IsAutoIncrement"].ToString().Equals("True"))
-				{
-					addString += property.Name;
+                if (!schemaTable.Rows[count]["IsAutoIncrement"].ToString().Equals("True"))
+                {
+                    addString += property.Name;
 					count++;
 					//add a comma until end of Properties collection is reached
 					if (count < properties.Count())
 					{ addString += ", "; }
-				}
+            }
 				else
 				{
-					count++;
-				}
-			}
+                count++;
+            }
+        }
 
 
 			//start second part of Add string
@@ -240,9 +236,9 @@ namespace DB
 			//add each item property value to the string
 			foreach (PropertyInfo property in properties)
 			{
-				if (!schemaTable.Rows[count]["IsAutoIncrement"].ToString().Equals("True"))
-				{
-					if (property.GetValue(item) != null)
+                if (!schemaTable.Rows[count]["IsAutoIncrement"].ToString().Equals("True"))
+                {
+                    if (property.GetValue(item) != null)
 					{
 						command.Parameters.AddWithValue("@" + paramCounter, property.GetValue(item));
 						addString += "@" + paramCounter; //insert parameter in string
@@ -254,12 +250,12 @@ namespace DB
 					//add a comma until end of Properties collection is reached
 					if (count < properties.Count())
 					{ addString += ", "; }
-				}
+            }
 				else
 				{
-					count++;
-				}
-			}
+                count++;
+            }
+        }
 			//add bracket at end of Add string
 			addString += ")";
 
