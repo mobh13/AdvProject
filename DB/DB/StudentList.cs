@@ -15,13 +15,13 @@ namespace DB
 		protected override void GenerateList()
 		{
 			List.Clear();
-			SetDataTableColumns(new Instructor());
+			SetDataTableColumns(new Student());
 			while (Reader.Read())
 			{
-				Instructor instructor = new Instructor();
-				SetValues(instructor);
-				List.Add(instructor);
-				AddDataTableRow(instructor);
+				Student student = new Student();
+				SetValues(student);
+				List.Add(student);
+				AddDataTableRow(student);
 			}
 			Reader.Close();
 			Connection.Close();

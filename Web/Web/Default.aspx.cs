@@ -53,7 +53,7 @@ namespace Web
 				students.Filter("StudentID", lg_username.Text);
 				if (students.List.Count == 1)
 				{
-					Student student = (Student)instructors.List.ElementAt(0);
+					Student student = (Student)students.List.ElementAt(0);
 					students.Populate(student);
 					if (student.Password == lg_password.Text)
 					{
@@ -72,6 +72,16 @@ namespace Web
 				if (lg_remembe.Checked)
 				{
 					
+				}
+				if (instructorAccount.Checked)
+				{
+					Response.Redirect("~/instructor/mianPage.asp");
+
+				}
+				else if (studentAccount.Checked)
+				{
+					Response.Redirect("~/student/mianPage.asp");
+
 				}
 			}
 		}
