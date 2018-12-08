@@ -52,7 +52,7 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 			connection =
-				new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+				new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 			command = connection.CreateCommand();
 			dataTable = new DataTable();
 
@@ -443,7 +443,7 @@ namespace DB
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@value", value);
             //table here could be section (maybe we call this method from the SectionList class) and column and value are the instructors
-            command.CommandText = "DELETE FROM " + table2 + " WHERE " + key1 + " IN (SELECT " + key1 + " FROM " + table + " WHERE " 
+            command.CommandText = "DELETE FROM " + table + " WHERE " + key1 + " IN (SELECT " + key1 + " FROM " + table2 + " WHERE " 
                 + column + " = " + value +")";
             command.ExecuteNonQuery();
             connection.Close();

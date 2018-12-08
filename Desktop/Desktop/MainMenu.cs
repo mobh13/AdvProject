@@ -34,57 +34,57 @@ this.MaximizeBox = false;
         private void button1_Click(object sender, EventArgs e)
         {
             Form instructorsForm = new Instructors();
+            instructorsForm.StartPosition = FormStartPosition.CenterScreen;
             instructorsForm.Show();
-            instructorsForm.Location = this.Location;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form coursesForm = new Courses();
+            coursesForm.StartPosition = FormStartPosition.CenterScreen;
             coursesForm.Show();
-            coursesForm.Location = this.Location;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             Form taughtCoursesForm = new TaughtCourses();
+            taughtCoursesForm.StartPosition = FormStartPosition.CenterScreen;
             taughtCoursesForm.Show();
-            taughtCoursesForm.Location = this.Location;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form sectionsForm = new Sections();
+            sectionsForm.StartPosition = FormStartPosition.CenterScreen;
             sectionsForm.Show();
-            sectionsForm.Location = this.Location;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form studentsForm = new Students();
+            studentsForm.StartPosition = FormStartPosition.CenterScreen;
             studentsForm.Show();
-            studentsForm.Location = this.Location;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             Form schedulesForm = new Schedules();
+            schedulesForm.StartPosition = FormStartPosition.CenterScreen;
             schedulesForm.Show();
-            schedulesForm.Location = this.Location;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Form locationsForm = new Locations();
+            locationsForm.StartPosition = FormStartPosition.CenterScreen;
             locationsForm.Show();
-            locationsForm.Location = this.Location;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Form reportsForm = new Reports();
+            reportsForm.StartPosition = FormStartPosition.CenterScreen;
             reportsForm.Show();
-            reportsForm.Location = this.Location;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

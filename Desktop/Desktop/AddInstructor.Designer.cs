@@ -28,69 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelAddInstructor = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
+            this.labelFName = new System.Windows.Forms.Label();
+            this.labelLName = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxFname = new System.Windows.Forms.TextBox();
             this.textBoxlName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.textBoxHdate = new System.Windows.Forms.TextBox();
             this.textBoxPasswd = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelHDate = new System.Windows.Forms.Label();
+            this.labelPasswd = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // labelAddInstructor
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 33);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Add Instructor";
+            this.labelAddInstructor.AutoSize = true;
+            this.labelAddInstructor.BackColor = System.Drawing.Color.Transparent;
+            this.labelAddInstructor.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.labelAddInstructor.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelAddInstructor.Location = new System.Drawing.Point(12, 9);
+            this.labelAddInstructor.Name = "labelAddInstructor";
+            this.labelAddInstructor.Size = new System.Drawing.Size(213, 33);
+            this.labelAddInstructor.TabIndex = 7;
+            this.labelAddInstructor.Text = "Add Instructor";
             // 
-            // label2
+            // labelID
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(12, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Instructor ID:";
+            this.labelID.AutoSize = true;
+            this.labelID.BackColor = System.Drawing.Color.Transparent;
+            this.labelID.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.ForeColor = System.Drawing.Color.Teal;
+            this.labelID.Location = new System.Drawing.Point(12, 55);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(159, 25);
+            this.labelID.TabIndex = 8;
+            this.labelID.Text = "Instructor ID:";
             // 
-            // label3
+            // labelFName
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(13, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "First Name:";
+            this.labelFName.AutoSize = true;
+            this.labelFName.BackColor = System.Drawing.Color.Transparent;
+            this.labelFName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFName.ForeColor = System.Drawing.Color.Teal;
+            this.labelFName.Location = new System.Drawing.Point(13, 93);
+            this.labelFName.Name = "labelFName";
+            this.labelFName.Size = new System.Drawing.Size(134, 25);
+            this.labelFName.TabIndex = 9;
+            this.labelFName.Text = "First Name:";
             // 
-            // label4
+            // labelLName
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(12, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 25);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Last Name:";
+            this.labelLName.AutoSize = true;
+            this.labelLName.BackColor = System.Drawing.Color.Transparent;
+            this.labelLName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLName.ForeColor = System.Drawing.Color.Teal;
+            this.labelLName.Location = new System.Drawing.Point(12, 129);
+            this.labelLName.Name = "labelLName";
+            this.labelLName.Size = new System.Drawing.Size(132, 25);
+            this.labelLName.TabIndex = 10;
+            this.labelLName.Text = "Last Name:";
             // 
             // textBoxID
             // 
@@ -117,53 +117,53 @@
             this.textBoxlName.Size = new System.Drawing.Size(237, 24);
             this.textBoxlName.TabIndex = 15;
             // 
-            // button1
+            // buttonSubmit
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(438, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 36);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSubmit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonSubmit.Location = new System.Drawing.Point(438, 55);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(176, 36);
+            this.buttonSubmit.TabIndex = 18;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonClear
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(438, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 35);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonClear.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonClear.FlatAppearance.BorderSize = 0;
+            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClear.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonClear.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonClear.Location = new System.Drawing.Point(438, 108);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(176, 35);
+            this.buttonClear.TabIndex = 19;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(438, 159);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 35);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonExit.Location = new System.Drawing.Point(438, 159);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.TabIndex = 20;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBoxHdate
             // 
@@ -181,51 +181,51 @@
             this.textBoxPasswd.Size = new System.Drawing.Size(237, 24);
             this.textBoxPasswd.TabIndex = 17;
             // 
-            // label5
+            // labelHDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(13, 169);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Hire Date:";
+            this.labelHDate.AutoSize = true;
+            this.labelHDate.BackColor = System.Drawing.Color.Transparent;
+            this.labelHDate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHDate.ForeColor = System.Drawing.Color.Teal;
+            this.labelHDate.Location = new System.Drawing.Point(13, 169);
+            this.labelHDate.Name = "labelHDate";
+            this.labelHDate.Size = new System.Drawing.Size(119, 25);
+            this.labelHDate.TabIndex = 11;
+            this.labelHDate.Text = "Hire Date:";
             // 
-            // label6
+            // labelPasswd
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(13, 208);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 25);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Password:";
+            this.labelPasswd.AutoSize = true;
+            this.labelPasswd.BackColor = System.Drawing.Color.Transparent;
+            this.labelPasswd.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPasswd.ForeColor = System.Drawing.Color.Teal;
+            this.labelPasswd.Location = new System.Drawing.Point(13, 208);
+            this.labelPasswd.Name = "labelPasswd";
+            this.labelPasswd.Size = new System.Drawing.Size(123, 25);
+            this.labelPasswd.TabIndex = 12;
+            this.labelPasswd.Text = "Password:";
             // 
             // AddInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 243);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.textBoxHdate);
             this.Controls.Add(this.textBoxlName);
             this.Controls.Add(this.textBoxFname);
             this.Controls.Add(this.textBoxID);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPasswd);
+            this.Controls.Add(this.labelHDate);
+            this.Controls.Add(this.labelLName);
+            this.Controls.Add(this.labelFName);
+            this.Controls.Add(this.labelID);
+            this.Controls.Add(this.labelAddInstructor);
             this.Name = "AddInstructor";
-            this.Text = "AddInstructor";
+            this.Text = "Add Instructor";
             this.Load += new System.EventHandler(this.AddInstructor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,19 +234,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelAddInstructor;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Label labelFName;
+        private System.Windows.Forms.Label labelLName;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.TextBox textBoxFname;
         private System.Windows.Forms.TextBox textBoxlName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.TextBox textBoxHdate;
         private System.Windows.Forms.TextBox textBoxPasswd;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelHDate;
+        private System.Windows.Forms.Label labelPasswd;
     }
 }

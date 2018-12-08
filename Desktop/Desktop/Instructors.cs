@@ -20,23 +20,22 @@ namespace Desktop
         private void button1_Click(object sender, EventArgs e)
         {
             Form addInstructorForm = new AddInstructor();
+            addInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             addInstructorForm.Show();
-            addInstructorForm.Location = this.Location;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form editInstructorForm = new EditInstructor();
+            editInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             editInstructorForm.Show();
-            editInstructorForm.Location = this.Location;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form deleteInstructorForm = new DeleteInstructor();
+            deleteInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             deleteInstructorForm.Show();
-            deleteInstructorForm.Location = this.Location;
-
         }
 
         private void button3_Click(object sender, EventArgs e)
