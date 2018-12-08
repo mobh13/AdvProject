@@ -82,6 +82,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Schedule.cs" />
+    <Compile Include="ScheduleList.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="SectionList.cs" />
     <Compile Include="SectionStudent.cs" />

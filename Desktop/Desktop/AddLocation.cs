@@ -17,13 +17,13 @@ namespace Desktop
         {
             InitializeComponent();
             int id = locations.GetMaxID() + 1;
-            this.textBox1.Text =  id.ToString();
+            this.txtLocationID.Text =  id.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Location loc = new Location();
-            loc.setID(this.textBox1.Text.ToString());
+            loc.setID(this.txtLocationID.Text.ToString());
             loc.Name = this.textBox5.Text.ToString();
             loc.Capacity = this.textBox2.Text.ToString();
             locations.Add(loc);
@@ -34,7 +34,7 @@ namespace Desktop
         {
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
-                if (txt.Name != "textBox1")
+                if (txt.Name != "txtLocationID")
                 {
                     txt.Text = "";
                 }
