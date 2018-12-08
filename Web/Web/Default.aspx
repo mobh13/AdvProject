@@ -9,36 +9,45 @@
     </div>
 
     <div class="row">
-        
+		
      <div class="col-lg-4 center-block text-center loginBox" >
-		<form id="login-form" >
+		 
+		<form id="login-form" method="post" name="LoginForm" role="form" target="_self" >
             <h3>Login</h3>
              <div class="login-form-main-message"></div>
              <div class="main-login-form">
                  <div class="login-group">
                      <div class="form-group ">
                          <label for="lg_username" class="sr-only">Username</label>
-                         <input type="text" class="form-control center-block" id="lg_username" name="lg_username" placeholder="username">
+                         <%--<input type="text" class="" id="lg_username" name="lg_username" placeholder="username">--%>
+						         <asp:TextBox runat="server" ID="lg_username"  CssClass="form-control center-block" placeholder="username"></asp:TextBox>
+
                      </div>
                      <div class="form-group">
                          <label for="lg_password" class="sr-only">Password</label>
-                         <input type="password" class="form-control center-block" id="lg_password" name="lg_password" placeholder="password">
+                         <%--<input type="password" class="form-control center-block" id="lg_password" name="lg_password" placeholder="password">--%>
+						 <asp:TextBox runat="server" ID="lg_password"  CssClass="form-control center-block" placeholder="password" TextMode="Password"></asp:TextBox>
+
                      </div>
                      <div class="form-group login-group-checkbox">
-                         <input type="checkbox" id="lg_remember" name="lg_remember">
+						 <asp:CheckBox  runat="server" id="lg_remembe" />
+                         <%--<input type="checkbox" id="lg_remember" name="lg_remember">--%>
                          <label for="lg_remember">remember me ?</label>
                       
                      </div>
                        <div class="form-group">
                      <h4>Account Type</h4>
-                         <input type="radio" name="accountType" id="studentAccount" />
+						   <asp:RadioButton  runat="server" id="studentAccount" GroupName="accountType" />
+                         <%--<input type="radio" name="accountType" id="studentAccount" />--%>
                          <label for="studentAccount" > Student</label>
-                         <input type="radio" name="accountType" id="instructorAccount" />
+						   <asp:RadioButton  runat="server" id="instructorAccount" GroupName="accountType" />
+                         <%--<input type="radio" name="accountType" id="instructorAccount" />--%>
                          <label for="instructorAccount" > Instructor</label>
                      </div>
                     
                  </div>
-                 <button type="submit" class="btn btn-primary ">Login</button>
+				 <asp:Button runat="server" CssClass="btn btn-primary " ID="LoginButton"  Text="Login" OnClick="LoginButton_Click"/>
+                 <%--<button type="submit" class="btn btn-primary "  name="LoginButton" id="LoginButton" >Login</button>--%>
              </div>
             
          </form>

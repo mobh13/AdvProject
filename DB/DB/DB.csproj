@@ -78,6 +78,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
