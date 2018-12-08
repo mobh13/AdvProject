@@ -418,5 +418,111 @@ namespace DB
             connection.Close();
             return sum;
         }
-	}
+
+        //Moosa's Methods
+
+        //Average Value (1)
+        public double AverageValue(string columnName)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@column", columnName);
+            command.CommandText = "SELECT AVG(@column) FROM " + table;
+            reader = command.ExecuteReader();
+            reader.Read();
+            double avg = Convert.ToDouble(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            return avg;
+        }
+
+        //Delete (2)
+        public void Delete(string table2, string key1, string key2, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value", value);
+            //table here could be section (maybe we call this method from the SectionList class) and column and value are the instructors
+            command.CommandText = "DELETE FROM " + table2 + " WHERE " + key1 + " IN (SELECT " + key1 + " FROM " + table + " WHERE " 
+                + column + " = " + value +")";
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        //Total Value (3)
+        public double TotalValue(string sumColumn, string table1, string key1, string key2, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "SELECT SUM(" + sumColumn + ") FROM " + table + " WHERE " + key1 + " IN ( SELECT " + key2 + 
+                " FROM " + table1 + " WHERE " + column + " = @value";
+            reader = command.ExecuteReader();
+            reader.Read();
+            double sum = Convert.ToDouble(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            return sum;
+        }
+
+        //Exist (2)
+        //KEY2 ? PURPOSE
+        public bool Exist(string table1, string key1, string key2, string column1, 
+            string value1, string column2, string value2, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value1", value1);
+            command.Parameters.AddWithValue("@value2", value2);
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
+                " WHERE " + key1 + " IN (" +
+                "SELECT " + key1 + " FROM " + table1 + " WHERE " + column + " = @value) AND " 
+                + column1 + " = @value1 AND " + column2 + " = @value2";
+            reader = command.ExecuteReader();
+            reader.Read();
+            int count = Convert.ToInt32(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            if (count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //Exist (3)
+        //KEY3 ? PURPOSE
+        public bool Exist(string table1, string key1, string key2, string table2, string key3, string key4, 
+            string column1, string value1, string column2, string value2, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value1", value1);
+            command.Parameters.AddWithValue("@value2", value2);
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
+                " WHERE " + key1 + " IN (" +
+                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
+                " FROM " + table2 + " WHERE " + column + " = " + value + ") AND " + column1 + " = " + value1 + 
+                " AND " + column2 + " = " + value2;
+            reader = command.ExecuteReader();
+            reader.Read();
+            int count = Convert.ToInt32(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            if (count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+    }
 }
