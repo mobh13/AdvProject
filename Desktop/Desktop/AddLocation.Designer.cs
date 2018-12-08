@@ -43,7 +43,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 134);
+            this.textBox2.Location = new System.Drawing.Point(221, 144);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(237, 24);
             this.textBox2.TabIndex = 110;
@@ -51,7 +51,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(222, 94);
+            this.textBox5.Location = new System.Drawing.Point(222, 104);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(237, 24);
             this.textBox5.TabIndex = 105;
@@ -59,7 +59,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(222, 53);
+            this.textBox1.Location = new System.Drawing.Point(222, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(237, 24);
@@ -71,7 +71,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(13, 132);
+            this.label4.Location = new System.Drawing.Point(13, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 25);
             this.label4.TabIndex = 102;
@@ -85,12 +85,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(524, 157);
+            this.button3.Location = new System.Drawing.Point(442, 210);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(176, 35);
             this.button3.TabIndex = 100;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -100,12 +101,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(524, 106);
+            this.button2.Location = new System.Drawing.Point(245, 209);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 35);
             this.button2.TabIndex = 99;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -115,12 +117,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(524, 53);
+            this.button1.Location = new System.Drawing.Point(45, 209);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 36);
             this.button1.TabIndex = 98;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -128,7 +131,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(13, 93);
+            this.label3.Location = new System.Drawing.Point(13, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 25);
             this.label3.TabIndex = 97;
@@ -140,7 +143,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(12, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 25);
             this.label2.TabIndex = 96;
@@ -162,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 204);
+            this.ClientSize = new System.Drawing.Size(659, 268);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox1);

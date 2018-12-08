@@ -42,12 +42,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(376, 59);
+            this.button3.Location = new System.Drawing.Point(430, 62);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(176, 35);
             this.button3.TabIndex = 27;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -69,7 +70,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(194, 59);
+            this.button2.Location = new System.Drawing.Point(227, 62);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 35);
             this.button2.TabIndex = 25;
@@ -85,7 +86,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(12, 59);
+            this.button1.Location = new System.Drawing.Point(12, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 35);
             this.button1.TabIndex = 24;
@@ -97,12 +98,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 131);
+            this.ClientSize = new System.Drawing.Size(638, 131);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Locations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Locations";
             this.ResumeLayout(false);
             this.PerformLayout();

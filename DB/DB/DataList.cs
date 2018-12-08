@@ -289,7 +289,7 @@ namespace DB
 		//start of the design document Methods
 
 		// Start of Madan Methods
-		public int GetMAxID()
+		public int GetMaxID()
 		{
 			connection.Open();
 			command.CommandText = "Select Max(" + idField + ") from " + table;
