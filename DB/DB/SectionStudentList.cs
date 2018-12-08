@@ -9,7 +9,7 @@ namespace DB
     class SectionStudentList : DataListJoin
     {
         public SectionStudentList() : base("SectionStudent", "SectionID", "StudentID")
-        { }
+        {   }
 
         protected override void GenerateList()
         {
