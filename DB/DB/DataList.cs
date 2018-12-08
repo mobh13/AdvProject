@@ -466,7 +466,6 @@ namespace DB
         }
 
         //Exist (2)
-        //KEY2 ? PURPOSE
         public bool Exist(string table1, string key1, string key2, string column1, 
             string value1, string column2, string value2, string column, string value)
         {
@@ -477,7 +476,8 @@ namespace DB
             command.Parameters.AddWithValue("@value", value);
             command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
                 " WHERE " + key1 + " IN (" +
-                "SELECT " + key1 + " FROM " + table1 + " WHERE " + column + " = @value) AND " 
+                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 + " FROM " + table + " " +
+                "WHERE " + column + " = @value)) AND " 
                 + column1 + " = @value1 AND " + column2 + " = @value2";
             reader = command.ExecuteReader();
             reader.Read();
@@ -495,7 +495,6 @@ namespace DB
         }
 
         //Exist (3)
-        //KEY3 ? PURPOSE
         public bool Exist(string table1, string key1, string key2, string table2, string key3, string key4, 
             string column1, string value1, string column2, string value2, string column, string value)
         {
@@ -507,8 +506,9 @@ namespace DB
             command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
                 " WHERE " + key1 + " IN (" +
                 "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
-                " FROM " + table2 + " WHERE " + column + " = " + value + ") AND " + column1 + " = " + value1 + 
-                " AND " + column2 + " = " + value2;
+                " FROM " + table2 + " WHERE " + key3 + " IN (SELECT " + key3 +
+                " FROM " + table + " WHERE " + column + " = @value)) AND " +
+                "" + column1 + " = @value1 AND " + column2 + " = @value2";
             reader = command.ExecuteReader();
             reader.Read();
             int count = Convert.ToInt32(reader.GetValue(0));
