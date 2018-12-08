@@ -16,17 +16,39 @@ namespace Web
 		{
 			students = new StudentList();
 			instructors = new InstructorList();
+			if(Request.Cookies["RememberMe"] != null){
+				lg_username.Text = Request.Cookies["RememberMe"].Value;
+				lg_remembe.Checked = true;
+				if(Request.Cookies["AccoutType"].Value == "instructor")
+				{
+					instructorAccount.Checked = true;
+
+				}else if (Request.Cookies["AccoutType"].Value == "student")
+				{
+					studentAccount.Checked = true;
+				}
+
+			}
 		}
 		protected void LoginButton_Click(object sender, EventArgs e)
 		{
 			bool loggedin = false;
-			if(!instructorAccount.Checked && !studentAccount.Checked)
+			
+			 if (lg_username.Text == "" || lg_password.Text == "")
 			{
-				lg_username.Text = "error";
+				errormsg.Text = "Please Complete your account information";
+				meassgaePanel.Visible = true;
+
+			}
+			else if(!instructorAccount.Checked && !studentAccount.Checked)
+			{
+				errormsg.Text = "Please Choose  your account type";
+				meassgaePanel.Visible = true;
 
 			}
 			else if (instructorAccount.Checked && lg_username.Text!="" && lg_password.Text!="")
 			{
+				meassgaePanel.Visible = false;
 				instructors.Filter("InstructorID", lg_username.Text);
 				if (instructors.List.Count == 1)
 				{
@@ -34,22 +56,26 @@ namespace Web
 					instructors.Populate(instructor);
 					if (instructor.Password == lg_password.Text)
 					{
-						Session["User"] = instructor;
+						Session["User"] = instructor.getID();
 						loggedin = true;
 					}
 					else
 					{
-
+						errormsg.Text = "Wrong password, Please check your password and try again";
+						meassgaePanel.Visible = true;
 					}
 				}
 				else
 				{
-
+					errormsg.Text = "User Not Found, Please check your userId and account type and try again ";
+					meassgaePanel.Visible = true;
 				}
 			
 			}
 			else if(studentAccount.Checked && lg_username.Text != "" && lg_password.Text != "")
 			{
+				meassgaePanel.Visible = false;
+
 				students.Filter("StudentID", lg_username.Text);
 				if (students.List.Count == 1)
 				{
@@ -57,30 +83,43 @@ namespace Web
 					students.Populate(student);
 					if (student.Password == lg_password.Text)
 					{
-						Session["User"] = student;
+						Session["User"] = student.getID();
 						loggedin = true;
 					}
 					else
 					{
-
+						errormsg.Text = "Wrong password, Please check your password and try again";
+						meassgaePanel.Visible = true;
 					}
+				}
+				else
+				{
+					errormsg.Text = "User Not Found, Please check your userId and account type and try again ";
+					meassgaePanel.Visible = true;
 				}
 
 			}
 			if(loggedin )
 			{
-				if (lg_remembe.Checked)
-				{
-					
-				}
+				string id  = lg_username.Text.ToString();
 				if (instructorAccount.Checked)
 				{
-					Response.Redirect("~/instructor/mianPage.asp");
+					if (lg_remembe.Checked)
+					{
+						Response.Cookies["RememberMe"].Value = id;
+						Response.Cookies["AccoutType"].Value = "instructor";
+					}
+					Response.Redirect("~/instructor/MainPage.aspx");
 
 				}
 				else if (studentAccount.Checked)
 				{
-					Response.Redirect("~/student/mianPage.asp");
+					if (lg_remembe.Checked)
+					{
+						Response.Cookies["RememberMe"].Value = id;
+						Response.Cookies["AccoutType"].Value = "student";
+					}
+					Response.Redirect("~/student/MainPage.aspx");
 
 				}
 			}

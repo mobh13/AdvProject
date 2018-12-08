@@ -13,6 +13,24 @@ namespace Web {
     public partial class _Default {
         
         /// <summary>
+        /// meassgaePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel meassgaePanel;
+        
+        /// <summary>
+        /// errormsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal errormsg;
+        
+        /// <summary>
         /// lg_username control.
         /// </summary>
         /// <remarks>

@@ -14,13 +14,18 @@
 		 
 		<form id="login-form" method="post" name="LoginForm" role="form" target="_self" >
             <h3>Login</h3>
-             <div class="login-form-main-message"></div>
+			
+			<asp:panel runat="server" id="meassgaePanel" visible="false">
+				<div class="alert alert-danger"><asp:Literal runat="server" id="errormsg" /></div>
+    
+</asp:panel>
+             
              <div class="main-login-form">
                  <div class="login-group">
                      <div class="form-group ">
-                         <label for="lg_username" class="sr-only">Username</label>
+                         <label for="lg_username" class="sr-only">UserId</label>
                          <%--<input type="text" class="" id="lg_username" name="lg_username" placeholder="username">--%>
-						         <asp:TextBox runat="server" ID="lg_username"  CssClass="form-control center-block" placeholder="username"></asp:TextBox>
+						         <asp:TextBox runat="server" ID="lg_username"  CssClass="form-control center-block" placeholder="UserId"></asp:TextBox>
 
                      </div>
                      <div class="form-group">

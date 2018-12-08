@@ -132,6 +132,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="instructor\ClassList.aspx" />
+    <Content Include="instructor\MainPage.aspx" />
     <Content Include="instructor\MarkClass.aspx" />
     <Content Include="instructor\TimeTable.aspx" />
     <Content Include="Logout.aspx" />
@@ -168,6 +169,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Masters\Site.Master" />
     <Content Include="student\ClassList.aspx" />
+    <Content Include="student\MainPage.aspx" />
     <Content Include="student\Records.aspx" />
     <Content Include="student\TimeTable.aspx" />
     <Content Include="Web.config" />
@@ -192,6 +194,13 @@
     </Compile>
     <Compile Include="instructor\ClassList.aspx.designer.cs">
       <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructor\MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructor\MarkClass.aspx.cs">
       <DependentUpon>MarkClass.aspx</DependentUpon>
@@ -242,6 +251,13 @@
     </Compile>
     <Compile Include="student\ClassList.aspx.designer.cs">
       <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\Records.aspx.cs">
       <DependentUpon>Records.aspx</DependentUpon>
