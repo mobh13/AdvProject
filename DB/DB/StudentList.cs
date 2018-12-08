@@ -18,7 +18,7 @@ namespace DB
 			SetDataTableColumns(new Student());
 			while (Reader.Read())
 			{
-				Student student = new Student();
+				Student student = new Student(Reader.GetValue(0).ToString());
 				SetValues(student);
 				List.Add(student);
 				AddDataTableRow(student);

@@ -66,6 +66,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Course.cs" />
+    <Compile Include="CourseList.cs" />
     <Compile Include="DataList.cs" />
     <Compile Include="DataListJoin.cs" />
     <Compile Include="Instructor.cs" />
@@ -80,6 +82,8 @@
     </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="StudentList.cs" />
+    <Compile Include="TaughtCourses.cs" />
+    <Compile Include="TaughtCoursesList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

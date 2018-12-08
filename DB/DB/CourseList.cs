@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    public class InstructorList : DataList
+    class CourseList : DataList
     {
-        public InstructorList() : base("INSTRUCTOR", "INSTRUCTORID")
+        public CourseList() : base("Course", "CourseID")
         {
         }
 
         protected override void GenerateList()
         {
             List.Clear();
-            SetDataTableColumns(new Instructor());
+            SetDataTableColumns(new Course());
             while (Reader.Read())
             {
-                Instructor instructor = new Instructor(Reader.GetValue(0).ToString());
-                SetValues(instructor);
-                List.Add(instructor);
-                AddDataTableRow(instructor);
+                Course course = new Course(Reader.GetValue(0).ToString());
+                SetValues(course);
+                List.Add(course);
+                AddDataTableRow(course);
             }
             Reader.Close();
             Connection.Close();
