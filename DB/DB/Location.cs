@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    class Location : Item
+    public class Location : Item
     {
         private string name;
-        private int capacity;
+        private string capacity;
 
         public string LocationID { get => base.getID(); set => base.setID(value); }
         public string Name { get => name; set => name = value; }
-        public int Capacity { get => capacity; set => capacity = value; }
+        public string Capacity { get => capacity; set => capacity = value; }
 
         public Location(String ID) : base(ID)
         {
@@ -25,7 +25,7 @@ namespace DB
         }
         public override string ToString()
         {
-            return LocationID;
+            return base.getID();
         }
     }
 }
