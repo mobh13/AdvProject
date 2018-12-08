@@ -36,7 +36,6 @@ namespace Desktop
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Instructor instructor = (Instructor)comboBoxID.SelectedItem;
-
             instructorList.Delete(instructor);
             MessageBox.Show("Instructor Deleted Successfully!");
             populateInstructors();
