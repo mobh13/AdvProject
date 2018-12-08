@@ -348,10 +348,75 @@ namespace DB
 			command.CommandText = "Select AVG(" + sumColumn + ") FROM " + table + " Where " + key1 + " in( select "+ key1 + " From ";
 			reader = command.ExecuteReader();
 			reader.Read();
-			double avg = Convert.ToInt64(reader.GetValue(0));
+			double avg = Convert.ToDouble(reader.GetValue(0));
 			reader.Close();
 			connection.Close();
 			return avg;
 		}
+
+        //Abdulla's methods 
+
+        //first total value
+        public int TotalValue(string columnName)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@column",columnName);
+            command.CommandText = "Select sum(@column) from " + table ;
+            reader = command.ExecuteReader();
+            reader.Read();
+            int sum = Convert.ToInt32(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            return sum;
+        }
+
+        //4th total value
+        //NOT USING ALL PARAMETERS 
+        public int TotalValue(String sumColumn, string table1, string key1, string key2, 
+            string table2, string key3, string key4, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.CommandText =
+                "select sum("+ sumColumn + ") from "+ table + " where "+ table + "."+ key1+
+                " = "+ table1 + "."+ key1 + " and "+table1+"." +key2+
+                " = "+table2+"."+key2+" and "+table2+"."+ column + " = "+ value;
+            reader = command.ExecuteReader();
+            reader.Read();
+            int sum = Convert.ToInt32(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            return sum;
+        }
+
+        // first delete
+        public void Delete(string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@column",column);
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "Delete from " + table + " where " + @column + " = @value";
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        //second average 
+        public double AverageValue(string sumColumn, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@column", column);
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "select avg(" + sumColumn + ") from " + table + " where " + @column +
+                " = @value";
+            reader = command.ExecuteReader();
+            reader.Read();
+            double sum = Convert.ToDouble(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            return sum;
+        }
 	}
 }
