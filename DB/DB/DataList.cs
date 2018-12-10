@@ -289,6 +289,7 @@ namespace DB
 		//start of the design document Methods
 
 		// Start of Madan Methods
+		// get max id
 		public int GetMaxID()
 		{
 			connection.Open();
@@ -301,6 +302,7 @@ namespace DB
 			return maxId;
 
 		}
+		//first exist
 		public bool Exist(string column1, string value1, string column2, string value2, string column, string value)
 		{
 			connection.Open();
@@ -326,6 +328,7 @@ namespace DB
 				return true;
 			}
 		}
+		//second total value
 		public int TotalValue(string sumColumn, string column, string value)
 		{
 			connection.Open();
@@ -339,13 +342,18 @@ namespace DB
 			connection.Close();
 			return sum;
 		}
-		// End of Madan Methods
-		public double AverageValue(string sumColumn, string table1, string key1, string key2, string column, string value)
+		// third avreage value
+		public double AverageValue(String sumColumn, string table1, string key1, string key2,
+			string table2, string key3, string key4, string column, string value)
 		{
 			connection.Open();
 			command.Parameters.Clear();
 			command.Parameters.AddWithValue("@value", value);
-			command.CommandText = "Select AVG(" + sumColumn + ") FROM " + table + " Where " + key1 + " in( select "+ key1 + " From ";
+			command.CommandText =
+				"Select avg(" + sumColumn + ") from " + table +
+				" inner join " + table1 + " on " + key1 + " = " + key2 +
+				" inner join " + table2 + " on " + key3 + " = " + key4 +
+				" where " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
 			double avg = Convert.ToDouble(reader.GetValue(0));
@@ -353,11 +361,11 @@ namespace DB
 			connection.Close();
 			return avg;
 		}
+		// End of Madan Methods
+		//Abdulla's methods 
 
-        //Abdulla's methods 
-
-        //first total value
-        public int TotalValue(string columnName)
+		//first total value
+		public int TotalValue(string columnName)
         {
             connection.Open();
             command.Parameters.Clear();
