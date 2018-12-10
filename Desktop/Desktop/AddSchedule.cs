@@ -27,20 +27,20 @@ namespace Desktop
             schedules.Populate();
             nextID();
             sections.Populate();
-            this.cmbSchedules.DataSource = sections.List;
+            this.cmbSections.DataSource = sections.List;
             locations.Populate();
-            this.cmbDays.DataSource = locations.List;
+            this.cmbLocations.DataSource = locations.List;
             string[] days = { "Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday" };
             foreach (string day in days)
             {
-                this.cmbLocations.Items.Add(day);
+                this.cmbDays.Items.Add(day);
             }
         }
 
         void nextID()
         {
             int ID = schedules.GetMaxID() + 1;
-            this.txtDuration.Text = ID.ToString();
+            this.txtScheduleID.Text = ID.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,15 +64,40 @@ namespace Desktop
         {
             Schedule sch = new Schedule();
             sch.setID(this.txtDuration.Text.ToString());
-            sch.SectionID = ((Section)this.cmbSchedules.SelectedItem).getID();
+            Section section = (Section)this.cmbSections.SelectedItem;
+            sch.SectionID = section.getID();
             sch.LocationID = ((Location)this.cmbLocations.SelectedItem).getID();
             sch.Day = cmbDays.SelectedItem.ToString();
             sch.Duration = this.txtDuration.Text.ToString();
             sch.Time = this.txtTime.Text.ToString();
 
             //check double scheduling for instructor using sectionID
-            //check double scheduling for location
-            //check location capacity
-        }
-    }
+            Boolean chkInstructor = 
+                schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID","Day",sch.Day.ToString(),
+                "Time",sch.Time.ToString(), "Section.instrcutorID", section.InstructorID.ToString());
+            if (chkInstructor)
+            {
+                Boolean chkLocation = schedules.Exist("Day",sch.Day.ToString(),"Time",
+                    sch.Time.ToString(),"LocationID",sch.LocationID.ToString());
+                if (chkLocation)
+                {
+                    /*
+                     * select (location.capacity - section.capacity) from schedule 
+                     * where location.locationID = schedule.locationID 
+                     * and schedule.sectionID = section.sectionID 
+                     * and location.locaionID = value 
+                     * and section.sectionID = value
+                     */
+                }
+                else
+                {
+                    MessageBox.Show("Location is busy at this time.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Instructor is busy at this time.");
+            }
+         }
+     }
 }

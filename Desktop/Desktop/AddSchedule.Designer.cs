@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbSchedules = new System.Windows.Forms.ComboBox();
+            this.cmbSections = new System.Windows.Forms.ComboBox();
             this.cmbLocations = new System.Windows.Forms.ComboBox();
             this.cmbDays = new System.Windows.Forms.ComboBox();
             this.txtDuration = new System.Windows.Forms.TextBox();
@@ -194,15 +194,15 @@
             this.label1.TabIndex = 75;
             this.label1.Text = "Add Schedule";
             // 
-            // cmbSchedules
+            // cmbSections
             // 
-            this.cmbSchedules.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSchedules.FormattingEnabled = true;
-            this.cmbSchedules.Location = new System.Drawing.Point(363, 161);
-            this.cmbSchedules.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbSchedules.Name = "cmbSchedules";
-            this.cmbSchedules.Size = new System.Drawing.Size(354, 37);
-            this.cmbSchedules.TabIndex = 90;
+            this.cmbSections.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSections.FormattingEnabled = true;
+            this.cmbSections.Location = new System.Drawing.Point(363, 161);
+            this.cmbSections.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSections.Name = "cmbSections";
+            this.cmbSections.Size = new System.Drawing.Size(354, 37);
+            this.cmbSections.TabIndex = 90;
             // 
             // cmbLocations
             // 
@@ -255,7 +255,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbDays);
             this.Controls.Add(this.cmbLocations);
-            this.Controls.Add(this.cmbSchedules);
+            this.Controls.Add(this.cmbSections);
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtScheduleID);
@@ -289,7 +289,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbSchedules;
+        private System.Windows.Forms.ComboBox cmbSections;
         private System.Windows.Forms.ComboBox cmbLocations;
         private System.Windows.Forms.ComboBox cmbDays;
         private System.Windows.Forms.TextBox txtDuration;
