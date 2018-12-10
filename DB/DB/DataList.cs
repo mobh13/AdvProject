@@ -372,16 +372,17 @@ namespace DB
         }
 
         //4th total value
-        //NOT USING ALL PARAMETERS 
         public int TotalValue(String sumColumn, string table1, string key1, string key2, 
             string table2, string key3, string key4, string column, string value)
         {
             connection.Open();
             command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value",value);
             command.CommandText =
-                "select sum("+ sumColumn + ") from "+ table + " where "+ table + "."+ key1+
-                " = "+ table1 + "."+ key1 + " and "+table1+"." +key2+
-                " = "+table2+"."+key2+" and "+table2+"."+ column + " = "+ value;
+                "Select sum(" + sumColumn+") from " + table +
+                " inner join "+ table1 +" on "+ key1 + " = "+key2 +
+                " inner join "+table2 + " on "+key3 + " = "+ key4 +
+                " where "+ column +" = @value";
             reader = command.ExecuteReader();
             reader.Read();
             int sum = Convert.ToInt32(reader.GetValue(0));

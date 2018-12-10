@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    class SectionList : DataList
+    public class SectionList : DataList
     {
         public SectionList() : base("Section", "SectionID")
         {

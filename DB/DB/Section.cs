@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    class Section : Item
+    public class Section : Item
     {
         private string taughtCourseID;
         private string instructorID;
