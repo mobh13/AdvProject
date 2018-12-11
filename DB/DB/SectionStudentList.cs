@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    class SectionStudentList : DataListJoin
+	public class SectionStudentList : DataListJoin
     {
         public SectionStudentList() : base("SectionStudent", "SectionID", "StudentID")
         {   }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    class TaughtCourses : Item
+	public class TaughtCourses : Item
     {
         private string courseID;
         private string semester;

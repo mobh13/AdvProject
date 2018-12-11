@@ -12,7 +12,6 @@
 		
      <div class="col-lg-4 center-block text-center loginBox" >
 		 
-		<form id="login-form" method="post" name="LoginForm" role="form" target="_self" >
             <h3>Login</h3>
 			
 			<asp:panel runat="server" id="meassgaePanel" visible="false">
@@ -55,7 +54,6 @@
                  <%--<button type="submit" class="btn btn-primary "  name="LoginButton" id="LoginButton" >Login</button>--%>
              </div>
             
-         </form>
 	</div>
     </div>
 

@@ -11,7 +11,16 @@ namespace Web
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			Session["User"] = 15;
+			//if(Session["User"] != null)
+			//{
+			//	Session.Abandon();
+			//	Response.Redirect("~/");
+			//}
+			//else
+			//{
+			//	Response.Write("Error please log in before trying to logout..!");
+			//}
 		}
 	}
 }

@@ -331,13 +331,22 @@ namespace DB
 		//second total value
 		public int TotalValue(string sumColumn, string column, string value)
 		{
+			int sum = 0;
 			connection.Open();
 			command.Parameters.Clear();
 			command.Parameters.AddWithValue("@value", value);
 			command.CommandText = "Select Sum(" + sumColumn + ") FROM " + table + " Where " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
-			int sum = Convert.ToInt32(reader.GetValue(0));
+			if (reader.GetValue(0) == null)
+			{
+				sum = 0;
+			}
+			else
+			{
+				 sum = Convert.ToInt32(reader.GetValue(0));
+			}
+			
 			reader.Close();
 			connection.Close();
 			return sum;
@@ -346,6 +355,7 @@ namespace DB
 		public double AverageValue(String sumColumn, string table1, string key1, string key2,
 			string table2, string key3, string key4, string column, string value)
 		{
+			double avg = 0;
 			connection.Open();
 			command.Parameters.Clear();
 			command.Parameters.AddWithValue("@value", value);
@@ -356,7 +366,15 @@ namespace DB
 				" where " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
-			double avg = Convert.ToDouble(reader.GetValue(0));
+			if (reader.GetValue(0) == null) {
+
+				avg = 0.0;
+
+			} else
+			{
+				avg = Convert.ToDouble(reader.GetValue(0));
+
+			}
 			reader.Close();
 			connection.Close();
 			return avg;
@@ -393,6 +411,7 @@ namespace DB
                 " where "+ column +" = @value";
             reader = command.ExecuteReader();
             reader.Read();
+			
             int sum = Convert.ToInt32(reader.GetValue(0));
             reader.Close();
             connection.Close();

@@ -49,12 +49,12 @@ namespace Web
 			else if (instructorAccount.Checked && lg_username.Text!="" && lg_password.Text!="")
 			{
 				meassgaePanel.Visible = false;
-				instructors.Filter("InstructorID", lg_username.Text);
+				instructors.Filter("InstructorID", lg_username.Text.ToString());
 				if (instructors.List.Count == 1)
 				{
 					Instructor instructor = (Instructor) instructors.List.ElementAt(0);
 					instructors.Populate(instructor);
-					if (instructor.Password == lg_password.Text)
+					if (instructor.Password == lg_password.Text.ToString())
 					{
 						Session["User"] = instructor.getID();
 						loggedin = true;
@@ -109,6 +109,12 @@ namespace Web
 						Response.Cookies["RememberMe"].Value = id;
 						Response.Cookies["AccoutType"].Value = "instructor";
 					}
+					else
+					{
+						Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
+						Response.Cookies["AccoutType"].Expires = DateTime.Now.AddDays(-1);
+
+					}
 					Response.Redirect("~/instructor/MainPage.aspx");
 
 				}
@@ -118,6 +124,11 @@ namespace Web
 					{
 						Response.Cookies["RememberMe"].Value = id;
 						Response.Cookies["AccoutType"].Value = "student";
+					}
+					else
+					{
+						Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
+						Response.Cookies["AccoutType"].Expires = DateTime.Now.AddDays(-1);
 					}
 					Response.Redirect("~/student/MainPage.aspx");
 
