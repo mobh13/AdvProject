@@ -23,15 +23,15 @@ namespace Desktop
         {
             instructorList = new InstructorList();
             instructorList.Populate();
-            populateInstructors();
+            PopulateInstructors();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            populateInstructors();
+            PopulateInstructors();
         }
 
-        private void populateInstructors()
+        private void PopulateInstructors()
         {
             comboBoxID.DataSource = instructorList.List;
             Instructor instructor = (Instructor)comboBoxID.SelectedItem;
@@ -66,7 +66,7 @@ namespace Desktop
             instructor.Password = textBoxPasswd.Text;
             instructorList.Update(instructor);
             MessageBox.Show("Instructor Updated Successfully!");
-            populateInstructors();
+            PopulateInstructors();
         }
     }
 }
