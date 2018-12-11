@@ -28,80 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.labelCourse = new System.Windows.Forms.Label();
+            this.buttonEditCourse = new System.Windows.Forms.Button();
+            this.buttonAddCourse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(374, 73);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 35);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonExit.Location = new System.Drawing.Point(374, 73);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.TabIndex = 11;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // label1
+            // labelCourse
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(10, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 33);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Course";
+            this.labelCourse.AutoSize = true;
+            this.labelCourse.BackColor = System.Drawing.Color.Transparent;
+            this.labelCourse.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.labelCourse.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelCourse.Location = new System.Drawing.Point(10, 23);
+            this.labelCourse.Name = "labelCourse";
+            this.labelCourse.Size = new System.Drawing.Size(109, 33);
+            this.labelCourse.TabIndex = 10;
+            this.labelCourse.Text = "Course";
             // 
-            // button2
+            // buttonEditCourse
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(192, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Edit Course";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEditCourse.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonEditCourse.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonEditCourse.FlatAppearance.BorderSize = 0;
+            this.buttonEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditCourse.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonEditCourse.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonEditCourse.Location = new System.Drawing.Point(192, 73);
+            this.buttonEditCourse.Name = "buttonEditCourse";
+            this.buttonEditCourse.Size = new System.Drawing.Size(176, 35);
+            this.buttonEditCourse.TabIndex = 9;
+            this.buttonEditCourse.Text = "Edit Course";
+            this.buttonEditCourse.UseVisualStyleBackColor = false;
+            this.buttonEditCourse.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // buttonAddCourse
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(10, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add Course";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddCourse.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonAddCourse.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonAddCourse.FlatAppearance.BorderSize = 0;
+            this.buttonAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddCourse.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonAddCourse.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonAddCourse.Location = new System.Drawing.Point(10, 73);
+            this.buttonAddCourse.Name = "buttonAddCourse";
+            this.buttonAddCourse.Size = new System.Drawing.Size(176, 35);
+            this.buttonAddCourse.TabIndex = 8;
+            this.buttonAddCourse.Text = "Add Course";
+            this.buttonAddCourse.UseVisualStyleBackColor = false;
+            this.buttonAddCourse.Click += new System.EventHandler(this.button1_Click);
             // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 131);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.labelCourse);
+            this.Controls.Add(this.buttonEditCourse);
+            this.Controls.Add(this.buttonAddCourse);
             this.Name = "Courses";
             this.Text = "Courses";
             this.ResumeLayout(false);
@@ -111,9 +112,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelCourse;
+        private System.Windows.Forms.Button buttonEditCourse;
+        private System.Windows.Forms.Button buttonAddCourse;
     }
 }

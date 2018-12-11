@@ -20,16 +20,21 @@ namespace Desktop
         private void button1_Click(object sender, EventArgs e)
         {
             Form addCourseForm = new AddCourse();
+            addCourseForm.StartPosition = FormStartPosition.CenterScreen;
             addCourseForm.Show();
-            addCourseForm.Location = this.Location;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form editCourseForm = new EditCourse();
+            editCourseForm.StartPosition = FormStartPosition.CenterScreen;
             editCourseForm.Show();
-            editCourseForm.Location = this.Location;
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
