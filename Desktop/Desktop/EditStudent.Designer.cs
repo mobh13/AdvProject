@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxPasswd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxlName = new System.Windows.Forms.TextBox();
+            this.textBoxFname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxEdate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBox5
+            // textBoxPasswd
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(223, 220);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(237, 24);
-            this.textBox5.TabIndex = 88;
+            this.textBoxPasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPasswd.Location = new System.Drawing.Point(223, 220);
+            this.textBoxPasswd.Name = "textBoxPasswd";
+            this.textBoxPasswd.Size = new System.Drawing.Size(237, 24);
+            this.textBoxPasswd.TabIndex = 88;
             // 
             // label6
             // 
@@ -64,21 +64,21 @@
             this.label6.TabIndex = 87;
             this.label6.Text = "Password:";
             // 
-            // textBox4
+            // textBoxlName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(222, 140);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(237, 24);
-            this.textBox4.TabIndex = 86;
+            this.textBoxlName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxlName.Location = new System.Drawing.Point(222, 140);
+            this.textBoxlName.Name = "textBoxlName";
+            this.textBoxlName.Size = new System.Drawing.Size(237, 24);
+            this.textBoxlName.TabIndex = 86;
             // 
-            // textBox3
+            // textBoxFname
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(222, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(237, 24);
-            this.textBox3.TabIndex = 85;
+            this.textBoxFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFname.Location = new System.Drawing.Point(222, 101);
+            this.textBoxFname.Name = "textBoxFname";
+            this.textBoxFname.Size = new System.Drawing.Size(237, 24);
+            this.textBoxFname.TabIndex = 85;
             // 
             // label4
             // 
@@ -92,13 +92,13 @@
             this.label4.TabIndex = 83;
             this.label4.Text = "Last Name:";
             // 
-            // textBox2
+            // textBoxEdate
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(222, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 24);
-            this.textBox2.TabIndex = 82;
+            this.textBoxEdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEdate.Location = new System.Drawing.Point(222, 178);
+            this.textBoxEdate.Name = "textBoxEdate";
+            this.textBoxEdate.Size = new System.Drawing.Size(237, 24);
+            this.textBoxEdate.TabIndex = 82;
             // 
             // label5
             // 
@@ -112,50 +112,53 @@
             this.label5.TabIndex = 81;
             this.label5.Text = "Enrollment Date:";
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(524, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 35);
-            this.button3.TabIndex = 80;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonExit.Location = new System.Drawing.Point(524, 165);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.TabIndex = 80;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // button2
+            // buttonClear
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(524, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 35);
-            this.button2.TabIndex = 79;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonClear.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonClear.FlatAppearance.BorderSize = 0;
+            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClear.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonClear.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonClear.Location = new System.Drawing.Point(524, 114);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(176, 35);
+            this.buttonClear.TabIndex = 79;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // button1
+            // buttonSubmit
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(524, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 36);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonSubmit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonSubmit.Location = new System.Drawing.Point(524, 61);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(176, 36);
+            this.buttonSubmit.TabIndex = 78;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // label3
             // 
@@ -193,36 +196,39 @@
             this.label1.TabIndex = 75;
             this.label1.Text = "Edit Student";
             // 
-            // comboBox3
+            // comboBoxID
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(222, 61);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 26);
-            this.comboBox3.TabIndex = 89;
+            this.comboBoxID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Location = new System.Drawing.Point(222, 61);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(237, 26);
+            this.comboBoxID.TabIndex = 89;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 261);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.comboBoxID);
+            this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxlName);
+            this.Controls.Add(this.textBoxFname);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxEdate);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EditStudent";
-            this.Text = "EditStudent";
+            this.Text = "Edit Student";
+            this.Load += new System.EventHandler(this.EditStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,19 +236,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxPasswd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxlName;
+        private System.Windows.Forms.TextBox textBoxFname;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxEdate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxID;
     }
 }

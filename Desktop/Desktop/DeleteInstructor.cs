@@ -22,10 +22,10 @@ namespace Desktop
         private void DeleteInstructor_Load(object sender, EventArgs e)
         {
             instructorList = new InstructorList();
-            populateInstructors();
+            PopulateInstructors();
         }
 
-        private void populateInstructors()
+        private void PopulateInstructors()
         {
             instructorList.Populate();
             comboBoxID.DataSource = null;
@@ -38,7 +38,7 @@ namespace Desktop
             Instructor instructor = (Instructor)comboBoxID.SelectedItem;
             instructorList.Delete(instructor);
             MessageBox.Show("Instructor Deleted Successfully!");
-            populateInstructors();
+            PopulateInstructors();
         }
 
         private void button3_Click(object sender, EventArgs e)
