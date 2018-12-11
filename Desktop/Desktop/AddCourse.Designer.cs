@@ -176,7 +176,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddCourse";
-            this.Text = "AddCourse";
+            this.Text = "Add Course";
             this.Load += new System.EventHandler(this.AddCourse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

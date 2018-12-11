@@ -179,7 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EditCourse";
-            this.Text = "EditCourse";
+            this.Text = "Edit Course";
             this.Load += new System.EventHandler(this.EditCourse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
