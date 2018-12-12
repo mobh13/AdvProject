@@ -61,11 +61,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CollegeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CollegeDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseList.cs" />
     <Compile Include="DataList.cs" />
@@ -105,17 +100,6 @@
     </None>
     <None Include="CollegeDataSet.xss">
       <DependentUpon>CollegeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CollegeDataSet1.xsc">
-      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CollegeDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CollegeDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CollegeDataSet1.xss">
-      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

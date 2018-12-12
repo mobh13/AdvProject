@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -27,7 +28,9 @@ namespace Web.student
 			scheduleList = new ScheduleList();
 			scheduleList.Populate();
 			instructorList = new InstructorList();
-			if (Request.QueryString["Enr"] !=null && Request.QueryString["Enr"] != "")
+			GenerateGridData();
+			
+				if (Request.QueryString["Enr"] !=null && Request.QueryString["Enr"] != "")
 			{
 				string sectionId = Request.QueryString["Enr"].ToString();
 				string studentID = Session["User"].ToString();
@@ -83,5 +86,40 @@ namespace Web.student
 			}
 
 		}
-	}
+		protected void GenerateGridData()
+		{
+			DataTable table = new DataTable();
+			table.Columns.Add("Course Id");
+			table.Columns.Add("Section Id");
+			table.Columns.Add("Course Title");
+			table.Columns.Add("Location");
+			table.Columns.Add("Time");
+			table.Columns.Add("Date");
+			table.Columns.Add("Instructor Name");
+			table.Columns.Add("Enroll");
+			foreach (Schedule schedule in scheduleList.List)
+			{
+
+				sectionsList.Filter("SectionID", schedule.SectionID);
+				Section section = (Section)sectionsList.List.ElementAt(0);
+
+				taughtList.Filter("TaughtCourseID", section.TaughtCourseID);
+				TaughtCourses taughtcourse = (TaughtCourses)taughtList.List.ElementAt(0);
+				taughtList.Populate(taughtcourse);
+				courseList.Filter("CourseID", taughtcourse.CourseID);
+				Course course = (Course)courseList.List.ElementAt(0);
+				courseList.Populate(course);
+				locationList.Filter("LocationID", schedule.LocationID);
+				Location location = (Location)locationList.List.ElementAt(0);
+				locationList.Populate(location);
+				instructorList.Filter("InstructorID", section.InstructorID);
+				Instructor instructor = (Instructor)instructorList.List.ElementAt(0);
+				instructorList.Populate(instructor);
+				table.Rows.Add(taughtcourse.CourseID, section.getID(), course.Title, location.Name, schedule.Time, schedule.Day, instructor.FirstName + " " + instructor.LastName, "<a href='? Enr ="+ schedule.SectionID+"'>Enroll Me</a>");
+
+			}
+			classListGrid.DataSource = table;
+			classListGrid.DataBind();
+		}
+		}
 }

@@ -20,13 +20,13 @@
 						studentList.Populate(student);
 
 					%>
-        <tr>
+			  <tr>
             <td> <% Response.Write(sectionStudent.StudentID); %></td>
             <td> <% Response.Write(student.FirstName + " " +student.LastName); %></td>
  
 
             <td> <input type="text"  id="<% Response.Write(sectionStudent.StudentID); %>" name=" <% Response.Write(sectionStudent.StudentID); %>"class="input" placeholder="Mark" />
-</td>
+			</td>
             
             </tr>
 		   <%} %>

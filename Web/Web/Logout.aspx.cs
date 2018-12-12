@@ -11,7 +11,7 @@ namespace Web
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			Session["User"] = 15;
+			Session["User"] = 2;
 			//if(Session["User"] != null)
 			//{
 			//	Session.Abandon();

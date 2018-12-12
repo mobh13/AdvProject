@@ -4183,7 +4183,7 @@ SELECT CourseID, Title, Credits FROM Course WHERE (CourseID = @CourseID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4523,7 +4523,7 @@ SELECT InstructorID, LastName, FirstName, HireDate, Password FROM Instructor WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4922,7 +4922,7 @@ SELECT LocationID, Name, Capacity FROM Location WHERE (LocationID = @LocationID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5265,7 +5265,7 @@ SELECT ScheduleID, SectionID, LocationID, Day, Time, Duration FROM Schedule WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5630,7 +5630,7 @@ SELECT SectionID, TaughtCourseID, InstructorID, Capacity FROM Section WHERE (Sec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5945,7 +5945,7 @@ SELECT SectionID, StudentID, Grade FROM SectionStudent WHERE (SectionID = @Secti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6287,7 +6287,7 @@ SELECT StudentID, LastName, FirstName, EnrollmentDate, Password FROM Student WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6692,7 +6692,7 @@ SELECT TaughtCourseID, CourseID, Semester, Year FROM TaughtCourse WHERE (TaughtC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString;
+            this._connection.ConnectionString = global::DB.Properties.Settings.Default.CollegeConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

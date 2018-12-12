@@ -52,7 +52,7 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 			connection =
-				new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+				new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
 			command = connection.CreateCommand();
 			dataTable = new DataTable();
 
