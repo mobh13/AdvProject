@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-	public class TaughtCourses : Item
+	public class TaughtCourse : Item
     {
         private string courseID;
         private string semester;
@@ -17,11 +17,11 @@ namespace DB
         public string Semester { get => semester; set => semester = value; }
         public string Year { get => year; set => year = value; }
 
-        public TaughtCourses(String ID) : base(ID)
+        public TaughtCourse(String ID) : base(ID)
         {
 
         }
-        public TaughtCourses()
+        public TaughtCourse()
         {
 
         }

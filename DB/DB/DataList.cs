@@ -51,9 +51,15 @@ namespace DB
 			list = new List<Item>();
 			this.table = table;
 			this.idField = idField;
-			connection =
-				new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
-			command = connection.CreateCommand();
+            
+			//connection =
+			//	new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
+
+            //abdulla connection string, dont delete just comment 
+            connection =
+                new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
+
+            command = connection.CreateCommand();
 			dataTable = new DataTable();
 
 		}
@@ -310,7 +316,7 @@ namespace DB
 			command.Parameters.AddWithValue("@value1", value1);
 			command.Parameters.AddWithValue("@value2", value2);
 			command.Parameters.AddWithValue("@value", value);
-			command.CommandText = "Select Count(" + idField + ") FROM " + table +
+			command.CommandText = "Select Count( * ) FROM " + table +
 				" WHERE " + column1 + " = @value1" +
 				" And" + column2 + " = @value2" +
 				" And" + column + " = @value";
@@ -380,18 +386,26 @@ namespace DB
 			return avg;
 		}
 		// End of Madan Methods
-		//Abdulla's methods 
 
+		//Abdulla's methods 
 		//first total value
 		public int TotalValue(string columnName)
         {
+            int sum;
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@column",columnName);
             command.CommandText = "Select sum(@column) from " + table ;
             reader = command.ExecuteReader();
             reader.Read();
-            int sum = Convert.ToInt32(reader.GetValue(0));
+            if (reader.GetValue(0) == null)
+            {
+                sum = 0;
+            }
+            else
+            {
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
             reader.Close();
             connection.Close();
             return sum;
@@ -401,6 +415,7 @@ namespace DB
         public int TotalValue(String sumColumn, string table1, string key1, string key2, 
             string table2, string key3, string key4, string column, string value)
         {
+            int sum;
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@value",value);
@@ -411,8 +426,14 @@ namespace DB
                 " where "+ column +" = @value";
             reader = command.ExecuteReader();
             reader.Read();
-			
-            int sum = Convert.ToInt32(reader.GetValue(0));
+            if (reader.GetValue(0) == null)
+            {
+                sum = 0;
+            }
+            else
+            {
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
             reader.Close();
             connection.Close();
             return sum;
@@ -433,6 +454,7 @@ namespace DB
         //second average 
         public double AverageValue(string sumColumn, string column, string value)
         {
+            double avg;
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@column", column);
@@ -441,14 +463,21 @@ namespace DB
                 " = @value";
             reader = command.ExecuteReader();
             reader.Read();
-            double sum = Convert.ToDouble(reader.GetValue(0));
+            if (reader.GetValue(0) == null)
+            {
+                avg = 0;
+            }
+            else
+            {
+                avg = Convert.ToDouble(reader.GetValue(0));
+            }
             reader.Close();
             connection.Close();
-            return sum;
+            return avg;
         }
+        //end of abdulla
 
         //Moosa's Methods
-
         //Average Value (1)
         public double AverageValue(string columnName)
         {
@@ -502,11 +531,20 @@ namespace DB
             command.Parameters.AddWithValue("@value1", value1);
             command.Parameters.AddWithValue("@value2", value2);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
+            command.CommandText = "SELECT COUNT( * ) FROM " + table +
                 " WHERE " + key1 + " IN (" +
-                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 + " FROM " + table + " " +
-                "WHERE " + column + " = @value)) AND " 
+                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
+                " FROM " + table + " " + "WHERE " + column + " = @value)) AND "
                 + column1 + " = @value1 AND " + column2 + " = @value2";
+
+            //command.CommandText = "select count(*) from " + table
+            //    + " inner join " + table1 + " on " + key1 + " = " + key2 +
+            //    " where " + column1 + " = " + value1 + " and " + column2 + " = " + value2 +
+            //    " and " + column + " = " + value;
+
+            //command.CommandText = "select count(*) from schedule inner join section on schedule.sectionID = section.sectionID" +
+            //    " where Day = 'Satruday' and Time = 8 " + " and instructorID = 34";
+
             reader = command.ExecuteReader();
             reader.Read();
             int count = Convert.ToInt32(reader.GetValue(0));

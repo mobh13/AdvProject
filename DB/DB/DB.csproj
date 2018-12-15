@@ -85,8 +85,8 @@
     <Compile Include="SectionStudentList.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentList.cs" />
-    <Compile Include="TaughtCourses.cs" />
-    <Compile Include="TaughtCoursesList.cs" />
+    <Compile Include="TaughtCourse.cs" />
+    <Compile Include="TaughtCourseList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
