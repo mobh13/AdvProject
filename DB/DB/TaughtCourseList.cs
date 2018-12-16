@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-	public class TaughtCoursesList : DataList
+	public class TaughtCourseList : DataList
     {
-        public TaughtCoursesList() : base("TaughtCourse", "TaughtCourseID")
+        public TaughtCourseList() : base("TaughtCourse", "TaughtCourseID")
     {
     }
 
     protected override void GenerateList()
     {
         List.Clear();
-        SetDataTableColumns(new TaughtCourses());
+        SetDataTableColumns(new TaughtCourse());
         while (Reader.Read())
         {
-           TaughtCourses taughtCourses = new TaughtCourses(Reader.GetValue(0).ToString());
+           TaughtCourse taughtCourses = new TaughtCourse(Reader.GetValue(0).ToString());
             SetValues(taughtCourses);
             List.Add(taughtCourses);
             AddDataTableRow(taughtCourses);

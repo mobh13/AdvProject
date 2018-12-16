@@ -24,17 +24,19 @@ namespace Desktop
 
         private void AddSchedule_Load(object sender, EventArgs e)
         {
-            schedules.Populate();
             nextID();
             sections.Populate();
             this.cmbSections.DataSource = sections.List;
+            this.cmbSections.SelectedIndex = -1;
             locations.Populate();
             this.cmbLocations.DataSource = locations.List;
+            this.cmbLocations.SelectedIndex = -1;
             string[] days = { "Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday" };
             foreach (string day in days)
             {
                 this.cmbDays.Items.Add(day);
             }
+            this.cmbDays.SelectedIndex = -1;
         }
 
         void nextID()
@@ -43,7 +45,11 @@ namespace Desktop
             this.txtScheduleID.Text = ID.ToString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+        void clear()
         {
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
@@ -51,43 +57,55 @@ namespace Desktop
                 {
                     txt.Text = "";
                 }
-
+            }
+            foreach (ComboBox cmb in this.Controls.OfType<ComboBox>())
+            {
+                cmb.SelectedIndex = -1;
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             Schedule sch = new Schedule();
-            sch.setID(this.txtDuration.Text.ToString());
+            sch.setID(this.txtScheduleID.Text.ToString());
             Section section = (Section)this.cmbSections.SelectedItem;
             sch.SectionID = section.getID();
-            sch.LocationID = ((Location)this.cmbLocations.SelectedItem).getID();
+            Location location = (Location)this.cmbLocations.SelectedItem;
+            sch.LocationID = location.getID();
             sch.Day = cmbDays.SelectedItem.ToString();
             sch.Duration = this.txtDuration.Text.ToString();
             sch.Time = this.txtTime.Text.ToString();
 
             //check double scheduling for instructor using sectionID
             Boolean chkInstructor = 
-                schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID","Day",sch.Day.ToString(),
-                "Time",sch.Time.ToString(), "Section.instrcutorID", section.InstructorID.ToString());
+                schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID","Day","'"+sch.Day.ToString()+"'",
+                "Time",sch.Time.ToString(), "Section.instructorID", section.InstructorID.ToString());
             if (chkInstructor)
             {
                 Boolean chkLocation = schedules.Exist("Day",sch.Day.ToString(),"Time",
                     sch.Time.ToString(),"LocationID",sch.LocationID.ToString());
                 if (chkLocation)
                 {
-                    /*
-                     * select (location.capacity - section.capacity) from schedule 
-                     * where location.locationID = schedule.locationID 
-                     * and schedule.sectionID = section.sectionID 
-                     * and location.locaionID = value 
-                     * and section.sectionID = value
-                     */
+                    if (Convert.ToInt32(section.Capacity) <= Convert.ToInt32(location.Capacity))
+                    {
+                        schedules.Add(sch);
+                        if (sch.getValid() == true)
+                        {
+                            MessageBox.Show("Schedule have been added successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error has occured. record was not added.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Section's capacity is larger than the location's capacity.");
+                    }
                 }
                 else
                 {
@@ -98,6 +116,8 @@ namespace Desktop
             {
                 MessageBox.Show("Instructor is busy at this time.");
             }
+            clear();
+            nextID();
          }
      }
 }
