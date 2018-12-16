@@ -26,7 +26,7 @@ namespace Desktop
 
         private void AverageGrade_Load(object sender, EventArgs e)
         {
-            string[] listBy = {"Section","Student","Course"};
+            string[] listBy = {"Collage (All grades)","Section","Student","Course"};
             foreach (String by in listBy)
             {
                 this.cmbListBy.Items.Add(by);
@@ -40,30 +40,54 @@ namespace Desktop
                 case "Section":
                     sections.Populate();
                     this.cmbListFor.DataSource = sections.List;
-                    this.cmbListFor.SelectedIndex = -1;
+                    //this.cmbListFor.SelectedIndex = -1;
                     break;
                 case "Student":
                     students.Populate();
                     this.cmbListFor.DataSource = students.List;
-                    this.cmbListFor.SelectedIndex = -1;
+                   // this.cmbListFor.SelectedIndex = -1;
                     break;
                 case "Course":
                     courses.Populate();
                     this.cmbListFor.DataSource = courses.List;
+                   // this.cmbListFor.SelectedIndex = -1;
+                    break;
+                case "Collage (All grades)":
+                    this.txtAvgGrade.Text = secStuds.AverageValue("Grade").ToString();
                     this.cmbListFor.SelectedIndex = -1;
                     break;
                 default:
+                    
                     break;
             }
         }
 
         private void cmbListFor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cmbListFor.SelectedIndex != -1)
+            if (this.cmbListFor.SelectedIndex != -1 )
             {
                 //string avgColumn, string column, string value
-                secStuds.AverageValue();
+                switch (this.cmbListBy.SelectedItem.ToString())
+                {
+                    case "Section":
+                        this.txtAvgGrade.Text = secStuds.AverageValue("Grade","SectionID",this.cmbListFor.SelectedItem.ToString()).ToString();
+                        break;
+                    case "Student":
+                        this.txtAvgGrade.Text = secStuds.AverageValue("Grade", "StudentID", this.cmbListFor.SelectedItem.ToString()).ToString();
+                        break;
+                    case "Course":
+                        this.txtAvgGrade.Text = secStuds.AverageValue("Grade","Section","SectionStudent.sectionID","Section.sectionID","TaughtCourse"
+                            ,"Section.taughtCourseID", "TaughtCourse.taughtCourseID","CourseID",this.cmbListFor.SelectedItem.ToString()).ToString();
+                        break;
+                    default:
+                        break;
+                }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -52,12 +52,12 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 
-			connection =
-			new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+			//connection =
+			//new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
 			//abdulla connection string, dont delete just comment 
-			//connection =
-			//    new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
+			connection =
+	        new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
 
 			command = connection.CreateCommand();
 			dataTable = new DataTable();
@@ -358,7 +358,7 @@ namespace DB
 			return sum;
 		}
 		// third avreage value
-		public double AverageValue(String sumColumn, string table1, string key1, string key2,
+		public double AverageValue(String avgColumn, string table1, string key1, string key2,
 			string table2, string key3, string key4, string column, string value)
 		{
 			double avg = 0;
@@ -366,13 +366,14 @@ namespace DB
 			command.Parameters.Clear();
 			command.Parameters.AddWithValue("@value", value);
 			command.CommandText =
-				"Select avg(" + sumColumn + ") from " + table +
+                "Select AVG(CAST([" + avgColumn + "] as float)) from " + table +
 				" inner join " + table1 + " on " + key1 + " = " + key2 +
 				" inner join " + table2 + " on " + key3 + " = " + key4 +
 				" where " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
-			if (reader.GetValue(0) == null) {
+			if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            {
 
 				avg = 0.0;
 
@@ -394,8 +395,8 @@ namespace DB
             int sum;
             connection.Open();
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@column",columnName);
-            command.CommandText = "Select sum(@column) from " + table ;
+            //command.Parameters.AddWithValue("@column",columnName);
+            command.CommandText = "Select sum("+columnName+") from " + table ;
             reader = command.ExecuteReader();
             reader.Read();
             if (reader.GetValue(0) == null)
@@ -444,9 +445,9 @@ namespace DB
         {
             connection.Open();
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@column",column);
+            //command.Parameters.AddWithValue("@column",column);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "Delete from " + table + " where " + @column + " = @value";
+            command.CommandText = "Delete from " + table + " where " + column + " = @value";
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -457,13 +458,13 @@ namespace DB
             double avg;
             connection.Open();
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@column", column);
+           //command.Parameters.AddWithValue("@column", column);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "select avg(" + avgColumn + ") from " + table + " where " + @column +
+            command.CommandText = "select AVG(CAST([" + avgColumn + "] as float)) from " + table + " where " + column +
                 " = @value";
             reader = command.ExecuteReader();
             reader.Read();
-            if (reader.GetValue(0) == null)
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
             {
                 avg = 0;
             }
@@ -483,11 +484,18 @@ namespace DB
         {
             connection.Open();
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@column", columnName);
-            command.CommandText = "SELECT AVG(@column) FROM " + table;
+            command.CommandText = "SELECT AVG(CAST(["+columnName+"] as float)) FROM " + table;
             reader = command.ExecuteReader();
             reader.Read();
-            double avg = Convert.ToDouble(reader.GetValue(0));
+            double avg;
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            {
+                avg = 0;
+            }
+            else
+            {
+                avg = Convert.ToDouble(reader.GetValue(0));
+            }
             reader.Close();
             connection.Close();
             return avg;
