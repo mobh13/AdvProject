@@ -87,7 +87,7 @@ namespace Web.student
 		{
 			bool exist = false;
 			bool alreadyExist = false;
-			string scheduleID = 0;
+			string scheduleID = "";
 			GridViewRow row = classListGrid.SelectedRow;
 			string sectionId = row.Cells[2].Text.ToString();
 			string studentID = Session["User"].ToString();
@@ -114,6 +114,7 @@ namespace Web.student
 						exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
 						scheduleID = schedule.getID();
 						while (Convert.ToInt32(schedule.Duration) > 1 && !exist)
+
 						{
 							int newTime = Convert.ToInt32(schedule.Time) + 1;
 							schedule.Time = newTime.ToString();

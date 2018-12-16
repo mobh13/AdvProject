@@ -14,6 +14,9 @@ namespace Desktop
     public partial class DeleteInstructor : Form
     {
         InstructorList instructorList;
+        ScheduleList scheduleList;
+        SectionStudentList sectionStudentList;
+        SectionList sectionList;
         public DeleteInstructor()
         {
             InitializeComponent();
@@ -22,6 +25,9 @@ namespace Desktop
         private void DeleteInstructor_Load(object sender, EventArgs e)
         {
             instructorList = new InstructorList();
+            scheduleList = new ScheduleList();
+            sectionStudentList = new SectionStudentList();
+            sectionList = new SectionList();
             PopulateInstructors();
         }
 
@@ -35,9 +41,31 @@ namespace Desktop
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            Instructor instructor = (Instructor)comboBoxID.SelectedItem;
-            instructorList.Delete(instructor);
-            MessageBox.Show("Instructor Deleted Successfully!");
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this instructor?",
+               "Delete Notice", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Instructor instructor = (Instructor)comboBoxID.SelectedItem;
+                //Delete All Related Records First
+                //From Schedule Table
+                scheduleList.Delete("Section", "Section.SectionID", "Schedule.SectionID", "Section.InstructorID", comboBoxID.SelectedItem.ToString());
+                //From SectionStudent Table
+                sectionStudentList.Delete("Section", "Section.SectionID", "SectionStudent.SectionID", "Section.InstructorID", comboBoxID.SelectedItem.ToString());
+                //From Section Table
+                sectionList.Delete("InstructorID", comboBoxID.SelectedItem.ToString());
+                //Delete Instructor From Instructor Table Second
+                instructorList.Delete(instructor);
+
+                if (instructor.getValid() == true)
+                {
+                    MessageBox.Show("Instructor has been deleted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured. record was not added.");
+                }
+
+            }
             PopulateInstructors();
         }
 
