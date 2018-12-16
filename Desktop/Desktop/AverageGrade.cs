@@ -40,24 +40,27 @@ namespace Desktop
                 case "Section":
                     sections.Populate();
                     this.cmbListFor.DataSource = sections.List;
-                    //this.cmbListFor.SelectedIndex = -1;
+                    this.cmbListFor.SelectedIndex = -1;
+                    this.txtAvgGrade.Text = "";
                     break;
                 case "Student":
                     students.Populate();
                     this.cmbListFor.DataSource = students.List;
-                   // this.cmbListFor.SelectedIndex = -1;
+                    this.cmbListFor.SelectedIndex = -1;
+                    this.txtAvgGrade.Text = "";
                     break;
                 case "Course":
                     courses.Populate();
                     this.cmbListFor.DataSource = courses.List;
-                   // this.cmbListFor.SelectedIndex = -1;
+                   this.cmbListFor.SelectedIndex = -1;
+                    this.txtAvgGrade.Text = "";
                     break;
                 case "Collage (All grades)":
                     this.txtAvgGrade.Text = secStuds.AverageValue("Grade").ToString();
-                    this.cmbListFor.SelectedIndex = -1;
+                    this.cmbListFor.Items.Clear();
                     break;
+
                 default:
-                    
                     break;
             }
         }
@@ -66,7 +69,6 @@ namespace Desktop
         {
             if (this.cmbListFor.SelectedIndex != -1 )
             {
-                //string avgColumn, string column, string value
                 switch (this.cmbListBy.SelectedItem.ToString())
                 {
                     case "Section":

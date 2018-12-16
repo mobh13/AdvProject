@@ -44,6 +44,7 @@
             this.txtAvgGrade.Location = new System.Drawing.Point(294, 254);
             this.txtAvgGrade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAvgGrade.Name = "txtAvgGrade";
+            this.txtAvgGrade.ReadOnly = true;
             this.txtAvgGrade.Size = new System.Drawing.Size(354, 33);
             this.txtAvgGrade.TabIndex = 103;
             // 
