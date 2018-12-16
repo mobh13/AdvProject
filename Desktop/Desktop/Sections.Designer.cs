@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(558, 59);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 35);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnExit.Location = new System.Drawing.Point(374, 201);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(264, 54);
+            this.btnExit.TabIndex = 15;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
@@ -56,70 +58,75 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 33);
+            this.label1.Size = new System.Drawing.Size(170, 48);
             this.label1.TabIndex = 14;
             this.label1.Text = "Section";
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(194, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 35);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Edit Section";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnEdit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnEdit.Location = new System.Drawing.Point(374, 104);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(264, 54);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit Section";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(12, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 35);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add Section";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnAdd.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnAdd.Location = new System.Drawing.Point(26, 104);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(264, 54);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add Section";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button4.ForeColor = System.Drawing.Color.LightCyan;
-            this.button4.Location = new System.Drawing.Point(376, 59);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(176, 35);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Delete Section";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnDelete.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnDelete.Location = new System.Drawing.Point(26, 201);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(264, 54);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Delete Section";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.button4_Click);
             // 
             // Sections
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 131);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(697, 305);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Sections";
             this.Text = "Sections";
             this.ResumeLayout(false);
@@ -129,10 +136,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

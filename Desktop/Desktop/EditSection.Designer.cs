@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbInstructor = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCapacity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbTCourse = new System.Windows.Forms.ComboBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbSecID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // cmbInstructor
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(222, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(237, 26);
-            this.comboBox2.TabIndex = 69;
+            this.cmbInstructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbInstructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbInstructor.FormattingEnabled = true;
+            this.cmbInstructor.Location = new System.Drawing.Point(385, 209);
+            this.cmbInstructor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbInstructor.Name = "cmbInstructor";
+            this.cmbInstructor.Size = new System.Drawing.Size(354, 37);
+            this.cmbInstructor.TabIndex = 69;
             // 
             // label4
             // 
@@ -57,19 +59,21 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(13, 134);
+            this.label4.Location = new System.Drawing.Point(72, 210);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 25);
+            this.label4.Size = new System.Drawing.Size(239, 39);
             this.label4.TabIndex = 68;
             this.label4.Text = "Instructor ID:";
             // 
-            // textBox2
+            // txtCapacity
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(222, 172);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 24);
-            this.textBox2.TabIndex = 67;
+            this.txtCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.Location = new System.Drawing.Point(385, 269);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Size = new System.Drawing.Size(354, 33);
+            this.txtCapacity.TabIndex = 67;
             // 
             // label5
             // 
@@ -77,65 +81,74 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(12, 169);
+            this.label5.Location = new System.Drawing.Point(70, 264);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(166, 39);
             this.label5.TabIndex = 66;
             this.label5.Text = "Capacity:";
             // 
-            // comboBox1
+            // cmbTCourse
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(222, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 26);
-            this.comboBox1.TabIndex = 65;
+            this.cmbTCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTCourse.FormattingEnabled = true;
+            this.cmbTCourse.Location = new System.Drawing.Point(385, 149);
+            this.cmbTCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbTCourse.Name = "cmbTCourse";
+            this.cmbTCourse.Size = new System.Drawing.Size(354, 37);
+            this.cmbTCourse.TabIndex = 65;
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(524, 159);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 35);
-            this.button3.TabIndex = 64;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnExit.Location = new System.Drawing.Point(539, 351);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(227, 54);
+            this.btnExit.TabIndex = 64;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.ForeColor = System.Drawing.Color.LightCyan;
-            this.button2.Location = new System.Drawing.Point(524, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 35);
-            this.button2.TabIndex = 63;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnClear.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnClear.Location = new System.Drawing.Point(287, 351);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(227, 54);
+            this.btnClear.TabIndex = 63;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(524, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 36);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnSubmit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnSubmit.Location = new System.Drawing.Point(39, 350);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(227, 55);
+            this.btnSubmit.TabIndex = 62;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label3
             // 
@@ -143,9 +156,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(13, 95);
+            this.label3.Location = new System.Drawing.Point(72, 150);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 25);
+            this.label3.Size = new System.Drawing.Size(308, 39);
             this.label3.TabIndex = 60;
             this.label3.Text = "Taught Course ID:";
             // 
@@ -155,9 +169,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(12, 57);
+            this.label2.Location = new System.Drawing.Point(70, 92);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 25);
+            this.label2.Size = new System.Drawing.Size(196, 39);
             this.label2.TabIndex = 59;
             this.label2.Text = "Section ID:";
             // 
@@ -167,40 +182,47 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(18, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 33);
+            this.label1.Size = new System.Drawing.Size(261, 48);
             this.label1.TabIndex = 58;
             this.label1.Text = "Edit Section";
             // 
-            // comboBox3
+            // cmbSecID
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(222, 55);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 26);
-            this.comboBox3.TabIndex = 70;
+            this.cmbSecID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSecID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSecID.FormattingEnabled = true;
+            this.cmbSecID.Location = new System.Drawing.Point(385, 89);
+            this.cmbSecID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbSecID.Name = "cmbSecID";
+            this.cmbSecID.Size = new System.Drawing.Size(354, 37);
+            this.cmbSecID.TabIndex = 70;
+            this.cmbSecID.SelectedIndexChanged += new System.EventHandler(this.cmbSecID_SelectedIndexChanged);
             // 
             // EditSection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 207);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(807, 438);
+            this.Controls.Add(this.cmbSecID);
+            this.Controls.Add(this.cmbInstructor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCapacity);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbTCourse);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditSection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditSection";
+            this.Load += new System.EventHandler(this.EditSection_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,17 +230,17 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbInstructor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbTCourse;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbSecID;
     }
 }

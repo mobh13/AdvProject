@@ -38,5 +38,10 @@ namespace Desktop
             deleteSectionForm.Show();
             deleteSectionForm.Location = this.Location;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

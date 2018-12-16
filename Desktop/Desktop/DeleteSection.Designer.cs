@@ -42,9 +42,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(465, 40);
+            this.button3.Location = new System.Drawing.Point(139, 225);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 35);
+            this.button3.Size = new System.Drawing.Size(318, 54);
             this.button3.TabIndex = 132;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = false;
@@ -54,9 +55,10 @@
             // 
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(222, 49);
+            this.comboBox4.Location = new System.Drawing.Point(234, 121);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(237, 26);
+            this.comboBox4.Size = new System.Drawing.Size(354, 37);
             this.comboBox4.TabIndex = 131;
             // 
             // label2
@@ -65,9 +67,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(13, 51);
+            this.label2.Location = new System.Drawing.Point(19, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 25);
+            this.label2.Size = new System.Drawing.Size(196, 39);
             this.label2.TabIndex = 130;
             this.label2.Text = "Section ID:";
             // 
@@ -77,21 +80,23 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 33);
+            this.label1.Size = new System.Drawing.Size(313, 48);
             this.label1.TabIndex = 129;
             this.label1.Text = "Delete Section";
             // 
             // DeleteSection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 92);
+            this.ClientSize = new System.Drawing.Size(631, 308);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DeleteSection";
             this.Text = "DeleteSection";
             this.ResumeLayout(false);

@@ -28,9 +28,11 @@ namespace Desktop
             sections.Populate();
             this.cmbSections.DataSource = sections.List;
             this.cmbSections.SelectedIndex = -1;
+
             locations.Populate();
             this.cmbLocations.DataSource = locations.List;
             this.cmbLocations.SelectedIndex = -1;
+
             string[] days = { "Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday" };
             foreach (string day in days)
             {
@@ -106,7 +108,7 @@ namespace Desktop
                         }
                         else
                         {
-                            MessageBox.Show("An error has occured. record was not added.");
+                            MessageBox.Show("An error has occured. Record was not added.");
                         }
                     }
                     else
