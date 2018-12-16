@@ -14,8 +14,8 @@ namespace Web.student
 		protected SectionStudentList sectionStudentList;
 		protected StudentList studentList;
 		protected Section section;
-		protected TaughtCoursesList taughtCoursesList;
-		protected TaughtCourses taughtCourses;
+		protected TaughtCourseList taughtCoursesList;
+		protected TaughtCourse taughtCourses;
 		protected CourseList courseList;
 		protected Course course;
 		protected Instructor instructor;
@@ -27,7 +27,7 @@ namespace Web.student
 				sectionList = new SectionList();
 				sectionStudentList = new SectionStudentList();
 				studentList = new StudentList();
-				taughtCoursesList = new TaughtCoursesList();
+				taughtCoursesList = new TaughtCourseList();
 				courseList = new CourseList();
 				instructorList = new InstructorList();
 				string studentID = Session["User"].ToString();
@@ -65,7 +65,7 @@ namespace Web.student
 				sectionList.Populate(section);
 				instructor = new Instructor(section.InstructorID);
 				instructorList.Populate(instructor);
-				taughtCourses = new TaughtCourses(section.TaughtCourseID);
+				taughtCourses = new TaughtCourse(section.TaughtCourseID);
 				taughtCoursesList.Populate(taughtCourses);
 				course = new Course(taughtCourses.CourseID);
 				courseList.Populate(course);

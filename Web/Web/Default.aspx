@@ -33,12 +33,7 @@
 						 <asp:TextBox runat="server" ID="lg_password"  CssClass="form-control center-block" placeholder="password" TextMode="Password"></asp:TextBox>
 
                      </div>
-                     <div class="form-group login-group-checkbox">
-						 <asp:CheckBox  runat="server" id="lg_remembe" />
-                         <%--<input type="checkbox" id="lg_remember" name="lg_remember">--%>
-                         <label for="lg_remember">remember me ?</label>
-                      
-                     </div>
+                     
                        <div class="form-group">
                      <h4>Account Type</h4>
 						   <asp:RadioButton  runat="server" id="studentAccount" GroupName="accountType" />

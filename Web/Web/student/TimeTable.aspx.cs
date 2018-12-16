@@ -13,7 +13,7 @@ namespace Web.student
 		protected ScheduleList scheduleList;
 		protected SectionList SectionList;
 		protected SectionStudentList SectionStudentList;
-		protected TaughtCoursesList taughtCoursesList;
+		protected TaughtCourseList taughtCoursesList;
 		protected CourseList courseList;
 		protected string id;
 		protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace Web.student
 				scheduleList = new ScheduleList();
 				SectionList = new SectionList();
 				SectionStudentList = new SectionStudentList();
-				taughtCoursesList = new TaughtCoursesList();
+				taughtCoursesList = new TaughtCourseList();
 				courseList = new CourseList();
 				SectionStudentList.Filter("StudentID", id);
 				GenerateGridView();
@@ -338,7 +338,7 @@ namespace Web.student
 			{
 				Section section = new Section(sectionStudent.getID());
 				SectionList.Populate(section);
-				TaughtCourses taught = new TaughtCourses(section.TaughtCourseID);
+				TaughtCourse taught = new TaughtCourse(section.TaughtCourseID);
 				taughtCoursesList.Populate(taught);
 				Course course = new Course(taught.CourseID);
 				courseList.Populate(course);

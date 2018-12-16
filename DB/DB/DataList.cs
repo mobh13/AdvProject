@@ -51,15 +51,15 @@ namespace DB
 			list = new List<Item>();
 			this.table = table;
 			this.idField = idField;
-            
+
+			connection =
+			new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
+
+			//abdulla connection string, dont delete just comment 
 			//connection =
-			//	new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
+			//    new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
 
-            //abdulla connection string, dont delete just comment 
-            connection =
-                new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
-
-            command = connection.CreateCommand();
+			command = connection.CreateCommand();
 			dataTable = new DataTable();
 
 		}
@@ -571,8 +571,8 @@ namespace DB
             command.Parameters.AddWithValue("@value", value);
             command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
                 " WHERE " + key1 + " IN (" +
-                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
-                " FROM " + table2 + " WHERE " + key3 + " IN (SELECT " + key3 +
+                " SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
+                " FROM " + table2 + " WHERE " + key3 + " IN ( SELECT " + key3 +
                 " FROM " + table + " WHERE " + column + " = @value)) AND " +
                 "" + column1 + " = @value1 AND " + column2 + " = @value2";
             reader = command.ExecuteReader();

@@ -49,15 +49,6 @@ namespace Web {
         protected global::System.Web.UI.WebControls.TextBox lg_password;
         
         /// <summary>
-        /// lg_remembe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox lg_remembe;
-        
-        /// <summary>
         /// studentAccount control.
         /// </summary>
         /// <remarks>

@@ -11,7 +11,7 @@ namespace Web.instructor
 	public partial class ClassList : System.Web.UI.Page
 	{
 		protected SectionList sectionsList;
-		protected TaughtCoursesList taughtList;
+		protected TaughtCourseList taughtList;
 		protected CourseList courseList;
 		protected ScheduleList scheduleList;
 		protected InstructorList instructorList;
@@ -24,7 +24,7 @@ namespace Web.instructor
 			{
 
 				sectionsList = new SectionList();
-				taughtList = new TaughtCoursesList();
+				taughtList = new TaughtCourseList();
 				locationList = new LocationList();
 				courseList = new CourseList();
 				scheduleList = new ScheduleList();
@@ -64,7 +64,7 @@ namespace Web.instructor
 				sectionsList.Filter("SectionID", schedule.SectionID);
 				Section section = (Section)sectionsList.List.ElementAt(0);
 				taughtList.Filter("TaughtCourseID", section.TaughtCourseID);
-				TaughtCourses taughtcourse = (TaughtCourses)taughtList.List.ElementAt(0);
+				TaughtCourse taughtcourse = (TaughtCourse)taughtList.List.ElementAt(0);
 				taughtList.Populate(taughtcourse);
 				courseList.Filter("CourseID", taughtcourse.CourseID);
 				Course course = (Course)courseList.List.ElementAt(0);
@@ -94,7 +94,7 @@ namespace Web.instructor
 			{
 
 				taughtList.Filter("TaughtCourseID", section.TaughtCourseID);
-				TaughtCourses taughtcourse = (TaughtCourses)taughtList.List.ElementAt(0);
+				TaughtCourse taughtcourse = (TaughtCourse)taughtList.List.ElementAt(0);
 				taughtList.Populate(taughtcourse);
 				courseList.Filter("CourseID", taughtcourse.CourseID);
 				Course course = (Course)courseList.List.ElementAt(0);
