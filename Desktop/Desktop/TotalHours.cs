@@ -45,7 +45,7 @@ namespace Desktop
             studentList = new StudentList();
             studentList.Populate();
 
-            String[] tables = { "Location", "Section", "Instructor", "Course", "Student" };
+            String[] tables = { "Location", "Section", "Instructor", "Course", "Student", "All" };
             comboBoxBy.DataSource = tables;
         }
 
@@ -67,6 +67,10 @@ namespace Desktop
                     break;
                 case "Student":
                     comboBoxFor.DataSource = studentList.List;
+                    break;
+                case "All":
+                    comboBoxFor.DataSource = null;
+                    textBoxTotal.Text = scheduleList.TotalValue("Duration").ToString();
                     break;
                 default:
                     break;

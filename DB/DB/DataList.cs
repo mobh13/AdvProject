@@ -394,8 +394,7 @@ namespace DB
             int sum;
             connection.Open();
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@column",columnName);
-            command.CommandText = "Select sum(@column) from " + table ;
+            command.CommandText = "Select sum(" + columnName + ") from " + table ;
             reader = command.ExecuteReader();
             reader.Read();
             if (reader.GetValue(0) == null)
