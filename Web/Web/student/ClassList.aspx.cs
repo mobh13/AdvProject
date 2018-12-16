@@ -12,7 +12,7 @@ namespace Web.student
 	public partial class ClassList : System.Web.UI.Page
 	{
 		protected SectionList sectionsList;
-		protected TaughtCoursesList taughtList;
+		protected TaughtCourseList taughtList;
 		protected CourseList courseList;
 		protected ScheduleList scheduleList;
 		protected InstructorList instructorList;
@@ -23,7 +23,7 @@ namespace Web.student
 			if (Session["User"] != null && Session["Account"].ToString() == "Student")
 			{
 				sectionsList = new SectionList();
-				taughtList = new TaughtCoursesList();
+				taughtList = new TaughtCourseList();
 				locationList = new LocationList();
 				courseList = new CourseList();
 				scheduleList = new ScheduleList();
@@ -64,7 +64,7 @@ namespace Web.student
 				Section section = (Section)sectionsList.List.ElementAt(0);
 
 				taughtList.Filter("TaughtCourseID", section.TaughtCourseID);
-				TaughtCourses taughtcourse = (TaughtCourses)taughtList.List.ElementAt(0);
+				TaughtCourse taughtcourse = (TaughtCourse)taughtList.List.ElementAt(0);
 				taughtList.Populate(taughtcourse);
 				courseList.Filter("CourseID", taughtcourse.CourseID);
 				Course course = (Course)courseList.List.ElementAt(0);
@@ -85,7 +85,7 @@ namespace Web.student
 		{
 			bool alreadyExist = false;
 			GridViewRow row = classListGrid.SelectedRow;
-			string sectionId = row.Cells[1].Text.ToString();
+			string sectionId = row.Cells[2].Text.ToString();
 			string studentID = Session["User"].ToString();
 			Section section = new Section(sectionId);
 			sectionsList.Populate(section);

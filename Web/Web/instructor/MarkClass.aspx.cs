@@ -14,8 +14,8 @@ namespace Web.instructor
 		protected SectionStudentList sectionStudentList;
 		protected StudentList studentList;
 		protected Section section;
-		protected TaughtCoursesList taughtCoursesList;
-		protected TaughtCourses taughtCourses;
+		protected TaughtCourseList taughtCoursesList;
+		protected TaughtCourse taughtCourses;
 		protected CourseList courseList;
 		protected Course course;
 		protected string sectionId;
@@ -27,13 +27,13 @@ namespace Web.instructor
 				sectionList = new SectionList();
 				sectionStudentList = new SectionStudentList();
 				studentList = new StudentList();
-				taughtCoursesList = new TaughtCoursesList();
+				taughtCoursesList = new TaughtCourseList();
 				courseList = new CourseList();
 				sectionId = Request.QueryString["cls"];
 				sectionList.Filter("SectionID", sectionId);
 				section = (Section)sectionList.List.ElementAt(0);
 				taughtCoursesList.Filter("TaughtCourseID", section.TaughtCourseID);
-				taughtCourses = (TaughtCourses)taughtCoursesList.List.ElementAt(0);
+				taughtCourses = (TaughtCourse)taughtCoursesList.List.ElementAt(0);
 				course = new Course();
 				course.setID(taughtCourses.CourseID.ToString());
 				courseList.Populate(course);

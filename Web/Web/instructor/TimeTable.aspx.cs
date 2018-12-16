@@ -13,7 +13,7 @@ namespace Web.instructor
 		protected ScheduleList scheduleList;
 		protected SectionList sectionList;
 		protected StudentList studentList;
-		protected TaughtCoursesList taughtCoursesList;
+		protected TaughtCourseList taughtCoursesList;
 		protected CourseList courseList;
 		protected string id;
 		protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace Web.instructor
 				id = Session["User"].ToString();
 				scheduleList = new ScheduleList();
 				sectionList = new SectionList();
-				taughtCoursesList = new TaughtCoursesList();
+				taughtCoursesList = new TaughtCourseList();
 				courseList = new CourseList();
 				sectionList.Filter("InstructorID", id);
 				GenerateGridView();
@@ -335,7 +335,7 @@ namespace Web.instructor
 			timeTableGridView.DataBind();
 			foreach (Section section in sectionList.List)
 			{
-				TaughtCourses taught = new TaughtCourses(section.TaughtCourseID);
+				TaughtCourse taught = new TaughtCourse(section.TaughtCourseID);
 				taughtCoursesList.Populate(taught);
 				Course course = new Course(taught.CourseID);
 				courseList.Populate(course);

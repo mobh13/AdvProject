@@ -16,23 +16,10 @@ namespace Web
 		{
 			students = new StudentList();
 			instructors = new InstructorList();
-			if(Request.Cookies["RememberMe"] != null){
-				lg_username.Text = Request.Cookies["RememberMe"].Value;
-				lg_remembe.Checked = true;
-				if(Request.Cookies["AccoutType"].Value == "instructor")
-				{
-					instructorAccount.Checked = true;
-
-				}else if (Request.Cookies["AccoutType"].Value == "student")
-				{
-					studentAccount.Checked = true;
-				}
-
-			}
 		}
 		protected void LoginButton_Click(object sender, EventArgs e)
 		{
-			bool loggedin = false;
+
 			
 			 if (lg_username.Text == "" || lg_password.Text == "")
 			{
@@ -58,8 +45,8 @@ namespace Web
 					{
 						Session["User"] = instructor.getID();
 						Session["Account"] = "Instructor";
+						Response.Redirect("~/instructor/MainPage.aspx");
 
-						loggedin = true;
 					}
 					else
 					{
@@ -87,7 +74,7 @@ namespace Web
 					{
 						Session["User"] = student.getID();
 						Session["Account"] = "Student";
-						loggedin = true;
+						Response.Redirect("~/student/MainPage.aspx");
 					}
 					else
 					{
@@ -102,41 +89,7 @@ namespace Web
 				}
 
 			}
-			if(loggedin )
-			{
-				string id  = lg_username.Text.ToString();
-				if (instructorAccount.Checked)
-				{
-					if (lg_remembe.Checked)
-					{
-						Response.Cookies["RememberMe"].Value = id;
-						Response.Cookies["AccoutType"].Value = "instructor";
-					}
-					else
-					{
-						Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
-						Response.Cookies["AccoutType"].Expires = DateTime.Now.AddDays(-1);
-
-					}
-					Response.Redirect("~/instructor/MainPage.aspx");
-
-				}
-				else if (studentAccount.Checked)
-				{
-					if (lg_remembe.Checked)
-					{
-						Response.Cookies["RememberMe"].Value = id;
-						Response.Cookies["AccoutType"].Value = "student";
-					}
-					else
-					{
-						Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
-						Response.Cookies["AccoutType"].Expires = DateTime.Now.AddDays(-1);
-					}
-					Response.Redirect("~/student/MainPage.aspx");
-
-				}
-			}
+			
 		}
 		
 	}
