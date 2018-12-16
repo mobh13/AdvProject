@@ -22,10 +22,18 @@ namespace Desktop
         {
             this.Close();
         }
-        TaughtCourseList taughtCourses = new TaughtCourseList();
+
+        ScheduleList scheduleList;
+        SectionStudentList sectionStudentList;
+        SectionList sectionList;
+        TaughtCourseList taughtCourses;
 
         private void DeleteTaughtCourse_Load(object sender, EventArgs e)
         {
+            taughtCourses = new TaughtCourseList();
+            scheduleList = new ScheduleList();
+            sectionStudentList = new SectionStudentList();
+            sectionList = new SectionList();
             taughtCourses.Populate();
             this.cmbTaughtID.DataSource = taughtCourses.List;
         }
@@ -37,11 +45,19 @@ namespace Desktop
             if (dialogResult == DialogResult.Yes)
             {
                 TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtID.SelectedItem;
+                //Delete All Related Records First
+                //From Schedule Table
+                scheduleList.Delete("Section", "Section.SectionID", "Schedule.SectionID", "Section.TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
+                //From SectionStudent Table
+                sectionStudentList.Delete("Section", "Section.SectionID", "SectionStudent.SectionID", "Section.TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
+                //From Section Table
+                sectionList.Delete("TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
+                //Delete Instructor From Instructor Table Second
                 taughtCourses.Delete(tCourse);
 
                 if (tCourse.getValid() == true)
                 {
-                    MessageBox.Show("Schedule has been deleted successfully.");
+                    MessageBox.Show("Taught Course has been deleted successfully.");
                 }
                 else
                 {

@@ -53,7 +53,7 @@ namespace DB
 			this.idField = idField;
 
 			connection =
-			new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
+			new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
 			//abdulla connection string, dont delete just comment 
 			//connection =
@@ -499,9 +499,9 @@ namespace DB
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@value", value);
-            //table here could be section (maybe we call this method from the SectionList class) and column and value are the instructors
-            command.CommandText = "DELETE FROM " + table + " WHERE " + key1 + " IN (SELECT " + key1 + " FROM " + table2 + " WHERE " 
-                + column + " = " + value +")";
+            command.CommandText = "DELETE " + table + " FROM " + table +
+                " INNER JOIN " + table2 + " ON " + key1 + " = " + key2 +
+                " WHERE " + column + " = @value";
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -512,8 +512,9 @@ namespace DB
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "SELECT SUM(" + sumColumn + ") FROM " + table + " WHERE " + key1 + " IN ( SELECT " + key2 + 
-                " FROM " + table1 + " WHERE " + column + " = @value";
+            command.CommandText = "SELECT SUM(" + sumColumn + ") FROM " + table +
+                " INNER JOIN " + table1 + " ON " + key1 + " = " + key2 +
+                " WHERE " + column + " = @value";
             reader = command.ExecuteReader();
             reader.Read();
             double sum = Convert.ToDouble(reader.GetValue(0));
@@ -531,20 +532,10 @@ namespace DB
             command.Parameters.AddWithValue("@value1", value1);
             command.Parameters.AddWithValue("@value2", value2);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "SELECT COUNT( * ) FROM " + table +
-                " WHERE " + key1 + " IN (" +
-                "SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
-                " FROM " + table + " " + "WHERE " + column + " = @value)) AND "
-                + column1 + " = @value1 AND " + column2 + " = @value2";
-
-            //command.CommandText = "select count(*) from " + table
-            //    + " inner join " + table1 + " on " + key1 + " = " + key2 +
-            //    " where " + column1 + " = " + value1 + " and " + column2 + " = " + value2 +
-            //    " and " + column + " = " + value;
-
-            //command.CommandText = "select count(*) from schedule inner join section on schedule.sectionID = section.sectionID" +
-            //    " where Day = 'Satruday' and Time = 8 " + " and instructorID = 34";
-
+            command.CommandText = "SELECT COUNT(*) FROM " + table
+                + " INNER JOIN " + table1 + " ON " + key1 + " = " + key2 +
+                " WHERE " + column1 + " = @value1 AND " + column2 + " = @value2 " +
+                " AND " + column + " = @value";
             reader = command.ExecuteReader();
             reader.Read();
             int count = Convert.ToInt32(reader.GetValue(0));
@@ -569,12 +560,11 @@ namespace DB
             command.Parameters.AddWithValue("@value1", value1);
             command.Parameters.AddWithValue("@value2", value2);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table +
-                " WHERE " + key1 + " IN (" +
-                " SELECT " + key1 + " FROM " + table1 + " WHERE " + key2 + " IN (SELECT " + key2 +
-                " FROM " + table2 + " WHERE " + key3 + " IN ( SELECT " + key3 +
-                " FROM " + table + " WHERE " + column + " = @value)) AND " +
-                "" + column1 + " = @value1 AND " + column2 + " = @value2";
+            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table
+                + " INNER JOIN " + table1 + " ON " + key1 + " = " + key2 +
+                " INNER JOIN " + table2 + " ON " + key3 + " = " + key4 +
+                " WHERE " + column1 + " = @value1 AND " + column2 + " = @value2 " +
+                " AND " + column + " = @value";
             reader = command.ExecuteReader();
             reader.Read();
             int count = Convert.ToInt32(reader.GetValue(0));

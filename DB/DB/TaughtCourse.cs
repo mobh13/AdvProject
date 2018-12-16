@@ -12,7 +12,7 @@ namespace DB
         private string semester;
         private string year;
 
-        public string TaughCourseID { get => base.getID(); set => base.setID(value); }
+        public string TaughtCourseID { get => base.getID(); set => base.setID(value); }
         public string CourseID { get => courseID; set => courseID = value; }
         public string Semester { get => semester; set => semester = value; }
         public string Year { get => year; set => year = value; }
@@ -27,7 +27,7 @@ namespace DB
         }
         public override string ToString()
         {
-            return TaughCourseID;
+            return TaughtCourseID;
         }
     }
 }

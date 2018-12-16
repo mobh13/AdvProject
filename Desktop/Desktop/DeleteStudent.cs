@@ -35,9 +35,23 @@ namespace Desktop
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            Student student = (Student)comboBoxID.SelectedItem;
-            studentList.Delete(student);
-            MessageBox.Show("Instructor Deleted Successfully!");
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this student?",
+               "Delete Notice", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Student student = (Student)comboBoxID.SelectedItem;
+                studentList.Delete(student);
+
+                if (student.getValid() == true)
+                {
+                    MessageBox.Show("Student has been deleted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured. record was not added.");
+                }
+
+            }
             PopulateStudents();
         }
 
