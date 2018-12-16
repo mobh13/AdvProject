@@ -52,7 +52,7 @@ namespace Desktop
                 sectionStudentList.Delete("Section", "Section.SectionID", "SectionStudent.SectionID", "Section.TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
                 //From Section Table
                 sectionList.Delete("TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
-                //Delete Instructor From Instructor Table Second
+                //Delete Taught Course From Taught Courses Table Second
                 taughtCourses.Delete(tCourse);
 
                 if (tCourse.getValid() == true)

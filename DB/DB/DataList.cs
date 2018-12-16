@@ -344,7 +344,7 @@ namespace DB
 			command.CommandText = "Select Sum(" + sumColumn + ") FROM " + table + " Where " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
-			if (reader.GetValue(0) == null)
+			if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
 			{
 				sum = 0;
 			}
@@ -420,13 +420,13 @@ namespace DB
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@value",value);
             command.CommandText =
-                "Select sum(" + sumColumn+") from " + table +
+                "Select sum(" + sumColumn +") from " + table +
                 " inner join "+ table1 +" on "+ key1 + " = "+key2 +
                 " inner join "+table2 + " on "+key3 + " = "+ key4 +
                 " where "+ column +" = @value";
             reader = command.ExecuteReader();
             reader.Read();
-            if (reader.GetValue(0) == null)
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
             {
                 sum = 0;
             }
@@ -517,7 +517,15 @@ namespace DB
                 " WHERE " + column + " = @value";
             reader = command.ExecuteReader();
             reader.Read();
-            double sum = Convert.ToDouble(reader.GetValue(0));
+            double sum;
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            {
+                sum = 0;
+            }
+            else
+            {
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
             reader.Close();
             connection.Close();
             return sum;

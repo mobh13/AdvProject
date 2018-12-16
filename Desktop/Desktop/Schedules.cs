@@ -42,5 +42,10 @@ namespace Desktop
         {
             this.Close();
         }
+
+        private void Schedules_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

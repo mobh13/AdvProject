@@ -28,39 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.comboBoxBy = new System.Windows.Forms.ComboBox();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxFor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox3
+            // comboBoxBy
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(428, 89);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(354, 37);
-            this.comboBox3.TabIndex = 94;
+            this.comboBoxBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBy.FormattingEnabled = true;
+            this.comboBoxBy.Location = new System.Drawing.Point(285, 58);
+            this.comboBoxBy.Name = "comboBoxBy";
+            this.comboBoxBy.Size = new System.Drawing.Size(237, 26);
+            this.comboBoxBy.TabIndex = 94;
+            this.comboBoxBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxBy_SelectedIndexChanged);
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(294, 228);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 54);
-            this.button3.TabIndex = 93;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.buttonExit.Location = new System.Drawing.Point(197, 170);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.TabIndex = 93;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // label2
             // 
@@ -68,12 +71,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(18, 85);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 39);
+            this.label2.Size = new System.Drawing.Size(46, 25);
             this.label2.TabIndex = 91;
-            this.label2.Text = "For:";
+            this.label2.Text = "By:";
             // 
             // label1
             // 
@@ -81,21 +83,19 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(18, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(475, 48);
+            this.label1.Size = new System.Drawing.Size(320, 33);
             this.label1.TabIndex = 90;
             this.label1.Text = "Total Scheduled Hours";
             // 
-            // textBox3
+            // textBoxTotal
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(426, 154);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(354, 33);
-            this.textBox3.TabIndex = 96;
+            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTotal.Location = new System.Drawing.Point(285, 122);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(237, 24);
+            this.textBoxTotal.TabIndex = 96;
             // 
             // label3
             // 
@@ -103,27 +103,51 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(18, 146);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(388, 39);
+            this.label3.Size = new System.Drawing.Size(254, 25);
             this.label3.TabIndex = 95;
             this.label3.Text = "Total Scheduled Hours:";
             // 
+            // comboBoxFor
+            // 
+            this.comboBoxFor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFor.FormattingEnabled = true;
+            this.comboBoxFor.Location = new System.Drawing.Point(285, 90);
+            this.comboBoxFor.Name = "comboBoxFor";
+            this.comboBoxFor.Size = new System.Drawing.Size(237, 26);
+            this.comboBoxFor.TabIndex = 98;
+            this.comboBoxFor.SelectedIndexChanged += new System.EventHandler(this.comboBoxFor_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(12, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 25);
+            this.label4.TabIndex = 97;
+            this.label4.Text = "For:";
+            // 
             // TotalHours
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 312);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(561, 216);
+            this.Controls.Add(this.comboBoxFor);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.comboBoxBy);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TotalHours";
             this.Text = "TotalHours";
+            this.Load += new System.EventHandler(this.TotalHours_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,11 +155,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBoxBy;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxFor;
+        private System.Windows.Forms.Label label4;
     }
 }
