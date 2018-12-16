@@ -17,6 +17,7 @@ namespace Web.student
 		protected ScheduleList scheduleList;
 		protected InstructorList instructorList;
 		protected LocationList locationList;
+		protected StudentList studentList;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -27,6 +28,7 @@ namespace Web.student
 				locationList = new LocationList();
 				courseList = new CourseList();
 				scheduleList = new ScheduleList();
+				 studentList = new StudentList();
 				scheduleList.Populate();
 				instructorList = new InstructorList();
 				GenerateGridData();
@@ -83,14 +85,16 @@ namespace Web.student
 		}
 		protected void EnrollMeBtn_Click(object sender, EventArgs e)
 		{
+			bool exist = false;
 			bool alreadyExist = false;
+			string scheduleID = 0;
 			GridViewRow row = classListGrid.SelectedRow;
 			string sectionId = row.Cells[2].Text.ToString();
 			string studentID = Session["User"].ToString();
 			Section section = new Section(sectionId);
 			sectionsList.Populate(section);
 			Student student = new Student(studentID);
-			StudentList studentList = new StudentList();
+			
 			studentList.Populate(student);
 			int totalHours = scheduleList.TotalValue("Duration", "Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "StudentID", student.getID());
 			int sectionTotalHours = scheduleList.TotalValue("Duration", "SectionID", sectionId);
@@ -107,8 +111,17 @@ namespace Web.student
 					scheduleList.Filter("SectionID", section.getID());
 					foreach (Schedule schedule in scheduleList.List)
 					{
-
-						bool exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
+						exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
+						scheduleID = schedule.getID();
+						while (Convert.ToInt32(schedule.Duration) > 1 && !exist)
+						{
+							int newTime = Convert.ToInt32(schedule.Time) + 1;
+							schedule.Time = newTime.ToString();
+							 exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
+							int duration = Convert.ToInt32(schedule.Duration) - 1;
+							schedule.Duration = duration.ToString();
+						}
+					
 						if (exist)
 						{
 							alreadyExist = true;
@@ -122,10 +135,20 @@ namespace Web.student
 					}
 					else
 					{
-						SectionStudent sectionStudent = new SectionStudent(sectionId, studentID);
-						SectionStudentList sectionStudentList = new SectionStudentList();
-						sectionStudentList.Add(sectionStudent);
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Section Added", "alert('You have been Enrolled to this section !')", true);
+						int total = sectionsList.TotalValue("StudentID", "SectionID", sectionId);
+						total = total + 1;
+						Schedule schedule = new Schedule(scheduleID);
+						scheduleList.Populate(schedule);
+						Location location = new Location(schedule.LocationID);
+						locationList.Populate(location);
+						if(Convert.ToInt32(location.Capacity) >= total){
+							SectionStudent sectionStudent = new SectionStudent(sectionId, studentID);
+							SectionStudentList sectionStudentList = new SectionStudentList();
+							sectionStudentList.Add(sectionStudent);
+							ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Section Added", "alert('You have been Enrolled to this section !')", true);
+						}
+
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('The Section is Already Full !')", true);
 
 					}
 				}
