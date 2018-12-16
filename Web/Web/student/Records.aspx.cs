@@ -22,15 +22,31 @@ namespace Web.student
 		protected InstructorList instructorList; 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			sectionList = new SectionList();
-			sectionStudentList = new SectionStudentList();
-			studentList = new StudentList();
-			taughtCoursesList = new TaughtCoursesList();
-			courseList = new CourseList();
-			instructorList = new InstructorList();
-			string studentID = Session["User"].ToString();
-			sectionStudentList.Filter("StudentID", studentID);
-			GenerateGridData();
+			if (Session["User"] != null && Session["Account"].ToString() == "Student")
+			{
+				sectionList = new SectionList();
+				sectionStudentList = new SectionStudentList();
+				studentList = new StudentList();
+				taughtCoursesList = new TaughtCoursesList();
+				courseList = new CourseList();
+				instructorList = new InstructorList();
+				string studentID = Session["User"].ToString();
+				sectionStudentList.Filter("StudentID", studentID);
+				GenerateGridData();
+
+			}
+			else if (Session["User"] != null && Session["Account"].ToString() != "Student")
+			{
+				Response.Write("Error You are not allowed to be here");
+				Response.End();
+			}
+			else
+			{
+				Response.Write("Error please log in before trying to Access this page..!");
+				Response.End();
+
+			}
+			
 
 
 		}

@@ -20,70 +20,31 @@ namespace Web.student
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			bool alreadyExist = false; 
-			sectionsList = new SectionList();
-			taughtList = new TaughtCoursesList();
-			locationList = new LocationList();
-			courseList = new CourseList();
-			scheduleList = new ScheduleList();
-			scheduleList.Populate();
-			instructorList = new InstructorList();
-			GenerateGridData();
-			
-				if (Request.QueryString["Enr"] !=null && Request.QueryString["Enr"] != "")
+			if (Session["User"] != null && Session["Account"].ToString() == "Student")
 			{
-				string sectionId = Request.QueryString["Enr"].ToString();
-				string studentID = Session["User"].ToString();
-				Section section = new Section(sectionId);
-				sectionsList.Populate(section);
-				Student student = new Student(studentID);
-				StudentList studentList = new StudentList();
-				studentList.Populate(student);
-				int totalHours = scheduleList.TotalValue("Duration","Section","Schedule.SectionID","Section.SectionID","SectionStudent","Section.SectionID","SectionStudent.SectionID","StudentID", student.getID());
-				int sectionTotalHours = scheduleList.TotalValue("Duration", "SectionID", sectionId);
-				if (totalHours < 20)
-				{
+				sectionsList = new SectionList();
+				taughtList = new TaughtCoursesList();
+				locationList = new LocationList();
+				courseList = new CourseList();
+				scheduleList = new ScheduleList();
+				scheduleList.Populate();
+				instructorList = new InstructorList();
+				GenerateGridData();
 
-					if(totalHours + sectionTotalHours > 20)
-					{
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You can't SignUP for more than 20 hours !')", true);
-
-					}
-					else
-					{
-						scheduleList.Filter("SectionID", section.getID());
-						foreach(Schedule schedule in scheduleList.List)
-						{
-							
-							bool exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
-							if (exist)
-							{
-								alreadyExist = true;
-							}
-						}
-
-						if (alreadyExist)
-						{
-							ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You already have a class in that time !')", true);
-
-						}
-						else
-						{
-							SectionStudent sectionStudent = new SectionStudent(sectionId, studentID);
-							SectionStudentList sectionStudentList = new SectionStudentList();
-							sectionStudentList.Add(sectionStudent);
-							ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Section Added", "alert('You have been Enrolled to this section !')", true);
-
-						}
-					}
-
-				}
-				else
-				{
-					ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You can't SignUP for more than 20 hours !')", true);
-
-				}
 			}
+			else if (Session["User"] != null && Session["Account"].ToString() != "Student")
+			{
+				Response.Write("Error You are not allowed to be here");
+				Response.End();
+			}
+			else
+			{
+				Response.Write("Error please log in before trying to Access this page..!");
+				Response.End();
+
+			}
+			
+			
 
 		}
 		protected void GenerateGridData()
@@ -96,7 +57,6 @@ namespace Web.student
 			table.Columns.Add("Time");
 			table.Columns.Add("Date");
 			table.Columns.Add("Instructor Name");
-			table.Columns.Add("Enroll");
 			foreach (Schedule schedule in scheduleList.List)
 			{
 
@@ -115,11 +75,67 @@ namespace Web.student
 				instructorList.Filter("InstructorID", section.InstructorID);
 				Instructor instructor = (Instructor)instructorList.List.ElementAt(0);
 				instructorList.Populate(instructor);
-				table.Rows.Add(taughtcourse.CourseID, section.getID(), course.Title, location.Name, schedule.Time, schedule.Day, instructor.FirstName + " " + instructor.LastName, "<a href='? Enr ="+ schedule.SectionID+"'>Enroll Me</a>");
+				table.Rows.Add(taughtcourse.CourseID, section.getID(), course.Title, location.Name, schedule.Time, schedule.Day, instructor.FirstName + " " + instructor.LastName);
 
 			}
 			classListGrid.DataSource = table;
 			classListGrid.DataBind();
 		}
+		protected void EnrollMeBtn_Click(object sender, EventArgs e)
+		{
+			bool alreadyExist = false;
+			GridViewRow row = classListGrid.SelectedRow;
+			string sectionId = row.Cells[1].Text.ToString();
+			string studentID = Session["User"].ToString();
+			Section section = new Section(sectionId);
+			sectionsList.Populate(section);
+			Student student = new Student(studentID);
+			StudentList studentList = new StudentList();
+			studentList.Populate(student);
+			int totalHours = scheduleList.TotalValue("Duration", "Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "StudentID", student.getID());
+			int sectionTotalHours = scheduleList.TotalValue("Duration", "SectionID", sectionId);
+			if (totalHours < 20)
+			{
+
+				if (totalHours + sectionTotalHours > 20)
+				{
+					ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You can't SignUP for more than 20 hours !')", true);
+
+				}
+				else
+				{
+					scheduleList.Filter("SectionID", section.getID());
+					foreach (Schedule schedule in scheduleList.List)
+					{
+
+						bool exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());
+						if (exist)
+						{
+							alreadyExist = true;
+						}
+					}
+
+					if (alreadyExist)
+					{
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You already have a class in that time !')", true);
+
+					}
+					else
+					{
+						SectionStudent sectionStudent = new SectionStudent(sectionId, studentID);
+						SectionStudentList sectionStudentList = new SectionStudentList();
+						sectionStudentList.Add(sectionStudent);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Section Added", "alert('You have been Enrolled to this section !')", true);
+
+					}
+				}
+
+			}
+			else
+			{
+				ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('You can't SignUP for more than 20 hours !')", true);
+
+			}
 		}
+	}
 }

@@ -57,6 +57,8 @@ namespace Web
 					if (instructor.Password == lg_password.Text.ToString())
 					{
 						Session["User"] = instructor.getID();
+						Session["Account"] = "Instructor";
+
 						loggedin = true;
 					}
 					else
@@ -84,6 +86,7 @@ namespace Web
 					if (student.Password == lg_password.Text)
 					{
 						Session["User"] = student.getID();
+						Session["Account"] = "Student";
 						loggedin = true;
 					}
 					else

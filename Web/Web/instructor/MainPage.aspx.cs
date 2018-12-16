@@ -11,11 +11,28 @@ namespace Web.instructor
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			string inId = Session["User"].ToString();
-			Instructor instructor = new Instructor(inId);
-			InstructorList instructors = new InstructorList();
-			instructors.Populate(instructor);
-			name.Text = instructor.FirstName + " " + instructor.LastName;
+
+			if (Session["User"] != null && Session["Account"].ToString() == "Instructor")
+			{
+
+				string inId = Session["User"].ToString();
+				Instructor instructor = new Instructor(inId);
+				InstructorList instructors = new InstructorList();
+				instructors.Populate(instructor);
+				name.Text = instructor.FirstName + " " + instructor.LastName;
+			}
+			else if (Session["User"] != null && Session["Account"].ToString() != "Instructor")
+			{
+				Response.Write("Error You are not allowed to be here");
+				Response.End();
+			}
+			else
+			{
+				Response.Write("Error please log in before trying to Access this page..!");
+				Response.End();
+
+			}
+			
 		}
 	}
 }
