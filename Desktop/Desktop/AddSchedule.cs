@@ -81,9 +81,16 @@ namespace Desktop
             sch.Time = this.txtTime.Text.ToString();
 
             //check double scheduling for instructor using sectionID
-            Boolean chkInstructor = 
-                schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID","Day","'"+sch.Day.ToString()+"'",
-                "Time",sch.Time.ToString(), "Section.instructorID", section.InstructorID.ToString());
+            Boolean chkInstructor = false;
+            int newTime = Convert.ToInt32(sch.Time);
+            int schDuration = Convert.ToInt32(sch.Duration);
+            while (schDuration >= 1 & !chkInstructor)
+            {
+                chkInstructor = schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID", "Day", "'" + sch.Day.ToString() + "'",
+                "Time", newTime.ToString(), "Section.instructorID", section.InstructorID.ToString());
+                newTime++;
+                schDuration--;
+            }
             if (!chkInstructor)
             {
                 Boolean chkLocation = schedules.Exist("Day",sch.Day.ToString(),"Time",
