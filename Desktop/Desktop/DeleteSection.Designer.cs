@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.cmbSectionID = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(139, 225);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(318, 54);
-            this.button3.TabIndex = 132;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnExit.Location = new System.Drawing.Point(139, 225);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(318, 54);
+            this.btnExit.TabIndex = 132;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox4
+            // cmbSectionID
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(234, 121);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(354, 37);
-            this.comboBox4.TabIndex = 131;
+            this.cmbSectionID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSectionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSectionID.FormattingEnabled = true;
+            this.cmbSectionID.Location = new System.Drawing.Point(234, 121);
+            this.cmbSectionID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbSectionID.Name = "cmbSectionID";
+            this.cmbSectionID.Size = new System.Drawing.Size(354, 37);
+            this.cmbSectionID.TabIndex = 131;
             // 
             // label2
             // 
@@ -92,8 +93,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 308);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.cmbSectionID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -106,8 +107,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ComboBox cmbSectionID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
