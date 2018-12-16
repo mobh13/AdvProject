@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAvgGrade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmbListFor = new System.Windows.Forms.ComboBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbListBy = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtAvgGrade
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(294, 189);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(354, 33);
-            this.textBox3.TabIndex = 103;
+            this.txtAvgGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAvgGrade.Location = new System.Drawing.Point(294, 254);
+            this.txtAvgGrade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAvgGrade.Name = "txtAvgGrade";
+            this.txtAvgGrade.Size = new System.Drawing.Size(354, 33);
+            this.txtAvgGrade.TabIndex = 103;
             // 
             // label3
             // 
@@ -51,38 +53,40 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(19, 179);
+            this.label3.Location = new System.Drawing.Point(19, 244);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(266, 39);
             this.label3.TabIndex = 102;
             this.label3.Text = "Average Grade:";
             // 
-            // comboBox3
+            // cmbListFor
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(296, 124);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(354, 37);
-            this.comboBox3.TabIndex = 101;
+            this.cmbListFor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbListFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbListFor.FormattingEnabled = true;
+            this.cmbListFor.Location = new System.Drawing.Point(296, 189);
+            this.cmbListFor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbListFor.Name = "cmbListFor";
+            this.cmbListFor.Size = new System.Drawing.Size(354, 37);
+            this.cmbListFor.TabIndex = 101;
+            this.cmbListFor.SelectedIndexChanged += new System.EventHandler(this.cmbListFor_SelectedIndexChanged);
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.ForeColor = System.Drawing.Color.LightCyan;
-            this.button3.Location = new System.Drawing.Point(225, 276);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 54);
-            this.button3.TabIndex = 100;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnExit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btnExit.Location = new System.Drawing.Point(220, 340);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(264, 54);
+            this.btnExit.TabIndex = 100;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -90,7 +94,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(19, 118);
+            this.label2.Location = new System.Drawing.Point(19, 183);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 39);
@@ -110,20 +114,49 @@
             this.label1.TabIndex = 97;
             this.label1.Text = "Average grade for the college";
             // 
+            // cmbListBy
+            // 
+            this.cmbListBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbListBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbListBy.FormattingEnabled = true;
+            this.cmbListBy.Location = new System.Drawing.Point(296, 119);
+            this.cmbListBy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbListBy.Name = "cmbListBy";
+            this.cmbListBy.Size = new System.Drawing.Size(354, 37);
+            this.cmbListBy.TabIndex = 105;
+            this.cmbListBy.SelectedIndexChanged += new System.EventHandler(this.cmbListBy_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(19, 113);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 39);
+            this.label4.TabIndex = 104;
+            this.label4.Text = "By:";
+            // 
             // AverageGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 361);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(704, 426);
+            this.Controls.Add(this.cmbListBy);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtAvgGrade);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cmbListFor);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AverageGrade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AverageGrade";
+            this.Load += new System.EventHandler(this.AverageGrade_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,11 +164,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAvgGrade;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmbListFor;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbListBy;
+        private System.Windows.Forms.Label label4;
     }
 }

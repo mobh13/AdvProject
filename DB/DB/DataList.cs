@@ -452,14 +452,14 @@ namespace DB
         }
 
         //second average 
-        public double AverageValue(string sumColumn, string column, string value)
+        public double AverageValue(string avgColumn, string column, string value)
         {
             double avg;
             connection.Open();
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@column", column);
             command.Parameters.AddWithValue("@value", value);
-            command.CommandText = "select avg(" + sumColumn + ") from " + table + " where " + @column +
+            command.CommandText = "select avg(" + avgColumn + ") from " + table + " where " + @column +
                 " = @value";
             reader = command.ExecuteReader();
             reader.Read();
