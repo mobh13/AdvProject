@@ -70,6 +70,7 @@
             // 
             // cmbDays
             // 
+            this.cmbDays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDays.FormattingEnabled = true;
             this.cmbDays.Location = new System.Drawing.Point(390, 272);
@@ -80,6 +81,7 @@
             // 
             // cmbLocations
             // 
+            this.cmbLocations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLocations.FormattingEnabled = true;
             this.cmbLocations.Location = new System.Drawing.Point(391, 213);
@@ -90,6 +92,7 @@
             // 
             // cmbSections
             // 
+            this.cmbSections.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSections.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSections.FormattingEnabled = true;
             this.cmbSections.Location = new System.Drawing.Point(390, 158);
@@ -238,6 +241,7 @@
             // 
             // cmbSchedules
             // 
+            this.cmbSchedules.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSchedules.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSchedules.FormattingEnabled = true;
             this.cmbSchedules.Location = new System.Drawing.Point(391, 95);

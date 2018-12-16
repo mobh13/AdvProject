@@ -50,8 +50,9 @@
             this.label2.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(626, 93);
+            this.label2.Size = new System.Drawing.Size(939, 143);
             this.label2.TabIndex = 0;
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -61,9 +62,10 @@
             this.labelACEMCollege.BackColor = System.Drawing.Color.PaleTurquoise;
             this.labelACEMCollege.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.labelACEMCollege.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelACEMCollege.Location = new System.Drawing.Point(9, 47);
+            this.labelACEMCollege.Location = new System.Drawing.Point(14, 72);
+            this.labelACEMCollege.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelACEMCollege.Name = "labelACEMCollege";
-            this.labelACEMCollege.Size = new System.Drawing.Size(200, 33);
+            this.labelACEMCollege.Size = new System.Drawing.Size(296, 48);
             this.labelACEMCollege.TabIndex = 1;
             this.labelACEMCollege.Text = "ACEM College";
             // 
@@ -75,9 +77,10 @@
             this.buttonInstructors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstructors.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonInstructors.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonInstructors.Location = new System.Drawing.Point(28, 169);
+            this.buttonInstructors.Location = new System.Drawing.Point(37, 197);
+            this.buttonInstructors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonInstructors.Name = "buttonInstructors";
-            this.buttonInstructors.Size = new System.Drawing.Size(176, 35);
+            this.buttonInstructors.Size = new System.Drawing.Size(264, 54);
             this.buttonInstructors.TabIndex = 3;
             this.buttonInstructors.Text = "Instructors";
             this.buttonInstructors.UseVisualStyleBackColor = false;
@@ -89,9 +92,10 @@
             this.buttonCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCourses.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonCourses.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonCourses.Location = new System.Drawing.Point(222, 169);
+            this.buttonCourses.Location = new System.Drawing.Point(328, 197);
+            this.buttonCourses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCourses.Name = "buttonCourses";
-            this.buttonCourses.Size = new System.Drawing.Size(176, 35);
+            this.buttonCourses.Size = new System.Drawing.Size(264, 54);
             this.buttonCourses.TabIndex = 4;
             this.buttonCourses.Text = "Courses";
             this.buttonCourses.UseVisualStyleBackColor = false;
@@ -103,9 +107,10 @@
             this.buttonSections.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSections.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonSections.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonSections.Location = new System.Drawing.Point(129, 311);
+            this.buttonSections.Location = new System.Drawing.Point(189, 415);
+            this.buttonSections.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSections.Name = "buttonSections";
-            this.buttonSections.Size = new System.Drawing.Size(177, 35);
+            this.buttonSections.Size = new System.Drawing.Size(266, 54);
             this.buttonSections.TabIndex = 5;
             this.buttonSections.Text = "Sections";
             this.buttonSections.UseVisualStyleBackColor = false;
@@ -117,9 +122,10 @@
             this.buttonStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStudents.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonStudents.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonStudents.Location = new System.Drawing.Point(28, 240);
+            this.buttonStudents.Location = new System.Drawing.Point(37, 306);
+            this.buttonStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonStudents.Name = "buttonStudents";
-            this.buttonStudents.Size = new System.Drawing.Size(177, 35);
+            this.buttonStudents.Size = new System.Drawing.Size(266, 54);
             this.buttonStudents.TabIndex = 6;
             this.buttonStudents.Text = "Students";
             this.buttonStudents.UseVisualStyleBackColor = false;
@@ -131,9 +137,10 @@
             this.buttonSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSchedules.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonSchedules.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonSchedules.Location = new System.Drawing.Point(421, 169);
+            this.buttonSchedules.Location = new System.Drawing.Point(627, 197);
+            this.buttonSchedules.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSchedules.Name = "buttonSchedules";
-            this.buttonSchedules.Size = new System.Drawing.Size(176, 35);
+            this.buttonSchedules.Size = new System.Drawing.Size(264, 54);
             this.buttonSchedules.TabIndex = 7;
             this.buttonSchedules.Text = "Schedules";
             this.buttonSchedules.UseVisualStyleBackColor = false;
@@ -145,9 +152,10 @@
             this.buttonLocations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLocations.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonLocations.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonLocations.Location = new System.Drawing.Point(421, 239);
+            this.buttonLocations.Location = new System.Drawing.Point(627, 305);
+            this.buttonLocations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLocations.Name = "buttonLocations";
-            this.buttonLocations.Size = new System.Drawing.Size(176, 35);
+            this.buttonLocations.Size = new System.Drawing.Size(264, 54);
             this.buttonLocations.TabIndex = 8;
             this.buttonLocations.Text = "Locations";
             this.buttonLocations.UseVisualStyleBackColor = false;
@@ -159,9 +167,10 @@
             this.buttonTAughtCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTAughtCourses.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonTAughtCourses.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonTAughtCourses.Location = new System.Drawing.Point(222, 240);
+            this.buttonTAughtCourses.Location = new System.Drawing.Point(328, 306);
+            this.buttonTAughtCourses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonTAughtCourses.Name = "buttonTAughtCourses";
-            this.buttonTAughtCourses.Size = new System.Drawing.Size(176, 34);
+            this.buttonTAughtCourses.Size = new System.Drawing.Size(264, 52);
             this.buttonTAughtCourses.TabIndex = 9;
             this.buttonTAughtCourses.Text = "Taught Courses";
             this.buttonTAughtCourses.UseVisualStyleBackColor = false;
@@ -173,9 +182,10 @@
             this.buttonReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReports.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonReports.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonReports.Location = new System.Drawing.Point(323, 311);
+            this.buttonReports.Location = new System.Drawing.Point(479, 415);
+            this.buttonReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonReports.Name = "buttonReports";
-            this.buttonReports.Size = new System.Drawing.Size(176, 35);
+            this.buttonReports.Size = new System.Drawing.Size(264, 54);
             this.buttonReports.TabIndex = 10;
             this.buttonReports.Text = "Reports";
             this.buttonReports.UseVisualStyleBackColor = false;
@@ -184,27 +194,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 422);
+            this.label3.Location = new System.Drawing.Point(14, 649);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 11;
             this.label3.Text = "Today is ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 422);
+            this.label4.Location = new System.Drawing.Point(94, 649);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 12;
             // 
             // pictureBoxCollegeLogo
             // 
             this.pictureBoxCollegeLogo.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pictureBoxCollegeLogo.Image = global::Desktop.Properties.Resources.kisspng_computer_icons_student_icon_design_college_vector_students_5ada87512ed101_3670843215242709291918;
-            this.pictureBoxCollegeLogo.Location = new System.Drawing.Point(504, 12);
+            this.pictureBoxCollegeLogo.Location = new System.Drawing.Point(756, 18);
+            this.pictureBoxCollegeLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBoxCollegeLogo.Name = "pictureBoxCollegeLogo";
-            this.pictureBoxCollegeLogo.Size = new System.Drawing.Size(110, 81);
+            this.pictureBoxCollegeLogo.Size = new System.Drawing.Size(165, 125);
             this.pictureBoxCollegeLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCollegeLogo.TabIndex = 13;
             this.pictureBoxCollegeLogo.TabStop = false;
@@ -215,9 +228,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(222, 375);
+            this.btnExit.Location = new System.Drawing.Point(328, 514);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(176, 35);
+            this.btnExit.Size = new System.Drawing.Size(264, 54);
             this.btnExit.TabIndex = 14;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -225,9 +239,9 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 441);
+            this.ClientSize = new System.Drawing.Size(939, 626);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBoxCollegeLogo);
             this.Controls.Add(this.label4);
@@ -242,6 +256,7 @@
             this.Controls.Add(this.buttonInstructors);
             this.Controls.Add(this.labelACEMCollege);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainMenu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

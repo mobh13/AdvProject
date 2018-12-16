@@ -318,8 +318,8 @@ namespace DB
 			command.Parameters.AddWithValue("@value", value);
 			command.CommandText = "Select Count( * ) FROM " + table +
 				" WHERE " + column1 + " = @value1" +
-				" And" + column2 + " = @value2" +
-				" And" + column + " = @value";
+				" And " + column2 + " = @value2" +
+				" And " + column + " = @value";
 			reader = command.ExecuteReader();
 			reader.Read();
 			int count = Convert.ToInt32(reader.GetValue(0));

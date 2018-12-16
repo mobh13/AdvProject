@@ -84,11 +84,11 @@ namespace Desktop
             Boolean chkInstructor = 
                 schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID","Day","'"+sch.Day.ToString()+"'",
                 "Time",sch.Time.ToString(), "Section.instructorID", section.InstructorID.ToString());
-            if (chkInstructor)
+            if (!chkInstructor)
             {
                 Boolean chkLocation = schedules.Exist("Day",sch.Day.ToString(),"Time",
                     sch.Time.ToString(),"LocationID",sch.LocationID.ToString());
-                if (chkLocation)
+                if (!chkLocation)
                 {
                     if (Convert.ToInt32(section.Capacity) <= Convert.ToInt32(location.Capacity))
                     {

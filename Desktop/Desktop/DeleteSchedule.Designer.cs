@@ -43,10 +43,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnExit.Location = new System.Drawing.Point(333, 256);
+            this.btnExit.Location = new System.Drawing.Point(333, 269);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(270, 51);
+            this.btnExit.Size = new System.Drawing.Size(270, 54);
             this.btnExit.TabIndex = 132;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -54,9 +54,10 @@
             // 
             // cmbSchedules
             // 
+            this.cmbSchedules.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSchedules.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSchedules.FormattingEnabled = true;
-            this.cmbSchedules.Location = new System.Drawing.Point(249, 132);
+            this.cmbSchedules.Location = new System.Drawing.Point(273, 137);
             this.cmbSchedules.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSchedules.Name = "cmbSchedules";
             this.cmbSchedules.Size = new System.Drawing.Size(354, 37);
@@ -68,7 +69,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(19, 130);
+            this.label2.Location = new System.Drawing.Point(19, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(222, 39);
@@ -81,7 +82,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(18, 13);
+            this.label1.Location = new System.Drawing.Point(18, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 48);
@@ -96,10 +97,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 15F);
             this.btnDelete.ForeColor = System.Drawing.Color.LightCyan;
-            this.btnDelete.Location = new System.Drawing.Point(26, 256);
+            this.btnDelete.Location = new System.Drawing.Point(26, 269);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(270, 51);
+            this.btnDelete.Size = new System.Drawing.Size(270, 54);
             this.btnDelete.TabIndex = 133;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -107,9 +108,9 @@
             // 
             // DeleteSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 344);
+            this.ClientSize = new System.Drawing.Size(676, 362);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.cmbSchedules);

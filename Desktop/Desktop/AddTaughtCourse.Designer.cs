@@ -157,6 +157,7 @@
             // 
             // cmbCourseID
             // 
+            this.cmbCourseID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCourseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseID.FormattingEnabled = true;
             this.cmbCourseID.Location = new System.Drawing.Point(396, 158);
@@ -189,6 +190,7 @@
             // 
             // cmbSemester
             // 
+            this.cmbSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSemester.FormattingEnabled = true;
             this.cmbSemester.Items.AddRange(new object[] {

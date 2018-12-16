@@ -50,7 +50,7 @@
             // txtTime
             // 
             this.txtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTime.Location = new System.Drawing.Point(364, 348);
+            this.txtTime.Location = new System.Drawing.Point(364, 350);
             this.txtTime.Margin = new System.Windows.Forms.Padding(4);
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(354, 33);
@@ -62,7 +62,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(50, 343);
+            this.label6.Location = new System.Drawing.Point(50, 345);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 39);
@@ -85,7 +85,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(50, 225);
+            this.label4.Location = new System.Drawing.Point(50, 227);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(214, 39);
@@ -98,7 +98,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(48, 279);
+            this.label5.Location = new System.Drawing.Point(48, 281);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 39);
@@ -197,6 +197,7 @@
             // 
             // cmbSections
             // 
+            this.cmbSections.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSections.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSections.FormattingEnabled = true;
             this.cmbSections.Location = new System.Drawing.Point(363, 169);
@@ -207,9 +208,10 @@
             // 
             // cmbLocations
             // 
+            this.cmbLocations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLocations.FormattingEnabled = true;
-            this.cmbLocations.Location = new System.Drawing.Point(364, 225);
+            this.cmbLocations.Location = new System.Drawing.Point(364, 227);
             this.cmbLocations.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLocations.Name = "cmbLocations";
             this.cmbLocations.Size = new System.Drawing.Size(354, 37);
@@ -217,9 +219,10 @@
             // 
             // cmbDays
             // 
+            this.cmbDays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDays.FormattingEnabled = true;
-            this.cmbDays.Location = new System.Drawing.Point(363, 283);
+            this.cmbDays.Location = new System.Drawing.Point(363, 285);
             this.cmbDays.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDays.Name = "cmbDays";
             this.cmbDays.Size = new System.Drawing.Size(354, 37);
@@ -228,7 +231,7 @@
             // txtDuration
             // 
             this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(363, 417);
+            this.txtDuration.Location = new System.Drawing.Point(363, 428);
             this.txtDuration.Margin = new System.Windows.Forms.Padding(4);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.Size = new System.Drawing.Size(354, 33);
@@ -240,7 +243,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(48, 413);
+            this.label7.Location = new System.Drawing.Point(48, 424);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 39);
@@ -251,7 +254,7 @@
             // 
             this.txtNote.AutoSize = true;
             this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(53, 388);
+            this.txtNote.Location = new System.Drawing.Point(53, 390);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(409, 20);
             this.txtNote.TabIndex = 95;
@@ -261,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 626);
+            this.ClientSize = new System.Drawing.Size(793, 606);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtDuration);
             this.Controls.Add(this.label7);
