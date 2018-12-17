@@ -10,6 +10,9 @@ namespace Web.instructor
 {
 	public partial class TimeTable : System.Web.UI.Page
 	{
+		/* 
+		 * declare Variables to be used in this page
+		 */
 		protected ScheduleList scheduleList;
 		protected SectionList sectionList;
 		protected StudentList studentList;
@@ -20,36 +23,55 @@ namespace Web.instructor
 		{
 			if (Session["User"] != null && Session["Account"].ToString() == "Instructor")
 			{
+				/*
+				 * check if the user session exist and Account session value is Instructor
+				 */
 
-				id = Session["User"].ToString();
+				/*
+				 * instantiate classes when the page loads 
+				 */
+				id = Session["User"].ToString(); //get the id of the instructor from the session and assign it to variable 
 				scheduleList = new ScheduleList();
 				sectionList = new SectionList();
 				taughtCoursesList = new TaughtCourseList();
 				courseList = new CourseList();
-				sectionList.Filter("InstructorID", id);
-				GenerateGridView();
+				sectionList.Filter("InstructorID", id); // filter the sectionstudentList usign the instructor id 
+				GenerateGridView();  // call the GenerateGridView method to fill the gridView element with data
 			}
 			else if (Session["User"] != null && Session["Account"].ToString() != "Instructor")
 			{
+				/*
+				 * else if the user session exist but the account session value is not student show error message 
+				 */
 				Response.Write("Error You are not allowed to be here");
 				Response.End();
 			}
 			else
 			{
+				/*
+				 * else show error message
+				 */
 				Response.Write("Error please log in before trying to Access this page..!");
 				Response.End();
 
 			}
 			
 		}
+		/*
+		 * Method: AddToGridByDayAndTime
+		 * Areguments: none
+		 * Return: none
+		 * Des: this method is to put the information in its place in the grid view
+		 */
 		protected void AddToGridByDayAndTime(Section section, Course course, Schedule schedule)
 		{
 
-			string textToDispaly = section.getID() + " - " + course.getID() + " - " + course.Title;
+			string textToDispaly = section.getID() + " - " + course.getID() + " - " + course.Title; // create string var with the information wanted to be displayed
 			switch (schedule.Day)
 			{
+				/* switch the schedule days  */
 				case "Saturday":
-
+					/* if the day is Saturday then switch between time*/
 					switch (schedule.Time)
 					{
 						case "8":
@@ -87,6 +109,7 @@ namespace Web.instructor
 
 					break;
 				case "Sunday":
+					/* if the day is Sunday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -124,6 +147,7 @@ namespace Web.instructor
 
 					break;
 				case "Monday":
+					/* if the day is Monday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -161,6 +185,7 @@ namespace Web.instructor
 
 					break;
 				case "Tuesday":
+					/* if the day is Tuesday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -198,6 +223,7 @@ namespace Web.instructor
 
 					break;
 				case "Wednesday":
+					/* if the day is Wednesday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -235,6 +261,7 @@ namespace Web.instructor
 
 					break;
 				case "Thursday":
+					/* if the day is Thursday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -272,6 +299,7 @@ namespace Web.instructor
 
 					break;
 				case "Friday":
+					/* if the day is Friday then switch between time*/
 
 					switch (schedule.Time)
 					{
@@ -310,9 +338,17 @@ namespace Web.instructor
 					break;
 			}
 		}
+
+		/*
+	 * Method: GenerateGridView
+	 * Areguments: none
+	 * Return: none
+	 * Des: this method is to fill the GridView with data
+	 */
 		protected void GenerateGridView()
 		{
-			DataTable table = new DataTable();
+			DataTable table = new DataTable(); // create new DataTable object
+											   /* Fill the table with Columns and rows */
 			table.Columns.Add(" ");
 			table.Columns.Add("Saturday");
 			table.Columns.Add("Sunday");
@@ -331,26 +367,32 @@ namespace Web.instructor
 			table.Rows.Add("3", "", "", "", "", "", "", "");
 			table.Rows.Add("4", "", "", "", "", "", "", "");
 			table.Rows.Add("5", "", "", "", "", "", "", "");
-			timeTableGridView.DataSource = table;
-			timeTableGridView.DataBind();
+			timeTableGridView.DataSource = table;// add the table as data source for the gridview
+			timeTableGridView.DataBind();// bind the data
 			foreach (Section section in sectionList.List)
 			{
-				TaughtCourse taught = new TaughtCourse(section.TaughtCourseID);
-				taughtCoursesList.Populate(taught);
-				Course course = new Course(taught.CourseID);
-				courseList.Populate(course);
+				/* ForEach element in the sectionList */
 
-				scheduleList.Filter("SectionID", section.getID());
+				TaughtCourse taught = new TaughtCourse(section.TaughtCourseID); // create new TaughtCourse object and pass id
+				taughtCoursesList.Populate(taught); //populate object
+				Course course = new Course(taught.CourseID); // create new course object and pass the id
+				courseList.Populate(course); // populate object
+
+				scheduleList.Filter("SectionID", section.getID()); // filter the schedule list according to section id
 				foreach (Schedule schedule in scheduleList.List)
 				{
-					AddToGridByDayAndTime(section, course, schedule);
+					/* ForEeach Element in sechedule List */
+
+					AddToGridByDayAndTime(section, course, schedule); // call AddToGridByDayAndTime to add the schedule information to the gridView 
 					while (Convert.ToInt32(schedule.Duration) > 1)
 					{
-						int newTime = Convert.ToInt32(schedule.Time) + 1;
-						schedule.Time = newTime.ToString();
-						AddToGridByDayAndTime(section, course, schedule);
-						int duration = Convert.ToInt32(schedule.Duration) - 1;
-						schedule.Duration = duration.ToString();
+						/* While the schedule duration is more than 1 do*/
+
+						int newTime = Convert.ToInt32(schedule.Time) + 1; //get the old time and add 1 and assign it to var
+						schedule.Time = newTime.ToString();// set the schedule object time to the new time
+						AddToGridByDayAndTime(section, course, schedule); // call AddToGridByDayAndTime to add the schedule information to the gridView
+						int duration = Convert.ToInt32(schedule.Duration) - 1;// get the duration and abstract 1 
+						schedule.Duration = duration.ToString(); //  assign the new duration to the schedule duration
 					}
 
 
