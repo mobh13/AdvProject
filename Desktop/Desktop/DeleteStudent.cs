@@ -14,6 +14,7 @@ namespace Desktop
     public partial class DeleteStudent : Form
     {
         StudentList studentList;
+        SectionStudentList sectionStudentList;
         public DeleteStudent()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Desktop
         private void DeleteStudent_Load(object sender, EventArgs e)
         {
             studentList = new StudentList();
+            sectionStudentList = new SectionStudentList();
             PopulateStudents();
         }
 
@@ -40,6 +42,7 @@ namespace Desktop
             if (dialogResult == DialogResult.Yes)
             {
                 Student student = (Student)comboBoxID.SelectedItem;
+                sectionStudentList.Delete("StudentID", comboBoxID.SelectedItem.ToString());
                 studentList.Delete(student);
 
                 if (student.getValid() == true)
