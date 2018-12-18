@@ -23,16 +23,14 @@ namespace Web.instructor
 		protected string InsId;
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            /*
+	    	 * check if the user session exist and Account session value is Instructor
+		    */
 			if (Session["User"] != null && Session["Account"].ToString() == "Instructor")
 			{
 				/*
-				 * check if the user session exist and Account session value is Instructor
-				 */
-
-				/*
 				 * instantiate classes when the page loads 
 				 */
-
 				sectionsList = new SectionList();
 				taughtList = new TaughtCourseList();
 				locationList = new LocationList();
@@ -46,7 +44,7 @@ namespace Web.instructor
 			}
 			else if (Session["User"] != null && Session["Account"].ToString() != "Instructor")
 			{
-				/*
+			/*
 			 * else if the user session exist but the account session value is not student show error message 
 			 */
 				Response.Write("Error You are not allowed to be here");
@@ -63,7 +61,7 @@ namespace Web.instructor
 			}
 
 		}
-		/*
+	/*
 	 * Method: GenerateAllClassessGridData
 	 * Areguments: none
 	 * Return: none
@@ -83,7 +81,7 @@ namespace Web.instructor
 
 			foreach (Schedule schedule in scheduleList.List)
 			{
-				/* foreach elemnt in the scheduleList 
+				/* foreach element in the scheduleList 
 				 */
 				sectionsList.Filter("SectionID", schedule.SectionID); // filter the sectionList with sectionID
 				Section section = (Section)sectionsList.List.ElementAt(0); // get the first element in the list and cast it to ( section )

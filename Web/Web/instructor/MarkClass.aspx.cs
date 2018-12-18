@@ -24,16 +24,14 @@ namespace Web.instructor
 		protected string sectionId;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+        /*
+		 * check if the user session exist and Account session value is Instructor
+		 */
 			if (Session["User"] != null && Session["Account"].ToString() == "Instructor")
 			{
-				/*
-				 * check if the user session exist and Account session value is Instructor
-				 */
-
-				/*
-				 * instantiate classes when the page loads 
-				 */
+	    	/*
+			 * instantiate classes when the page loads 
+		     */
 				sectionList = new SectionList();
 				sectionStudentList = new SectionStudentList();
 				studentList = new StudentList();
@@ -52,11 +50,10 @@ namespace Web.instructor
 				CourseID.Text = taughtCourses.CourseID; // set the courseid lable text to the course id 
 				CourseName.Text = course.Title; // set courseName lable text to the course title
 				GenerateTable(); // call GenerateTable method to fill the grid view with data
-
 			}
 			else if (Session["User"] != null && Session["Account"].ToString() != "Instructor")
 			{
-				/*
+			/*
 			 * else if the user session exist but the account session value is not student show error message 
 			 */
 				Response.Write("Error You are not allowed to be here");
@@ -64,26 +61,22 @@ namespace Web.instructor
 			}
 			else
 			{
-				/*
-				 * else show error message
-				 */
+			/*
+			 * else show error message
+			 */
 				Response.Write("Error please log in before trying to Access this page..!");
 				Response.End();
 			}
-			
-
 		}
-		/*
-		 * Method: GenerateTable
+		/* Method: GenerateTable
 		 * Areguments: none
 		 * Return: none
 		 * Des: this method is to fill data into the grid view
 		 */
 		protected void GenerateTable()
 		{
-			DataTable table = new DataTable();// create data table object
-											  // add the table columns
-
+			DataTable table = new DataTable();// create data table object					  
+            // add the table columns
 			table.Columns.Add("Student Id");
 			table.Columns.Add("Student Name");
 			table.Columns.Add("Mark");
