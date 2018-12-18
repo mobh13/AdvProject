@@ -13,20 +13,28 @@ namespace Web.student
 		{
 			if (Session["User"] != null && Session["Account"].ToString() == "Student")
 			{
-
-				string stId = Session["User"].ToString();
-				Student student = new Student(stId);
-				StudentList students = new StudentList();
-				students.Populate(student);
-				name.Text = student.FirstName + " " + student.LastName;
+				/*
+				 * check if the user session exist and Account session value is student
+				 */
+				string stId = Session["User"].ToString(); // get the user id from the session user
+				Student student = new Student(stId); // declare and instantiate new student object
+				StudentList students = new StudentList(); //declare and instantiate new studentList object
+				students.Populate(student); // Populate the student object 
+ 				name.Text = student.FirstName + " " + student.LastName; // assign the first and last name to the name lable
 			}
 			else if (Session["User"] != null && Session["Account"].ToString() != "Student")
 			{
+				/*
+				 * else if the user session exist but the account session value is not student show error message 
+				 */
 				Response.Write("Error You are not allowed to be here");
 				Response.End();
 			}
 			else
 			{
+				/*
+				 * else show error message
+				 */
 				Response.Write("Error please log in before trying to Access this page..!");
 				Response.End();
 

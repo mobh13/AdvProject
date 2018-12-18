@@ -52,14 +52,17 @@ namespace DB
 			this.table = table;
 			this.idField = idField;
 
-			//connection =
-			//new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\ADMIN\\SOURCE\\REPOS\\ADVPROJECT\\DB\\DB\\COLLEGE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            //connection =
+            //new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-			//abdulla connection string, dont delete just comment 
-			connection =
-	        new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
+            //abdulla connection string, dont delete just comment 
+            //connection =
+            //      new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
 
-			command = connection.CreateCommand();
+            // Madan connection please don't remove only comment it 
+            //connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
+            connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            command = connection.CreateCommand();
 			dataTable = new DataTable();
 
 		}
