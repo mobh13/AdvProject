@@ -481,7 +481,47 @@ namespace DB
             //returning the variable to the caller method
             return sum;
         }
-
+        //This method does the same exact thing as the previous total value except with less parameters.
+        public int TotalValue(String sumColumn, string table1, string key1, string key2,
+         string table2, string column, string value)
+        {
+            //declaring a varibale to store the returned data
+            int sum;
+            //opening the connection and clearing parameters
+            connection.Open();
+            command.Parameters.Clear();
+            //adding the value as a paramrter with value to avoid SQL injection attacks
+            command.Parameters.AddWithValue("@value", value);
+            //storing the SQL statment in the command text using all paramrters to structure it.
+            command.CommandText =
+                "Select sum(" + sumColumn + ") from " + table +
+                " inner join " + table1 + " on " + table + "." + key1 + " = " + table1 + "." + key1 +
+                " inner join " + table2 + " on " + table1 + "." + key2 + " = " + table2 + "." + key2 +
+                " where " + column + " = @value";
+            //executing the command and storing the results in the reader
+            reader = command.ExecuteReader();
+            //because one result will return from the execution, we need to put it in the buffer
+            reader.Read();
+            /*
+             *The below if statment will be usedd to check if there were any values were in 
+             * the column specified or if they are a valid values. if not, the sum will be 
+             * returned as zero or the actual value will be stored in sum variable. 
+             */
+            if (reader.GetValue(0) == null)
+            {
+                sum = 0;
+            }
+            else
+            {
+                //converting the value from string to an int to be stored and returned.
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
+            //closing the reader and connection after finishing the execution
+            reader.Close();
+            connection.Close();
+            //returning the variable to the caller method
+            return sum;
+        }
         /*
          * This delete have two parameters which are column name and the value. This method 
          * is Needed for deleting a Student.  Deleteing a recored with related data in
