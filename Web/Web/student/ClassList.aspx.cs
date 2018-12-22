@@ -129,8 +129,13 @@ namespace Web.student
 			Student student = new Student(studentID);
 			studentList.Populate(student); // populate the student object
 
-			int totalHours = scheduleList.TotalValue("Duration", "Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "StudentID", student.getID()); // get the total hours of the student
-			int sectionTotalHours = scheduleList.TotalValue("Duration", "SectionID", sectionId); // get the total hours of the section per week
+            // get the total hours of the student
+            //int totalHours = scheduleList.TotalValue("Duration", "Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "StudentID", student.getID());
+           
+            //get the total hours of the student
+            //This line calls the new total value with the less parameters
+            int totalHours = scheduleList.TotalValue("Duration", "Section", "SectionID", "SectionID", "SectionStudent", "StudentID", student.getID()); 
+            int sectionTotalHours = scheduleList.TotalValue("Duration", "SectionID", sectionId); // get the total hours of the section per week
 			if (totalHours < 20) // check if the student registerd hours are less than 20 hours
 			{
 

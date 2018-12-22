@@ -389,94 +389,204 @@ namespace DB
 			connection.Close();
 			return avg;
 		}
-		// End of Madan Methods
+        // End of Madan Methods
 
-		//Abdulla's methods 
-		//first total value
-		public int TotalValue(string columnName)
+        //Abdulla's methods 
+        /*
+         *this total value method with one parameter -column name- will 
+         * be needed to calculate the total of all scheduled hours or any values in the passed
+         * column.
+        */
+        public int TotalValue(string columnName)
         {
+            //declaring a variable sum to store the value
             int sum;
+            //opening the connection and clearing paramters of the command
             connection.Open();
             command.Parameters.Clear();
-            //command.Parameters.AddWithValue("@column",columnName);
+            /*
+             * setting the command text to the SQL statment using the paramertes as 
+             * column nameand the table variable which is a class variable.
+            */
             command.CommandText = "Select sum("+columnName+") from " + table ;
+            //exectuing the query and storing the results in the reader
             reader = command.ExecuteReader();
+            //because one result will return from the execution, we need to put it in the buffer
             reader.Read();
+            /*
+             *The below if statment will be usedd to check if there were any values were in 
+             * the column specified or if they are a valid values. if not, the sum will be 
+             * returned as zero or the actual value will be stored in sum variable. 
+             */
             if (reader.GetValue(0) == null)
             {
                 sum = 0;
             }
             else
             {
+                //converting the value from string to an int to be stored and returned.
                 sum = Convert.ToInt32(reader.GetValue(0));
             }
+            //closing the reader and connection after finishing the execution
             reader.Close();
             connection.Close();
+            //returning the varibale.
             return sum;
         }
 
-        //4th total value
+        /*
+         * totalValue with nine parameters ranging from column and table names, keys to be 
+         * used in the inner join and the value specified for the statment.
+         * This method i Needed to calculate the total scheduled hours for a 
+         * Course or a Student and also can be used to to check if a student have 
+         * more than 20 schedules hours.
+         */
         public int TotalValue(String sumColumn, string table1, string key1, string key2, 
             string table2, string key3, string key4, string column, string value)
         {
+            //declaring a varibale to store the returned data
             int sum;
+            //opening the connection and clearing parameters
             connection.Open();
             command.Parameters.Clear();
+            //adding the value as a paramrter with value to avoid SQL injection attacks
             command.Parameters.AddWithValue("@value",value);
+            //storing the SQL statment in the command text using all paramrters to structure it.
             command.CommandText =
                 "Select sum(" + sumColumn +") from " + table +
                 " inner join "+ table1 +" on "+ key1 + " = "+key2 +
                 " inner join "+table2 + " on "+key3 + " = "+ key4 +
                 " where "+ column +" = @value";
+            //executing the command and storing the results in the reader
             reader = command.ExecuteReader();
+            //because one result will return from the execution, we need to put it in the buffer
             reader.Read();
-            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            /*
+             *The below if statment will be usedd to check if there were any values were in 
+             * the column specified or if they are a valid values. if not, the sum will be 
+             * returned as zero or the actual value will be stored in sum variable. 
+             */
+            if (reader.GetValue(0) == null)
             {
                 sum = 0;
             }
             else
             {
+                //converting the value from string to an int to be stored and returned.
                 sum = Convert.ToInt32(reader.GetValue(0));
             }
+            //closing the reader and connection after finishing the execution
             reader.Close();
             connection.Close();
+            //returning the variable to the caller method
             return sum;
         }
-
-        // first delete
-        public void Delete(string column, string value)
+        //This method does the same exact thing as the previous total value except with less parameters.
+        public int TotalValue(String sumColumn, string table1, string key1, string key2,
+         string table2, string column, string value)
         {
+            //declaring a varibale to store the returned data
+            int sum;
+            //opening the connection and clearing parameters
             connection.Open();
             command.Parameters.Clear();
-            //command.Parameters.AddWithValue("@column",column);
+            //adding the value as a paramrter with value to avoid SQL injection attacks
             command.Parameters.AddWithValue("@value", value);
+            //storing the SQL statment in the command text using all paramrters to structure it.
+            command.CommandText =
+                "Select sum(" + sumColumn + ") from " + table +
+                " inner join " + table1 + " on " + table + "." + key1 + " = " + table1 + "." + key1 +
+                " inner join " + table2 + " on " + table1 + "." + key2 + " = " + table2 + "." + key2 +
+                " where " + column + " = @value";
+            //executing the command and storing the results in the reader
+            reader = command.ExecuteReader();
+            //because one result will return from the execution, we need to put it in the buffer
+            reader.Read();
+            /*
+             *The below if statment will be usedd to check if there were any values were in 
+             * the column specified or if they are a valid values. if not, the sum will be 
+             * returned as zero or the actual value will be stored in sum variable. 
+             */
+            if (reader.GetValue(0) == null)
+            {
+                sum = 0;
+            }
+            else
+            {
+                //converting the value from string to an int to be stored and returned.
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
+            //closing the reader and connection after finishing the execution
+            reader.Close();
+            connection.Close();
+            //returning the variable to the caller method
+            return sum;
+        }
+        /*
+         * This delete have two parameters which are column name and the value. This method 
+         * is Needed for deleting a Student.  Deleteing a recored with related data in
+         * other tables will throw an exception. First the related records 
+         * in the SectionStudent table will need to be deleted using this method. 
+         * Then the Student can be deleted
+         */
+        public void Delete(string column, string value)
+        {
+            //opening the connection and clearing parameters
+            connection.Open();
+            command.Parameters.Clear();
+            //adding the value as a paramrter with value to avoid SQL injection attacks
+            command.Parameters.AddWithValue("@value", value);
+            //storing the SQL statment in the command text using all paramrters to structure it as well as the table class variable.
             command.CommandText = "Delete from " + table + " where " + column + " = @value";
+            //Executing the command against the database
             command.ExecuteNonQuery();
+            //closing the connection to the database after the command is executed.
             connection.Close();
         }
 
-        //second average 
+        /*
+         * averageValue method has three parameters which are the column take the average of
+         * and the condition column as well as the value of it. This method will be used 
+         * to calculate the average grade for a Section or Student
+         */
         public double AverageValue(string avgColumn, string column, string value)
         {
+            //declaring a varibale to store the returned data
             double avg;
+            //opening the connection and clearing parameters
             connection.Open();
             command.Parameters.Clear();
-           //command.Parameters.AddWithValue("@column", column);
+            //adding the value as a paramrter with value to avoid SQL injection attacks
             command.Parameters.AddWithValue("@value", value);
+            /*storing the SQL statment in the command text using all paramrters to 
+             * structure it as well as the table class variable. The cast in the sql statment 
+             * is used to apply the average function on the columns that are declared as
+             * nvarchar but store only numbers, this is why it must be casted as a float to 
+             * avoid any exceptions from the databse.
+             */
             command.CommandText = "select AVG(CAST([" + avgColumn + "] as float)) from " + table + " where " + column +
                 " = @value";
+            //because one result will return from the execution, we need to put it in the buffer
             reader = command.ExecuteReader();
             reader.Read();
+            /*
+             *The below if statment will be usedd to check if there were any values were in 
+             * the column specified or if they are a valid values. if not, the sum will be 
+             * returned as zero or the actual value will be stored in sum variable. 
+             */
             if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
             {
                 avg = 0;
             }
             else
             {
+                //converting the value from string to an double to be stored and returned.
                 avg = Convert.ToDouble(reader.GetValue(0));
             }
+            //closing the connection to the database after the command is executed.
             reader.Close();
             connection.Close();
+            //returning the variable to the caller method.
             return avg;
         }
         //end of abdulla

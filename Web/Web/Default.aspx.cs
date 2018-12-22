@@ -11,7 +11,7 @@ namespace Web
 	public partial class _Default : Page
 	{
 		/* 
-		 declare Variables to be used in this page
+		 declare class Variables to be used in this page
 		*/
 		protected StudentList students;
 		protected InstructorList instructors;
