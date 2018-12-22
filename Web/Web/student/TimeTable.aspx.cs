@@ -351,7 +351,7 @@ namespace Web.student
 			DataTable table = new DataTable(); // create new DataTable object
 											   /* Fill the table with Columns and rows */
 
-			table.Columns.Add(" ");
+			table.Columns.Add("Time");
 			table.Columns.Add("Saturday");
 			table.Columns.Add("Sunday");
 			table.Columns.Add("Monday");
