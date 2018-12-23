@@ -11,6 +11,7 @@ namespace DB
 {
 	public class DataList
 	{
+        //declaring the class level variables that will be used througout 
 		private SqlConnection connection;
 		private SqlDataReader reader;
 		private List<Item> list;
@@ -19,33 +20,52 @@ namespace DB
 		private string table;
 		private string idField;
 
+        //creating getters and setters for the command, table, idfield and dataTable.
+        //protected because only sub-classes will access them
 		protected SqlCommand Command
 		{
 			get { return command; }
 			set { command = value; }
 		}
-
 		protected string Table
 		{
 			get { return table; }
 			set { table = value; }
 		}
-
-
 		protected string IdField
 		{
 			get { return idField; }
 			set { idField = value; }
 		}
-
-
 		public DataTable DataTable
 		{
 			get { return dataTable; }
 			set { dataTable = value; }
 		}
-
-		public DataList(string table, string idField)
+        protected SqlConnection Connection
+        {
+            get { return connection; }
+            set { connection = value; }
+        }
+        protected SqlDataReader Reader
+        {
+            get { return reader; }
+            set
+            {
+                reader = value;
+            }
+        }
+        public List<Item> List
+        {
+            get { return list; }
+            set
+            {
+                list = value;
+            }
+        }
+        //dataList constructor that takes two parameters (table name and primary key field name) 
+        //Inside, the sql connection and the reader are created
+        public DataList(string table, string idField)
 		{
 			list = new List<Item>();
 			this.table = table;
@@ -63,40 +83,10 @@ namespace DB
             // connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             command = connection.CreateCommand();
 			dataTable = new DataTable();
-
-		}
-
-		//protected as used only by subclasses
-		protected SqlConnection Connection
-		{
-			get { return connection; }
-			set { connection = value; }
-		}
-
-		//protected as used only by subclasses
-		protected SqlDataReader Reader
-		{
-			get { return reader; }
-
-			set
-			{
-				reader = value;
-			}
-		}
-
-		public List<Item> List
-		{
-			get { return list; }
-
-			set
-			{
-				list = value;
-			}
 		}
 
 		public void SetDataTableColumns(Item item)
 		{
-
 			dataTable.Clear();
 			dataTable.Columns.Clear();
 			Type type = item.GetType();
@@ -106,7 +96,6 @@ namespace DB
 			{
 				dataTable.Columns.Add(property.Name);
 			}
-
 		}
 
 		public void AddDataTableRow(Item item)
@@ -171,7 +160,6 @@ namespace DB
 			SetValues(item);
 			reader.Close();
 			connection.Close();
-
 		}
 
 		public void Update(Item item)
@@ -235,7 +223,6 @@ namespace DB
                 count++;
             }
         }
-
 
 			//start second part of Add string
 			addString += ") VALUES(";
