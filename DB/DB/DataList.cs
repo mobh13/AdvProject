@@ -19,7 +19,6 @@ namespace DB
 		private string table;
 		private string idField;
 
-
 		protected SqlCommand Command
 		{
 			get { return command; }
@@ -360,8 +359,12 @@ namespace DB
 			connection.Close();
 			return sum;
 		}
-		// third avreage value
-		public double AverageValue(String avgColumn, string table1, string key1, string key2,
+        /*
+         * This averageValue method with nine parameters ranging from column and table names, keys to be 
+         * used in the inner join and the value specified for the statment.
+         * This method is Needed to calculate the average grade for a course.
+         */
+        public double AverageValue(String avgColumn, string table1, string key1, string key2,
 			string table2, string key3, string key4, string column, string value)
 		{
 			double avg = 0;
@@ -377,18 +380,42 @@ namespace DB
 			reader.Read();
 			if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
             {
-
 				avg = 0.0;
-
 			} else
 			{
 				avg = Convert.ToDouble(reader.GetValue(0));
-
 			}
 			reader.Close();
 			connection.Close();
 			return avg;
 		}
+        //This method is the same as the one above it but it does the work with less paramerters.
+        public double AverageValue(String avgColumn, string table1, string key1, string key2,
+           string table2, string column, string value)
+        {
+            double avg = 0;
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText =
+               "Select avg(" + avgColumn + ") from " + table +
+                " inner join " + table1 + " on " + table + "." + key1 + " = " + table1 + "." + key1 +
+                " inner join " + table2 + " on " + table1 + "." + key2 + " = " + table2 + "." + key2 +
+                " where " + column + " = @value";
+            reader = command.ExecuteReader();
+            reader.Read();
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            {
+                avg = 0.0;
+            }
+            else
+            {
+                avg = Convert.ToDouble(reader.GetValue(0));
+            }
+            reader.Close();
+            connection.Close();
+            return avg;
+        }
         // End of Madan Methods
 
         //Abdulla's methods 
@@ -437,7 +464,7 @@ namespace DB
         /*
          * totalValue with nine parameters ranging from column and table names, keys to be 
          * used in the inner join and the value specified for the statment.
-         * This method i Needed to calculate the total scheduled hours for a 
+         * This method is Needed to calculate the total scheduled hours for a 
          * Course or a Student and also can be used to to check if a student have 
          * more than 20 schedules hours.
          */
@@ -680,7 +707,7 @@ namespace DB
             }
         }
 
-        //Exist (3)
+        //Exist method that checks if a student is busy on a particular day and time to avoid double scheduling
         public bool Exist(string table1, string key1, string key2, string table2, string key3, string key4, 
             string column1, string value1, string column2, string value2, string column, string value)
         {
@@ -708,6 +735,33 @@ namespace DB
                 return true;
             }
         }
-
+        //the below method is the same as the above but it uses less parameters and provide the same output
+        public bool Exist(string table1, string key1, string key2, string table2,
+            string column1, string value1, string column2, string value2, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value1", value1);
+            command.Parameters.AddWithValue("@value2", value2);
+            command.Parameters.AddWithValue("@value", value);
+            command.CommandText = "SELECT COUNT(" + idField + ") FROM " + table
+                + " INNER JOIN " + table1 + " ON " + table+"."+key1 + " = " + table1 + "." + key1 +
+                " INNER JOIN " + table2 + " ON " + table1 + "." + key2 + " = " + table2 + "." + key2 +
+                " WHERE " + column1 + " = @value1 AND " + column2 + " = @value2 " +
+                " AND " + column + " = @value";
+            reader = command.ExecuteReader();
+            reader.Read();
+            int count = Convert.ToInt32(reader.GetValue(0));
+            reader.Close();
+            connection.Close();
+            if (count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
