@@ -59,7 +59,6 @@ namespace Desktop
                     this.txtAvgGrade.Text = secStuds.AverageValue("Grade").ToString();
                     this.cmbListFor.Items.Clear();
                     break;
-
                 default:
                     break;
             }
@@ -78,8 +77,12 @@ namespace Desktop
                         this.txtAvgGrade.Text = secStuds.AverageValue("Grade", "StudentID", this.cmbListFor.SelectedItem.ToString()).ToString();
                         break;
                     case "Course":
-                        this.txtAvgGrade.Text = secStuds.AverageValue("Grade","Section","SectionStudent.sectionID","Section.sectionID","TaughtCourse"
-                            ,"Section.taughtCourseID", "TaughtCourse.taughtCourseID","CourseID",this.cmbListFor.SelectedItem.ToString()).ToString();
+                        //this line of code calls the method with 9 parameters. The same parameters from model design document
+                        //this.txtAvgGrade.Text = secStuds.AverageValue("Grade", "Section", "SectionStudent.sectionID", "Section.sectionID", "TaughtCourse"
+                        //    , "Section.taughtCourseID", "TaughtCourse.taughtCourseID", "CourseID", this.cmbListFor.SelectedItem.ToString()).ToString();
+                        //This line calls the method similar to the one above but with less parameters. same as our design document.
+                        this.txtAvgGrade.Text = secStuds.AverageValue("Grade", "Section", "sectionID", "taughtCourseID", "TaughtCourse"
+                            , "CourseID", this.cmbListFor.SelectedItem.ToString()).ToString();
                         break;
                     default:
                         break;
