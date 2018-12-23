@@ -86,21 +86,33 @@ namespace Desktop
                         comboBoxFor.SelectedItem.ToString()).ToString();
                     break;
                 case "Section":
-                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID", 
-                        "Schedule.SectionID", "Section.SectionID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    //Commented script is where 6 parameters were used (still works) (Model Design Given)
+                    //textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID", 
+                    //    "Schedule.SectionID", "Section.SectionID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "SectionID",
+                        "Section.SectionID", comboBoxFor.SelectedItem.ToString()).ToString();
                     break;
                 case "Instructor":
-                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID",
-                        "Schedule.SectionID", "Section.InstructorID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    //Commented script is where 6 parameters were used (still works) (Model Design Given)
+                    //textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID",
+                    //    "Schedule.SectionID", "Section.InstructorID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "SectionID",
+                        "Section.InstructorID", comboBoxFor.SelectedItem.ToString()).ToString();
                     break;
                 case "Course":
-                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID",
-                        "Schedule.SectionID", "TaughtCourse", "Section.TaughtCourseID", "TaughtCourse.TaughtCourseID",
-                        "TaughtCourse.CourseID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    //Commented script is where 9 parameters were used (still works) (Model Design Given)
+                    //textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "Section.SectionID",
+                    //    "Schedule.SectionID", "TaughtCourse", "Section.TaughtCourseID", "TaughtCourse.TaughtCourseID",
+                    //    "TaughtCourse.CourseID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "Section", "SectionID", "TaughtCourseID",
+                    "TaughtCourse", "TaughtCourse.CourseID", comboBoxFor.SelectedItem.ToString()).ToString();
                     break;
                 case "Student":
-                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "SectionStudent", "SectionStudent.SectionID",
-                        "Schedule.SectionID", "SectionStudent.StudentID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    //Commented script is where 6 parameters were used (still works) (Model Design Given)
+                    //textBoxTotal.Text = scheduleList.TotalValue("Duration", "SectionStudent", "SectionStudent.SectionID",
+                    //    "Schedule.SectionID", "SectionStudent.StudentID", comboBoxFor.SelectedItem.ToString()).ToString();
+                    textBoxTotal.Text = scheduleList.TotalValue("Duration", "SectionStudent", "SectionID",
+                        "SectionStudent.StudentID", comboBoxFor.SelectedItem.ToString()).ToString();
                     break;
                 default:
                     break;

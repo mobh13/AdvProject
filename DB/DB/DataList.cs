@@ -56,7 +56,7 @@ namespace DB
 
            // abdulla connection string, dont delete just comment
             connection =
-                  new SqlConnection("Data Source = (localdb)\\LocalDB; Initial Catalog = College; Integrated Security = True");
+                  new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
             // Madan connection please don't remove only comment it 
             //connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=College;Integrated Security=True");
@@ -534,7 +534,7 @@ namespace DB
              * the column specified or if they are a valid values. if not, the sum will be 
              * returned as zero or the actual value will be stored in sum variable. 
              */
-            if (reader.GetValue(0) == null)
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
             {
                 sum = 0;
             }
@@ -662,6 +662,34 @@ namespace DB
             command.Parameters.AddWithValue("@value", value);
             command.CommandText = "SELECT SUM(" + sumColumn + ") FROM " + table +
                 " INNER JOIN " + table1 + " ON " + key1 + " = " + key2 +
+                " WHERE " + column + " = @value";
+            reader = command.ExecuteReader();
+            reader.Read();
+            double sum;
+            if (reader.GetValue(0) == null || reader.GetValue(0) is DBNull)
+            {
+                sum = 0;
+            }
+            else
+            {
+                sum = Convert.ToInt32(reader.GetValue(0));
+            }
+            reader.Close();
+            connection.Close();
+            return sum;
+        }
+
+        //Total Value (3) With 5 parameters instead of 6
+        public double TotalValue(string sumColumn, string table1, string key1, string column, string value)
+        {
+            connection.Open();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@value", value);
+            //command.CommandText = "SELECT SUM(" + sumColumn + ") FROM " + table +
+            //    " INNER JOIN " + table1 + " ON " + key1 + " = " + key2 +
+            //    " WHERE " + column + " = @value";
+            command.CommandText =  "SELECT SUM(" + sumColumn + ") FROM " + table +
+                " INNER JOIN " + table1 + " ON " + table + "." + key1 + " = " + table1 + "." + key1 +
                 " WHERE " + column + " = @value";
             reader = command.ExecuteReader();
             reader.Read();
