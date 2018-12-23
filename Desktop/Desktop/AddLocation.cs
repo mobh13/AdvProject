@@ -16,21 +16,69 @@ namespace Desktop
         public AddLocation()
         {
             InitializeComponent();
-            int id = locations.GetMaxID() + 1;
-            this.txtLocationID.Text =  id.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             Location loc = new Location();
             loc.setID(this.txtLocationID.Text.ToString());
-            loc.Name = this.textBox5.Text.ToString();
-            loc.Capacity = this.textBox2.Text.ToString();
+            loc.Name = this.txtName.Text.ToString();
+            //checks if the capacity entered is a number
+            Boolean isValid = false;
+            foreach (char c in this.txtCapacity.Text.ToString())
+            {
+                if (c < '0' || c > '9')
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            if (isValid)
+            {
+                loc.Capacity = this.txtCapacity.Text.ToString();
+            }
+            else
+            {
+                loc.Capacity = "0";
+                MessageBox.Show("Capacity entered is invalid.");
+            }
+           
             locations.Add(loc);
-
+            if (loc.getValid() == true)
+            {
+                MessageBox.Show("Location have been added successfully.");
+                clear();
+                getNextID();
+            }
+            else
+            {
+                MessageBox.Show("An error has occured. Record was not added.\n"+loc.geterrorMessage());
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AddLocation_Load(object sender, EventArgs e)
+        {
+            getNextID();
+        }
+        void getNextID()
+        {
+            int id = locations.GetMaxID() + 1;
+            this.txtLocationID.Text = id.ToString();
+        }
+        void clear()
         {
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
@@ -38,13 +86,7 @@ namespace Desktop
                 {
                     txt.Text = "";
                 }
-              
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

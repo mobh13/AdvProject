@@ -22,32 +22,72 @@ namespace Desktop
         void loadLocations()
         {
             locations.Populate();
-            this.comboBox4.DataSource = locations.List;
+            this.cmbLocationID.DataSource = locations.List;
         }
         private void EditLocation_Load(object sender, EventArgs e)
         {
             loadLocations();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-             loc = (Location) this.comboBox4.SelectedItem;
-            loc.Name = this.textBox2.Text.ToString();
-            loc.Capacity = this.textBox5.Text.ToString();
+            loc = (Location) this.cmbLocationID.SelectedItem;
+            loc.Name = this.txtName.Text.ToString();
+            //checks if the capacity entered is a number
+            Boolean isValid = false;
+            foreach (char c in this.txtCapacity.Text.ToString())
+            {
+                if (c < '0' || c > '9')
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            if (isValid)
+            {
+                loc.Capacity = this.txtCapacity.Text.ToString();
+            }
+            else
+            {
+                loc.Capacity = "0";
+                MessageBox.Show("Capacity entered is invalid.");
+            }
+            
             locations.Update(loc);
+            if (loc.getValid() == true)
+            {
+                MessageBox.Show("Location have been updated successfully.");
+            }
+            else
+            {
+                MessageBox.Show("An error has occured. Record was not updated."+
+                    "\n"+loc.geterrorMessage());
+            }
             loadLocations();
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbLocationID_SelectedIndexChanged(object sender, EventArgs e)
         {
-             loc = (Location)this.comboBox4.SelectedItem;
-            this.textBox5.Text = loc.Name;
-            this.textBox2.Text = loc.Capacity;
+            loc = (Location)this.cmbLocationID.SelectedItem;
+            this.txtName.Text = loc.Name;
+            this.txtCapacity.Text = loc.Capacity;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            foreach (TextBox txt in this.Controls.OfType<TextBox>())
+            {
+                    txt.Text = "";
+            }
+            this.cmbLocationID.SelectedIndex = -1;
         }
     }
 }

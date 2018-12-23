@@ -79,7 +79,28 @@ namespace Desktop
             Location location = (Location)this.cmbLocations.SelectedItem;
             sch.LocationID = location.getID();
             sch.Day = cmbDays.SelectedItem.ToString();
-            sch.Duration = this.txtDuration.Text.ToString();
+            Boolean isValid = false;
+            //checks if the duration enters is valid
+            foreach (char c in this.txtDuration.Text.ToString())
+            {
+                if (c < '0' || c > '9')
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            if (isValid)
+            {
+                sch.Duration = this.txtDuration.Text.ToString();
+            }
+            else
+            {
+                sch.Duration = "0";
+                MessageBox.Show("Duration entered is invalid.");
+            }
             sch.Time = this.txtTime.Text.ToString();
 
             //check double scheduling for instructor using sectionID

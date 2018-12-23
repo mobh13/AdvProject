@@ -96,7 +96,7 @@
             // txtTaughtID
             // 
             this.txtTaughtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaughtID.Location = new System.Drawing.Point(396, 102);
+            this.txtTaughtID.Location = new System.Drawing.Point(390, 97);
             this.txtTaughtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTaughtID.Name = "txtTaughtID";
             this.txtTaughtID.ReadOnly = true;
@@ -109,7 +109,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(81, 214);
+            this.label4.Location = new System.Drawing.Point(75, 209);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 39);
@@ -122,7 +122,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(83, 159);
+            this.label3.Location = new System.Drawing.Point(77, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 39);
@@ -135,7 +135,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(81, 101);
+            this.label2.Location = new System.Drawing.Point(75, 96);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(308, 39);
@@ -160,7 +160,7 @@
             this.cmbCourseID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCourseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseID.FormattingEnabled = true;
-            this.cmbCourseID.Location = new System.Drawing.Point(396, 158);
+            this.cmbCourseID.Location = new System.Drawing.Point(390, 153);
             this.cmbCourseID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCourseID.Name = "cmbCourseID";
             this.cmbCourseID.Size = new System.Drawing.Size(354, 37);
@@ -169,7 +169,7 @@
             // txtYear
             // 
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYear.Location = new System.Drawing.Point(396, 278);
+            this.txtYear.Location = new System.Drawing.Point(390, 273);
             this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(354, 33);
@@ -181,7 +181,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(81, 273);
+            this.label5.Location = new System.Drawing.Point(75, 268);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 39);
@@ -196,7 +196,7 @@
             this.cmbSemester.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cmbSemester.Location = new System.Drawing.Point(396, 220);
+            this.cmbSemester.Location = new System.Drawing.Point(390, 215);
             this.cmbSemester.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(354, 37);

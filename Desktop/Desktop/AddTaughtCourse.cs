@@ -62,7 +62,29 @@ namespace Desktop
             tCourse.setID(this.txtTaughtID.Text.ToString());
             tCourse.CourseID = this.cmbCourseID.SelectedItem.ToString();
             tCourse.Semester = this.cmbSemester.SelectedItem.ToString();
-            tCourse.Year = this.txtYear.Text.ToString();
+            //checks if the capacity entered is a number
+            Boolean isValid = false;
+            foreach (char c in this.txtYear.Text.ToString())
+            {
+                if (c < '0' || c > '9')
+                {
+                    isValid = false;
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            if (isValid)
+            {
+                tCourse.Year = this.txtYear.Text.ToString();
+            }
+            else
+            {
+                tCourse.Year = "0000";
+                MessageBox.Show("Year entered is invalid.");
+            }
+           
             taughtCourses.Add(tCourse);
             if (tCourse.getValid() == true)
             {

@@ -122,7 +122,29 @@ namespace Desktop
             {
                 sch.SectionID = newSID;
                 sch.Time = newTime;
-                sch.Duration = newDuration;
+                Boolean isValid = false;
+                //checks if the duration enters is valid
+                foreach (char c in newDuration.ToString())
+                {
+                    if (c < '0' || c > '9')
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
+                }
+                if (isValid)
+                {
+                    sch.Duration = newDuration;
+                }
+                else
+                {
+                    sch.Duration = "0";
+                    MessageBox.Show("Duration entered is invalid.");
+                }
+               
                 sch.Day = newDay;
                 //check double scheduling for instructor using sectionID
                 Boolean chkInstructor = false;
@@ -164,7 +186,6 @@ namespace Desktop
             {
                 sch.LocationID = newLID;
                 schedules.Update(sch);
-                
             }
             if (sch.getValid() == true)
             {
@@ -172,7 +193,7 @@ namespace Desktop
             }
             else
             {
-                MessageBox.Show("An error has occured. record was not updated.");
+                MessageBox.Show("An error has occured. record was not updated.\n"+sch.geterrorMessage());
             }
         }
     }
