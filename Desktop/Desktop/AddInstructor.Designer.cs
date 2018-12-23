@@ -50,9 +50,10 @@
             this.labelAddInstructor.BackColor = System.Drawing.Color.Transparent;
             this.labelAddInstructor.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.labelAddInstructor.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelAddInstructor.Location = new System.Drawing.Point(12, 9);
+            this.labelAddInstructor.Location = new System.Drawing.Point(18, 14);
+            this.labelAddInstructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAddInstructor.Name = "labelAddInstructor";
-            this.labelAddInstructor.Size = new System.Drawing.Size(213, 33);
+            this.labelAddInstructor.Size = new System.Drawing.Size(315, 48);
             this.labelAddInstructor.TabIndex = 7;
             this.labelAddInstructor.Text = "Add Instructor";
             // 
@@ -62,9 +63,10 @@
             this.labelID.BackColor = System.Drawing.Color.Transparent;
             this.labelID.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelID.ForeColor = System.Drawing.Color.Teal;
-            this.labelID.Location = new System.Drawing.Point(12, 55);
+            this.labelID.Location = new System.Drawing.Point(77, 91);
+            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(159, 25);
+            this.labelID.Size = new System.Drawing.Size(239, 39);
             this.labelID.TabIndex = 8;
             this.labelID.Text = "Instructor ID:";
             // 
@@ -74,9 +76,10 @@
             this.labelFName.BackColor = System.Drawing.Color.Transparent;
             this.labelFName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFName.ForeColor = System.Drawing.Color.Teal;
-            this.labelFName.Location = new System.Drawing.Point(13, 93);
+            this.labelFName.Location = new System.Drawing.Point(79, 149);
+            this.labelFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFName.Name = "labelFName";
-            this.labelFName.Size = new System.Drawing.Size(134, 25);
+            this.labelFName.Size = new System.Drawing.Size(204, 39);
             this.labelFName.TabIndex = 9;
             this.labelFName.Text = "First Name:";
             // 
@@ -86,35 +89,39 @@
             this.labelLName.BackColor = System.Drawing.Color.Transparent;
             this.labelLName.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLName.ForeColor = System.Drawing.Color.Teal;
-            this.labelLName.Location = new System.Drawing.Point(12, 129);
+            this.labelLName.Location = new System.Drawing.Point(77, 204);
+            this.labelLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLName.Name = "labelLName";
-            this.labelLName.Size = new System.Drawing.Size(132, 25);
+            this.labelLName.Size = new System.Drawing.Size(198, 39);
             this.labelLName.TabIndex = 10;
             this.labelLName.Text = "Last Name:";
             // 
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(177, 55);
+            this.textBoxID.Location = new System.Drawing.Point(325, 91);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(237, 24);
+            this.textBoxID.Size = new System.Drawing.Size(354, 33);
             this.textBoxID.TabIndex = 13;
             // 
             // textBoxFname
             // 
             this.textBoxFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFname.Location = new System.Drawing.Point(177, 93);
+            this.textBoxFname.Location = new System.Drawing.Point(325, 149);
+            this.textBoxFname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(237, 24);
+            this.textBoxFname.Size = new System.Drawing.Size(354, 33);
             this.textBoxFname.TabIndex = 14;
             // 
             // textBoxlName
             // 
             this.textBoxlName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxlName.Location = new System.Drawing.Point(177, 130);
+            this.textBoxlName.Location = new System.Drawing.Point(325, 206);
+            this.textBoxlName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxlName.Name = "textBoxlName";
-            this.textBoxlName.Size = new System.Drawing.Size(237, 24);
+            this.textBoxlName.Size = new System.Drawing.Size(354, 33);
             this.textBoxlName.TabIndex = 15;
             // 
             // buttonSubmit
@@ -125,9 +132,10 @@
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonSubmit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonSubmit.Location = new System.Drawing.Point(438, 55);
+            this.buttonSubmit.Location = new System.Drawing.Point(37, 399);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(176, 36);
+            this.buttonSubmit.Size = new System.Drawing.Size(225, 55);
             this.buttonSubmit.TabIndex = 18;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -141,9 +149,10 @@
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonClear.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonClear.Location = new System.Drawing.Point(438, 108);
+            this.buttonClear.Location = new System.Drawing.Point(289, 399);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(176, 35);
+            this.buttonClear.Size = new System.Drawing.Size(225, 54);
             this.buttonClear.TabIndex = 19;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
@@ -157,9 +166,10 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonExit.Location = new System.Drawing.Point(438, 159);
+            this.buttonExit.Location = new System.Drawing.Point(539, 399);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.Size = new System.Drawing.Size(225, 54);
             this.buttonExit.TabIndex = 20;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -168,17 +178,19 @@
             // textBoxHdate
             // 
             this.textBoxHdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHdate.Location = new System.Drawing.Point(177, 169);
+            this.textBoxHdate.Location = new System.Drawing.Point(325, 266);
+            this.textBoxHdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxHdate.Name = "textBoxHdate";
-            this.textBoxHdate.Size = new System.Drawing.Size(237, 24);
+            this.textBoxHdate.Size = new System.Drawing.Size(354, 33);
             this.textBoxHdate.TabIndex = 16;
             // 
             // textBoxPasswd
             // 
             this.textBoxPasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasswd.Location = new System.Drawing.Point(177, 208);
+            this.textBoxPasswd.Location = new System.Drawing.Point(325, 326);
+            this.textBoxPasswd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPasswd.Name = "textBoxPasswd";
-            this.textBoxPasswd.Size = new System.Drawing.Size(237, 24);
+            this.textBoxPasswd.Size = new System.Drawing.Size(354, 33);
             this.textBoxPasswd.TabIndex = 17;
             // 
             // labelHDate
@@ -187,9 +199,10 @@
             this.labelHDate.BackColor = System.Drawing.Color.Transparent;
             this.labelHDate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHDate.ForeColor = System.Drawing.Color.Teal;
-            this.labelHDate.Location = new System.Drawing.Point(13, 169);
+            this.labelHDate.Location = new System.Drawing.Point(79, 266);
+            this.labelHDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHDate.Name = "labelHDate";
-            this.labelHDate.Size = new System.Drawing.Size(119, 25);
+            this.labelHDate.Size = new System.Drawing.Size(180, 39);
             this.labelHDate.TabIndex = 11;
             this.labelHDate.Text = "Hire Date:";
             // 
@@ -199,17 +212,18 @@
             this.labelPasswd.BackColor = System.Drawing.Color.Transparent;
             this.labelPasswd.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswd.ForeColor = System.Drawing.Color.Teal;
-            this.labelPasswd.Location = new System.Drawing.Point(13, 208);
+            this.labelPasswd.Location = new System.Drawing.Point(79, 326);
+            this.labelPasswd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPasswd.Name = "labelPasswd";
-            this.labelPasswd.Size = new System.Drawing.Size(123, 25);
+            this.labelPasswd.Size = new System.Drawing.Size(183, 39);
             this.labelPasswd.TabIndex = 12;
             this.labelPasswd.Text = "Password:";
             // 
             // AddInstructor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 243);
+            this.ClientSize = new System.Drawing.Size(796, 478);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonSubmit);
@@ -224,6 +238,7 @@
             this.Controls.Add(this.labelFName);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.labelAddInstructor);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddInstructor";
             this.Text = "Add Instructor";
             this.Load += new System.EventHandler(this.AddInstructor_Load);

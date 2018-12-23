@@ -48,9 +48,10 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonExit.Location = new System.Drawing.Point(438, 159);
+            this.buttonExit.Location = new System.Drawing.Point(501, 274);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.Size = new System.Drawing.Size(205, 54);
             this.buttonExit.TabIndex = 30;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -64,9 +65,10 @@
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonClear.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonClear.Location = new System.Drawing.Point(438, 108);
+            this.buttonClear.Location = new System.Drawing.Point(262, 273);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(176, 35);
+            this.buttonClear.Size = new System.Drawing.Size(205, 54);
             this.buttonClear.TabIndex = 29;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
@@ -80,9 +82,10 @@
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonSubmit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonSubmit.Location = new System.Drawing.Point(438, 55);
+            this.buttonSubmit.Location = new System.Drawing.Point(26, 273);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(176, 36);
+            this.buttonSubmit.Size = new System.Drawing.Size(205, 55);
             this.buttonSubmit.TabIndex = 28;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -91,25 +94,28 @@
             // textBoxCredits
             // 
             this.textBoxCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCredits.Location = new System.Drawing.Point(177, 130);
+            this.textBoxCredits.Location = new System.Drawing.Point(326, 204);
+            this.textBoxCredits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxCredits.Name = "textBoxCredits";
-            this.textBoxCredits.Size = new System.Drawing.Size(237, 24);
+            this.textBoxCredits.Size = new System.Drawing.Size(354, 33);
             this.textBoxCredits.TabIndex = 27;
             // 
             // textBoxTitle
             // 
             this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(177, 93);
+            this.textBoxTitle.Location = new System.Drawing.Point(326, 147);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(237, 24);
+            this.textBoxTitle.Size = new System.Drawing.Size(354, 33);
             this.textBoxTitle.TabIndex = 26;
             // 
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(177, 55);
+            this.textBoxID.Location = new System.Drawing.Point(326, 89);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(237, 24);
+            this.textBoxID.Size = new System.Drawing.Size(354, 33);
             this.textBoxID.TabIndex = 25;
             // 
             // label4
@@ -118,9 +124,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(12, 129);
+            this.label4.Location = new System.Drawing.Point(78, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 25);
+            this.label4.Size = new System.Drawing.Size(142, 39);
             this.label4.TabIndex = 24;
             this.label4.Text = "Credits:";
             // 
@@ -130,9 +137,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(13, 93);
+            this.label3.Location = new System.Drawing.Point(80, 147);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(101, 39);
             this.label3.TabIndex = 23;
             this.label3.Text = "Title:";
             // 
@@ -142,9 +150,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(78, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
+            this.label2.Size = new System.Drawing.Size(187, 39);
             this.label2.TabIndex = 22;
             this.label2.Text = "Course ID:";
             // 
@@ -154,17 +163,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 33);
+            this.label1.Size = new System.Drawing.Size(249, 48);
             this.label1.TabIndex = 21;
             this.label1.Text = "Add Course";
             // 
             // AddCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 207);
+            this.ClientSize = new System.Drawing.Size(745, 356);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonSubmit);
@@ -175,6 +185,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddCourse";
             this.Text = "Add Course";
             this.Load += new System.EventHandler(this.AddCourse_Load);

@@ -45,6 +45,7 @@
             this.txtDuration = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.Label();
+            this.txtNote2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTime
@@ -260,11 +261,22 @@
             this.txtNote.TabIndex = 95;
             this.txtNote.Text = "*Please enter the time as \'2\' if it was 2 PM or \'10\' if 10 AM";
             // 
+            // txtNote2
+            // 
+            this.txtNote2.AutoSize = true;
+            this.txtNote2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote2.Location = new System.Drawing.Point(51, 465);
+            this.txtNote2.Name = "txtNote2";
+            this.txtNote2.Size = new System.Drawing.Size(73, 20);
+            this.txtNote2.TabIndex = 96;
+            this.txtNote2.Text = "*In hours";
+            // 
             // AddSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 606);
+            this.Controls.Add(this.txtNote2);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtDuration);
             this.Controls.Add(this.label7);
@@ -310,5 +322,6 @@
         private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label txtNote;
+        private System.Windows.Forms.Label txtNote2;
     }
 }

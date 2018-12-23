@@ -50,18 +50,20 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(13, 132);
+            this.label4.Location = new System.Drawing.Point(64, 209);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 25);
+            this.label4.Size = new System.Drawing.Size(198, 39);
             this.label4.TabIndex = 68;
             this.label4.Text = "Last Name:";
             // 
             // textBoxEdate
             // 
             this.textBoxEdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEdate.Location = new System.Drawing.Point(222, 170);
+            this.textBoxEdate.Location = new System.Drawing.Point(377, 268);
+            this.textBoxEdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEdate.Name = "textBoxEdate";
-            this.textBoxEdate.Size = new System.Drawing.Size(237, 24);
+            this.textBoxEdate.Size = new System.Drawing.Size(354, 33);
             this.textBoxEdate.TabIndex = 67;
             // 
             // label5
@@ -70,9 +72,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(12, 167);
+            this.label5.Location = new System.Drawing.Point(62, 263);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 25);
+            this.label5.Size = new System.Drawing.Size(290, 39);
             this.label5.TabIndex = 66;
             this.label5.Text = "Enrollment Date:";
             // 
@@ -84,9 +87,10 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonExit.Location = new System.Drawing.Point(524, 157);
+            this.buttonExit.Location = new System.Drawing.Point(553, 423);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.Size = new System.Drawing.Size(237, 54);
             this.buttonExit.TabIndex = 64;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -100,9 +104,10 @@
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonClear.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonClear.Location = new System.Drawing.Point(524, 106);
+            this.buttonClear.Location = new System.Drawing.Point(288, 423);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(176, 35);
+            this.buttonClear.Size = new System.Drawing.Size(237, 54);
             this.buttonClear.TabIndex = 63;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
@@ -116,9 +121,10 @@
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonSubmit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonSubmit.Location = new System.Drawing.Point(524, 53);
+            this.buttonSubmit.Location = new System.Drawing.Point(27, 422);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(176, 36);
+            this.buttonSubmit.Size = new System.Drawing.Size(237, 55);
             this.buttonSubmit.TabIndex = 62;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -130,9 +136,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(13, 93);
+            this.label3.Location = new System.Drawing.Point(64, 149);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 25);
+            this.label3.Size = new System.Drawing.Size(204, 39);
             this.label3.TabIndex = 60;
             this.label3.Text = "First Name:";
             // 
@@ -142,9 +149,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(62, 91);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 25);
+            this.label2.Size = new System.Drawing.Size(202, 39);
             this.label2.TabIndex = 59;
             this.label2.Text = "Student ID:";
             // 
@@ -154,43 +162,48 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 33);
+            this.label1.Size = new System.Drawing.Size(269, 48);
             this.label1.TabIndex = 58;
             this.label1.Text = "Add Student";
             // 
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(222, 53);
+            this.textBoxID.Location = new System.Drawing.Point(377, 88);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(237, 24);
+            this.textBoxID.Size = new System.Drawing.Size(354, 33);
             this.textBoxID.TabIndex = 70;
             // 
             // textBoxFname
             // 
             this.textBoxFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFname.Location = new System.Drawing.Point(222, 93);
+            this.textBoxFname.Location = new System.Drawing.Point(377, 149);
+            this.textBoxFname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(237, 24);
+            this.textBoxFname.Size = new System.Drawing.Size(354, 33);
             this.textBoxFname.TabIndex = 71;
             // 
             // textBoxLname
             // 
             this.textBoxLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLname.Location = new System.Drawing.Point(222, 132);
+            this.textBoxLname.Location = new System.Drawing.Point(377, 209);
+            this.textBoxLname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLname.Name = "textBoxLname";
-            this.textBoxLname.Size = new System.Drawing.Size(237, 24);
+            this.textBoxLname.Size = new System.Drawing.Size(354, 33);
             this.textBoxLname.TabIndex = 72;
             // 
             // textBoxPasswd
             // 
             this.textBoxPasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasswd.Location = new System.Drawing.Point(223, 212);
+            this.textBoxPasswd.Location = new System.Drawing.Point(378, 332);
+            this.textBoxPasswd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPasswd.Name = "textBoxPasswd";
-            this.textBoxPasswd.Size = new System.Drawing.Size(237, 24);
+            this.textBoxPasswd.Size = new System.Drawing.Size(354, 33);
             this.textBoxPasswd.TabIndex = 74;
             // 
             // label6
@@ -199,17 +212,18 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(13, 209);
+            this.label6.Location = new System.Drawing.Point(64, 328);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 25);
+            this.label6.Size = new System.Drawing.Size(183, 39);
             this.label6.TabIndex = 73;
             this.label6.Text = "Password:";
             // 
             // AddStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 261);
+            this.ClientSize = new System.Drawing.Size(816, 503);
             this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxLname);
@@ -224,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddStudent";
             this.Text = "Add Student";
             this.Load += new System.EventHandler(this.AddStudent_Load);

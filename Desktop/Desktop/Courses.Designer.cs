@@ -42,9 +42,10 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonExit.Location = new System.Drawing.Point(374, 73);
+            this.buttonExit.Location = new System.Drawing.Point(229, 199);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.Size = new System.Drawing.Size(264, 54);
             this.buttonExit.TabIndex = 11;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -56,9 +57,10 @@
             this.labelCourse.BackColor = System.Drawing.Color.Transparent;
             this.labelCourse.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.labelCourse.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelCourse.Location = new System.Drawing.Point(10, 23);
+            this.labelCourse.Location = new System.Drawing.Point(15, 35);
+            this.labelCourse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCourse.Name = "labelCourse";
-            this.labelCourse.Size = new System.Drawing.Size(109, 33);
+            this.labelCourse.Size = new System.Drawing.Size(160, 48);
             this.labelCourse.TabIndex = 10;
             this.labelCourse.Text = "Course";
             // 
@@ -70,9 +72,10 @@
             this.buttonEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditCourse.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonEditCourse.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonEditCourse.Location = new System.Drawing.Point(192, 73);
+            this.buttonEditCourse.Location = new System.Drawing.Point(417, 111);
+            this.buttonEditCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditCourse.Name = "buttonEditCourse";
-            this.buttonEditCourse.Size = new System.Drawing.Size(176, 35);
+            this.buttonEditCourse.Size = new System.Drawing.Size(264, 54);
             this.buttonEditCourse.TabIndex = 9;
             this.buttonEditCourse.Text = "Edit Course";
             this.buttonEditCourse.UseVisualStyleBackColor = false;
@@ -86,9 +89,10 @@
             this.buttonAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddCourse.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonAddCourse.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonAddCourse.Location = new System.Drawing.Point(10, 73);
+            this.buttonAddCourse.Location = new System.Drawing.Point(65, 111);
+            this.buttonAddCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddCourse.Name = "buttonAddCourse";
-            this.buttonAddCourse.Size = new System.Drawing.Size(176, 35);
+            this.buttonAddCourse.Size = new System.Drawing.Size(264, 54);
             this.buttonAddCourse.TabIndex = 8;
             this.buttonAddCourse.Text = "Add Course";
             this.buttonAddCourse.UseVisualStyleBackColor = false;
@@ -96,13 +100,14 @@
             // 
             // Courses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 131);
+            this.ClientSize = new System.Drawing.Size(711, 281);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.labelCourse);
             this.Controls.Add(this.buttonEditCourse);
             this.Controls.Add(this.buttonAddCourse);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Courses";
             this.Text = "Courses";
             this.ResumeLayout(false);
