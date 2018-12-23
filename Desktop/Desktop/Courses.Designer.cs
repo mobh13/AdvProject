@@ -49,7 +49,7 @@
             this.buttonExit.TabIndex = 11;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // labelCourse
             // 
@@ -79,7 +79,7 @@
             this.buttonEditCourse.TabIndex = 9;
             this.buttonEditCourse.Text = "Edit Course";
             this.buttonEditCourse.UseVisualStyleBackColor = false;
-            this.buttonEditCourse.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEditCourse.Click += new System.EventHandler(this.ButtonEditCourse_Click);
             // 
             // buttonAddCourse
             // 
@@ -96,7 +96,7 @@
             this.buttonAddCourse.TabIndex = 8;
             this.buttonAddCourse.Text = "Add Course";
             this.buttonAddCourse.UseVisualStyleBackColor = false;
-            this.buttonAddCourse.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddCourse.Click += new System.EventHandler(this.ButtonAddCourse_Click);
             // 
             // Courses
             // 

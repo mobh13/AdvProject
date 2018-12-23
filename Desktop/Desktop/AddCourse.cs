@@ -24,7 +24,7 @@ namespace Desktop
             courseList = new CourseList();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             Course course = new Course();
             course.CourseID = textBoxID.Text.ToString();
@@ -34,7 +34,7 @@ namespace Desktop
             MessageBox.Show("Course Added Successfully!");
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             foreach (Control ctr in Controls)
             {
@@ -45,7 +45,7 @@ namespace Desktop
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

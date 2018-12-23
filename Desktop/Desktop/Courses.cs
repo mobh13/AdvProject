@@ -17,14 +17,14 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonAddCourse_Click(object sender, EventArgs e)
         {
             Form addCourseForm = new AddCourse();
             addCourseForm.StartPosition = FormStartPosition.CenterScreen;
             addCourseForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonEditCourse_Click(object sender, EventArgs e)
         {
             Form editCourseForm = new EditCourse();
             editCourseForm.StartPosition = FormStartPosition.CenterScreen;
@@ -32,7 +32,7 @@ namespace Desktop
 
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -26,7 +26,7 @@ namespace Desktop
             PopulateCourses();
         }
 
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateCourses();
         }
@@ -39,7 +39,7 @@ namespace Desktop
             textBoxCredits.Text = course.Credits;
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             foreach (Control ctr in Controls)
             {
@@ -50,12 +50,12 @@ namespace Desktop
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             Course course = (Course)comboBoxID.SelectedItem;
             course.Title = textBoxTitle.Text;

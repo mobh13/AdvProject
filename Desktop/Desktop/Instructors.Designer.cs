@@ -49,7 +49,7 @@
             this.buttonAddInstructor.TabIndex = 4;
             this.buttonAddInstructor.Text = "Add Instructor";
             this.buttonAddInstructor.UseVisualStyleBackColor = false;
-            this.buttonAddInstructor.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddInstructor.Click += new System.EventHandler(this.ButtonAddInstructor_Click);
             // 
             // buttonEditInstructor
             // 
@@ -65,7 +65,7 @@
             this.buttonEditInstructor.TabIndex = 5;
             this.buttonEditInstructor.Text = "Edit Instructor";
             this.buttonEditInstructor.UseVisualStyleBackColor = false;
-            this.buttonEditInstructor.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEditInstructor.Click += new System.EventHandler(this.ButtonEditInstructor_Click);
             // 
             // labelInstructor
             // 
@@ -93,7 +93,7 @@
             this.buttonExit.TabIndex = 7;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.button3_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonDeleteInstructor
             // 
@@ -109,7 +109,7 @@
             this.buttonDeleteInstructor.TabIndex = 8;
             this.buttonDeleteInstructor.Text = "Delete Instructor";
             this.buttonDeleteInstructor.UseVisualStyleBackColor = false;
-            this.buttonDeleteInstructor.Click += new System.EventHandler(this.button4_Click);
+            this.buttonDeleteInstructor.Click += new System.EventHandler(this.ButtonDeleteInstructor_Click);
             // 
             // Instructors
             // 
@@ -123,6 +123,7 @@
             this.Controls.Add(this.buttonAddInstructor);
             this.Name = "Instructors";
             this.Text = "Instructors";
+            this.Load += new System.EventHandler(this.Instructors_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

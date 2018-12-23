@@ -39,7 +39,7 @@ namespace Desktop
             comboBoxID.SelectedIndex = 0;
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this instructor?",
                "Delete Notice", MessageBoxButtons.YesNo);
@@ -69,9 +69,14 @@ namespace Desktop
             PopulateInstructors();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ComboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

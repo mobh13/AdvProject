@@ -49,7 +49,7 @@
             this.buttonExit.TabIndex = 19;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.button3_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // labelStudent
             // 
@@ -77,7 +77,7 @@
             this.buttonEditStudent.TabIndex = 17;
             this.buttonEditStudent.Text = "Edit Student";
             this.buttonEditStudent.UseVisualStyleBackColor = false;
-            this.buttonEditStudent.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEditStudent.Click += new System.EventHandler(this.ButtonEditStudent_Click);
             // 
             // buttonAddStudent
             // 
@@ -93,7 +93,7 @@
             this.buttonAddStudent.TabIndex = 16;
             this.buttonAddStudent.Text = "Add Student";
             this.buttonAddStudent.UseVisualStyleBackColor = false;
-            this.buttonAddStudent.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click);
             // 
             // buttonDeleteStudent
             // 
@@ -109,7 +109,7 @@
             this.buttonDeleteStudent.TabIndex = 20;
             this.buttonDeleteStudent.Text = "Delete Student";
             this.buttonDeleteStudent.UseVisualStyleBackColor = false;
-            this.buttonDeleteStudent.Click += new System.EventHandler(this.button4_Click);
+            this.buttonDeleteStudent.Click += new System.EventHandler(this.ButtonDeleteStudent_Click);
             // 
             // Students
             // 

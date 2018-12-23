@@ -17,23 +17,28 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonAddLocation_Click(object sender, EventArgs e)
         {
             Form addLocationForm = new AddLocation();
             addLocationForm.Show();
             addLocationForm.Location = this.Location;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonEditLocation_Click(object sender, EventArgs e)
         {
             Form editLocationForm = new EditLocation();
             editLocationForm.Show();
             editLocationForm.Location = this.Location;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Locations_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

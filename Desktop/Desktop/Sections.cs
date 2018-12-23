@@ -17,14 +17,14 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             Form addSectionForm = new AddSection();
             addSectionForm.Show();
             addSectionForm.Location = this.Location;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             Form editSectionForm = new EditSection();
             editSectionForm.Show();
@@ -32,14 +32,14 @@ namespace Desktop
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             Form deleteSectionForm = new DeleteSection();
             deleteSectionForm.Show();
             deleteSectionForm.Location = this.Location;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

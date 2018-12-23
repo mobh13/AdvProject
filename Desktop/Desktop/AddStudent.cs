@@ -26,7 +26,7 @@ namespace Desktop
             textBoxEdate.Text = DateTime.Now.ToString();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             Student student = new Student();
             student.StudentID = textBoxID.Text.ToString();
@@ -38,7 +38,7 @@ namespace Desktop
             MessageBox.Show("Student Added Successfully!");
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             foreach (Control ctr in Controls)
             {
@@ -51,7 +51,7 @@ namespace Desktop
             textBoxEdate.Text = DateTime.Now.ToString();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

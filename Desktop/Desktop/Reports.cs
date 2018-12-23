@@ -17,21 +17,21 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TotalScheduledHoursBtn_Click(object sender, EventArgs e)
         {
             Form totalHoursForm = new TotalHours();
             totalHoursForm.Show();
             totalHoursForm.Location = this.Location;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AverageGradesBtn_Click(object sender, EventArgs e)
         {
             Form averageGradeForm = new AverageGrade();
             averageGradeForm.Show();
             averageGradeForm.Location = this.Location;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

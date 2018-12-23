@@ -26,7 +26,7 @@ namespace Desktop
             PopulateStudents();
         }
 
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateStudents();
         }
@@ -41,7 +41,7 @@ namespace Desktop
             textBoxPasswd.Text = student.Password;
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             foreach (Control ctr in Controls)
             {
@@ -52,12 +52,12 @@ namespace Desktop
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             Student student = (Student)comboBoxID.SelectedItem;
             student.FirstName = textBoxFname.Text;

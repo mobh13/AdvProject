@@ -48,7 +48,7 @@
             this.comboBoxBy.Name = "comboBoxBy";
             this.comboBoxBy.Size = new System.Drawing.Size(354, 37);
             this.comboBoxBy.TabIndex = 94;
-            this.comboBoxBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxBy_SelectedIndexChanged);
+            this.comboBoxBy.SelectedIndexChanged += new System.EventHandler(this.ComboBoxBy_SelectedIndexChanged);
             // 
             // buttonExit
             // 
@@ -65,7 +65,7 @@
             this.buttonExit.TabIndex = 93;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // label2
             // 
@@ -126,7 +126,7 @@
             this.comboBoxFor.Name = "comboBoxFor";
             this.comboBoxFor.Size = new System.Drawing.Size(354, 37);
             this.comboBoxFor.TabIndex = 98;
-            this.comboBoxFor.SelectedIndexChanged += new System.EventHandler(this.comboBoxFor_SelectedIndexChanged);
+            this.comboBoxFor.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFor_SelectedIndexChanged);
             // 
             // label4
             // 

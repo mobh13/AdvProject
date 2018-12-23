@@ -25,7 +25,7 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -49,7 +49,7 @@ namespace Desktop
             comboBoxBy.DataSource = tables;
         }
 
-        private void comboBoxBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxBy.SelectedItem.ToString())
             {
@@ -77,7 +77,7 @@ namespace Desktop
             }
         }
 
-        private void comboBoxFor_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxFor_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxBy.SelectedItem.ToString())
             {

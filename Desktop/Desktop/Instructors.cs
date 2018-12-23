@@ -17,30 +17,35 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonAddInstructor_Click(object sender, EventArgs e)
         {
             Form addInstructorForm = new AddInstructor();
             addInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             addInstructorForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonEditInstructor_Click(object sender, EventArgs e)
         {
             Form editInstructorForm = new EditInstructor();
             editInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             editInstructorForm.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ButtonDeleteInstructor_Click(object sender, EventArgs e)
         {
             Form deleteInstructorForm = new DeleteInstructor();
             deleteInstructorForm.StartPosition = FormStartPosition.CenterScreen;
             deleteInstructorForm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Instructors_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
