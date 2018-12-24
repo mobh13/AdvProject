@@ -21,6 +21,7 @@ namespace Desktop
         CourseList courses = new CourseList();
         private void EditTaughtCourse_Load(object sender, EventArgs e)
         {
+            //populate the lists and combo oxes 
             taughtCourses.Populate();
             this.cmbTaughtCourse.DataSource = taughtCourses.List;
             this.cmbTaughtCourse.SelectedIndex = -1;
@@ -38,6 +39,7 @@ namespace Desktop
             {
                 TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtCourse.SelectedItem;
                 int count = 0;
+                //searches and sets the course in combobox
                 foreach (Course cou in cmbCourse.Items)
                 {
                     if (cou.getID() == tCourse.CourseID)
@@ -47,6 +49,7 @@ namespace Desktop
                     count++;
                 }
                 count = 0;
+                //searches and sets the semester in combobox
                 foreach (String sem in cmbSemester.Items)
                 {
                     if (sem == tCourse.Semester)
@@ -62,6 +65,7 @@ namespace Desktop
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            //clears all controls in the form
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
                 txt.Text = "";
@@ -74,15 +78,17 @@ namespace Desktop
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //closes form
             this.Close();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            //create an object and set properties
             TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtCourse.SelectedItem;
             tCourse.Semester = this.cmbSemester.SelectedItem.ToString();
             tCourse.CourseID = this.cmbCourse.SelectedItem.ToString();
-            //checks if the capacity entered is a number
+            //checks if the capacity entered is a number by checking each character in the number
             Boolean isValid = false;
             foreach (char c in this.txtYear.Text.ToString())
             {
@@ -95,6 +101,7 @@ namespace Desktop
                     isValid = true;
                 }
             }
+            //if valid, set the year. if not, set the default value
             if (isValid)
             {
                 tCourse.Year = this.txtYear.Text.ToString();
@@ -104,16 +111,15 @@ namespace Desktop
                 tCourse.Year = "0000";
                 MessageBox.Show("Year entered is invalid.");
             }
-
+            //updates the created taught course object 
             taughtCourses.Update(tCourse);
-
             if (tCourse.getValid() == true)
             {
                 MessageBox.Show("Taught Course have been updated successfully.");
             }
             else
             {
-                MessageBox.Show("An error has occured. record was not updated.");
+                MessageBox.Show("An error has occured. Record was not updated.");
             }
         }
     }

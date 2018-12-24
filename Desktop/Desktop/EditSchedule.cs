@@ -13,17 +13,22 @@ namespace Desktop
 {
     public partial class EditSchedule : Form
     {
+        //declaring the class variables to be usued in the form
+        ScheduleList schedules;
+        SectionList sections;
+        LocationList locations;
         public EditSchedule()
         {
             InitializeComponent();
+            locations = new LocationList();
+            sections = new SectionList();
+            locations = new LocationList();
         }
 
-        ScheduleList schedules = new ScheduleList();
-        SectionList sections = new SectionList();
-        LocationList locations = new LocationList();
 
         private void EditSchedule_Load(object sender, EventArgs e)
         {
+            //load all the objects in the comboboxes 
             schedules.Populate();
             this.cmbSchedules.DataSource = schedules.List;
             this.cmbSchedules.SelectedIndex = -1;
@@ -35,7 +40,7 @@ namespace Desktop
             locations.Populate();
             this.cmbLocations.DataSource = locations.List;
             this.cmbLocations.SelectedIndex = -1;
-
+            //set the days in the combobox so the user won't enter them manually
             string[] days = { "Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday" };
             foreach (string day in days)
             {
@@ -49,10 +54,13 @@ namespace Desktop
 
         private void cmbSchedules_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //checks if the combo box has a selection or not
             if (this.cmbSchedules.SelectedIndex != -1)
             {
+                //create an object to store the new information
                 Schedule schedule = (Schedule)this.cmbSchedules.SelectedItem;
                 int count = 0;
+                //for each loop to set the section in the combobox by comparing IDs
                 foreach (Section sec in cmbSections.Items)
                 {
                     if (sec.getID() == schedule.SectionID)
@@ -62,6 +70,7 @@ namespace Desktop
                     count++;
                 }
                 count = 0;
+                //for each loop to set the location in the combobox by comparing IDs
                 foreach (Location loc in cmbLocations.Items)
                 {
                     if (loc.getID() == schedule.LocationID)
@@ -71,6 +80,7 @@ namespace Desktop
                     count++;
                 }
                 count = 0;
+                //for each loop to set the day 
                 foreach (String day in cmbDays.Items)
                 {
                     if (day == schedule.Day)
@@ -79,6 +89,7 @@ namespace Desktop
                     }
                     count++;
                 }
+                //setting the text boxes directly
                 this.txtTime.Text = schedule.Time.ToString();
                 this.txtDuration.Text = schedule.Duration.ToString();
             }
@@ -86,6 +97,7 @@ namespace Desktop
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            //clearing all the comboboxes and textboxes
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
                     txt.Text = "";
@@ -98,11 +110,13 @@ namespace Desktop
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //close the form
             this.Close();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            //saving the new and old properties from the textboxes to be compared
             Schedule sch = (Schedule)this.cmbSchedules.SelectedItem;
             Section section = (Section)this.cmbSections.SelectedItem;
             string newSID = section.getID();
@@ -116,25 +130,22 @@ namespace Desktop
             string newDuration = this.txtDuration.Text.ToString();
             string oldTime = sch.Time;
             string newTime = this.txtTime.Text.ToString();
-
+            //checks if the section ID, day, duration or time have been changed in orderd to check for doube scheduling with the new information
             if (newSID != oldSID || oldDay != newDay || newDuration != oldDuration 
                 || newTime != oldTime)
             {
                 sch.SectionID = newSID;
                 sch.Time = newTime;
-                Boolean isValid = false;
-                //checks if the duration enters is valid
+                Boolean isValid = true;
+                //checks if the duration enters is valid by comparing each character and setting a boolean to false
                 foreach (char c in newDuration.ToString())
                 {
                     if (c < '0' || c > '9')
                     {
                         isValid = false;
                     }
-                    else
-                    {
-                        isValid = true;
-                    }
                 }
+                //assigns the duration if it is valid and assign a 0 if not
                 if (isValid)
                 {
                     sch.Duration = newDuration;
@@ -144,14 +155,14 @@ namespace Desktop
                     sch.Duration = "0";
                     MessageBox.Show("Duration entered is invalid.");
                 }
-               
                 sch.Day = newDay;
-                //check double scheduling for instructor using sectionID
+                //loop to check if the instructor is busy during the whole schedule. Using the start time and the duration.
                 Boolean chkInstructor = false;
                 int checkTime = Convert.ToInt32(sch.Time);
                 int schDuration = Convert.ToInt32(sch.Duration);
                 while (schDuration >= 1 & !chkInstructor)
                 {
+                    //call the exist method with each time a new time during the duration of the schedules
                     chkInstructor = schedules.Exist("Section", "Schedule.SectionID", "Section.SectionID", "Day", "'" + sch.Day.ToString() + "'",
                     "Time", checkTime.ToString(), "Section.instructorID", section.InstructorID.ToString());
                     checkTime++;
@@ -159,14 +170,18 @@ namespace Desktop
                 }
                 if (!chkInstructor)
                 {
+                    //checks if the location is busy at the time and day
                     Boolean chkLocation = schedules.Exist("Day", sch.Day.ToString(), "Time",
                         sch.Time.ToString(), "LocationID", sch.LocationID.ToString());
                     if (!chkLocation)
                     {
+                        //if all conditions are satified, check for the capacity
                         if (Convert.ToInt32(section.Capacity) <= Convert.ToInt32(location.Capacity))
                         {
+                            //update the schedules by passing the schedule obeject in the method
                             schedules.Update(sch);
                         }
+                        // print error messsages if any occured during the runtime
                         else
                         {
                             MessageBox.Show("Section's capacity is larger than the location's capacity.");
@@ -182,11 +197,17 @@ namespace Desktop
                     MessageBox.Show("Instructor is busy at this time.");
                 }
             }
+            //if the schedule only changed the location id, no need for checking double scheduling
             else if (newLID != oldLID)
             {
-                sch.LocationID = newLID;
-                schedules.Update(sch);
+                //check the capacity of the section against the location
+                if (Convert.ToInt32(section.Capacity) <= Convert.ToInt32(location.Capacity))
+                {
+                    sch.LocationID = newLID;
+                    schedules.Update(sch);
+                }
             }
+            //print messages appropiatly
             if (sch.getValid() == true)
             {
                 MessageBox.Show("Schedule have been updated successfully.");
