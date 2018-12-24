@@ -14,6 +14,7 @@ namespace Desktop
     The Studetns class
     Contains all methods for opening the forms related to Student functionalities
     */
+
     public partial class Students : Form
     {
         public Students()
@@ -49,6 +50,11 @@ namespace Desktop
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Students_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

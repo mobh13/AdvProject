@@ -13,35 +13,38 @@ namespace Desktop
 {
     public partial class DeleteTaughtCourse : Form
     {
-        public DeleteTaughtCourse()
-        {
-            InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        //class level variables
         ScheduleList scheduleList;
         SectionStudentList sectionStudentList;
         SectionList sectionList;
         TaughtCourseList taughtCourses;
 
-        private void DeleteTaughtCourse_Load(object sender, EventArgs e)
+        public DeleteTaughtCourse()
         {
+            InitializeComponent();
             taughtCourses = new TaughtCourseList();
             scheduleList = new ScheduleList();
             sectionStudentList = new SectionStudentList();
             sectionList = new SectionList();
+        }
+        //closes the form
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //on load, populate the taught course list and set the combobox to it
+        private void DeleteTaughtCourse_Load(object sender, EventArgs e)
+        {
             taughtCourses.Populate();
             this.cmbTaughtID.DataSource = taughtCourses.List;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //prompts a validation message to ensure selection
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this taught course?",
                "Delete Notice", MessageBoxButtons.YesNo);
+            //if yes, the taught course object is created and passed to be deleted
             if (dialogResult == DialogResult.Yes)
             {
                 TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtID.SelectedItem;
@@ -54,14 +57,14 @@ namespace Desktop
                 sectionList.Delete("TaughtCourseID", cmbTaughtID.SelectedItem.ToString());
                 //Delete Taught Course From Taught Courses Table Second
                 taughtCourses.Delete(tCourse);
-
+                //checks if the execution was a seccuess or not
                 if (tCourse.getValid() == true)
                 {
                     MessageBox.Show("Taught Course has been deleted successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("An error has occured. record was not added.");
+                    MessageBox.Show("An error has occured. Record was not deleted.");
                 }
                 
             }

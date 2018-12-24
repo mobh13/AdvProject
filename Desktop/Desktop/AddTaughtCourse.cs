@@ -107,6 +107,7 @@ namespace Desktop
             }
             else
             {
+                //prompt an error message for user indicating error
                 MessageBox.Show("An error has occured. record was not added.");
             }
         }

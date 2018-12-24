@@ -48,7 +48,6 @@ namespace Desktop
                     }
                 }
             }
-
             //Check if there is an empty field that wasn't put
             if (isValid)
             {
@@ -75,7 +74,6 @@ namespace Desktop
             {
                 MessageBox.Show("A field is empty");
             }
-                
         }
 
         //Used to clear all the textboses and refilling required data

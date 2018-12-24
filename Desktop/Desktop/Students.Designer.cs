@@ -43,9 +43,10 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonExit.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonExit.Location = new System.Drawing.Point(241, 168);
+            this.buttonExit.Location = new System.Drawing.Point(362, 258);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(176, 35);
+            this.buttonExit.Size = new System.Drawing.Size(264, 54);
             this.buttonExit.TabIndex = 19;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -57,9 +58,10 @@
             this.labelStudent.BackColor = System.Drawing.Color.Transparent;
             this.labelStudent.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.labelStudent.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelStudent.Location = new System.Drawing.Point(12, 27);
+            this.labelStudent.Location = new System.Drawing.Point(18, 42);
+            this.labelStudent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStudent.Name = "labelStudent";
-            this.labelStudent.Size = new System.Drawing.Size(121, 33);
+            this.labelStudent.Size = new System.Drawing.Size(180, 48);
             this.labelStudent.TabIndex = 18;
             this.labelStudent.Text = "Student";
             // 
@@ -71,9 +73,10 @@
             this.buttonEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditStudent.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonEditStudent.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonEditStudent.Location = new System.Drawing.Point(241, 87);
+            this.buttonEditStudent.Location = new System.Drawing.Point(362, 134);
+            this.buttonEditStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditStudent.Name = "buttonEditStudent";
-            this.buttonEditStudent.Size = new System.Drawing.Size(176, 35);
+            this.buttonEditStudent.Size = new System.Drawing.Size(264, 54);
             this.buttonEditStudent.TabIndex = 17;
             this.buttonEditStudent.Text = "Edit Student";
             this.buttonEditStudent.UseVisualStyleBackColor = false;
@@ -87,9 +90,10 @@
             this.buttonAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddStudent.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonAddStudent.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonAddStudent.Location = new System.Drawing.Point(17, 87);
+            this.buttonAddStudent.Location = new System.Drawing.Point(26, 134);
+            this.buttonAddStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddStudent.Name = "buttonAddStudent";
-            this.buttonAddStudent.Size = new System.Drawing.Size(176, 35);
+            this.buttonAddStudent.Size = new System.Drawing.Size(264, 54);
             this.buttonAddStudent.TabIndex = 16;
             this.buttonAddStudent.Text = "Add Student";
             this.buttonAddStudent.UseVisualStyleBackColor = false;
@@ -103,9 +107,10 @@
             this.buttonDeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteStudent.Font = new System.Drawing.Font("Tahoma", 15F);
             this.buttonDeleteStudent.ForeColor = System.Drawing.Color.LightCyan;
-            this.buttonDeleteStudent.Location = new System.Drawing.Point(17, 168);
+            this.buttonDeleteStudent.Location = new System.Drawing.Point(26, 258);
+            this.buttonDeleteStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDeleteStudent.Name = "buttonDeleteStudent";
-            this.buttonDeleteStudent.Size = new System.Drawing.Size(176, 35);
+            this.buttonDeleteStudent.Size = new System.Drawing.Size(264, 54);
             this.buttonDeleteStudent.TabIndex = 20;
             this.buttonDeleteStudent.Text = "Delete Student";
             this.buttonDeleteStudent.UseVisualStyleBackColor = false;
@@ -113,16 +118,18 @@
             // 
             // Students
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 255);
+            this.ClientSize = new System.Drawing.Size(682, 392);
             this.Controls.Add(this.buttonDeleteStudent);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.labelStudent);
             this.Controls.Add(this.buttonEditStudent);
             this.Controls.Add(this.buttonAddStudent);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Students";
             this.Text = "Students";
+            this.Load += new System.EventHandler(this.Students_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
