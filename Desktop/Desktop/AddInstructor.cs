@@ -28,14 +28,42 @@ namespace Desktop
 
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            Instructor instructor = new Instructor();
-            instructor.InstructorID = textBoxID.Text.ToString();
-            instructor.FirstName = textBoxFname.Text;
-            instructor.LastName = textBoxlName.Text;
-            instructor.HireDate = textBoxHdate.Text;
-            instructor.Password = textBoxPasswd.Text;
-            instructorList.Add(instructor);
-            MessageBox.Show("Instructor Added Successfully!");
+            bool isValid = true;
+            foreach (Control ctr in Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    if (ctr.Text == "" || ctr.Text is null)
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+            if (isValid)
+            {
+                Instructor instructor = new Instructor();
+                instructor.InstructorID = textBoxID.Text.ToString();
+                instructor.FirstName = textBoxFname.Text;
+                instructor.LastName = textBoxlName.Text;
+                instructor.HireDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                instructor.Password = textBoxPasswd.Text;
+                instructorList.Add(instructor);
+                if (instructor.getValid())
+                {
+                    MessageBox.Show("Instructor Added Successfully!");
+
+                }
+                else
+                {
+                    MessageBox.Show(instructor.geterrorMessage());
+                }
+            } else
+            {
+                MessageBox.Show("A field is empty");
+            }
+               
+
+
         }
 
         private void ButtonClear_Click(object sender, EventArgs e)

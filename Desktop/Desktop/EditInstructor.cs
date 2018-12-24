@@ -59,14 +59,40 @@ namespace Desktop
 
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            Instructor instructor = (Instructor)comboBoxID.SelectedItem;
-            instructor.FirstName = textBoxFname.Text;
-            instructor.LastName = textBoxlName.Text;
-            instructor.HireDate = textBoxHdate.Text;
-            instructor.Password = textBoxPasswd.Text;
-            instructorList.Update(instructor);
-            MessageBox.Show("Instructor Updated Successfully!");
-            PopulateInstructors();
+            bool isValid = true;
+            foreach (Control ctr in Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    if (ctr.Text == "" || ctr.Text is null)
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+
+            if (isValid)
+            {
+                Instructor instructor = (Instructor)comboBoxID.SelectedItem;
+                instructor.FirstName = textBoxFname.Text;
+                instructor.LastName = textBoxlName.Text;
+                instructor.HireDate = DateTime.Parse(textBoxHdate.Text).ToString("yyyy-MM-dd HH:mm:ss.fff");
+                instructor.Password = textBoxPasswd.Text;
+
+                instructorList.Update(instructor);
+                if (instructor.getValid())
+                {
+                    MessageBox.Show("Instructor Updated Successfully!");
+                    PopulateInstructors();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured");
+                }
+            } else
+            {
+                MessageBox.Show("A field is empty");
+            }
         }
     }
 }

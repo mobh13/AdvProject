@@ -13,16 +13,19 @@ namespace Desktop
 {
     public partial class AverageGrade : Form
     {
+        //declaring 
+        SectionList sections;
+        StudentList students;
+        CourseList courses;
+        SectionStudentList secStuds;
         public AverageGrade()
         {
             InitializeComponent();
+            sections = new SectionList();
+            students = new StudentList();
+            courses = new CourseList();
+            secStuds = new SectionStudentList();
         }
-        
-        // Section, Student and Course
-        SectionList sections = new SectionList();
-        StudentList students = new StudentList();
-        CourseList courses = new CourseList();
-        SectionStudentList secStuds = new SectionStudentList();
 
         private void AverageGrade_Load(object sender, EventArgs e)
         {
