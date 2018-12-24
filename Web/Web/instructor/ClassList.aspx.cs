@@ -93,7 +93,7 @@ namespace Web.instructor
 				Location location = (Location)locationList.List.ElementAt(0); // get the first element in the list and cast it to ( Location )
 				instructorList.Filter("InstructorID", section.InstructorID); // filter the instructorList with the instructorID from section object
 				Instructor instructor = (Instructor)instructorList.List.ElementAt(0); // get the first element in the list and cast it to ( Instructor )
-				table.Rows.Add(taughtcourse.CourseID, section.getID(), course.Title, location.Name, schedule.Time, schedule.Day); // add information as row to the table object
+				table.Rows.Add(taughtcourse.CourseID, section.getID(), course.Title, location.Name, schedule.Time, schedule.Day, instructor.FirstName + " " + instructor.LastName); // add information as row to the table object
 
 			}
 			allclassListGrid.DataSource = table; // set table as the dataSource of the grid view

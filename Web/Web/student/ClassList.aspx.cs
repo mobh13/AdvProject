@@ -195,11 +195,7 @@ namespace Web.student
 						sectionStudentList.Filter("SectionID", sectionId); // filter sectionstudentList by section id 
 						int total = sectionStudentList.List.Count; // get the count of the students that already registerd in the section
 						total = total + 1; // add one to the count 
-						Schedule schedule = new Schedule(scheduleID); // create new schedule object and pass schedule id
-						scheduleList.Populate(schedule); // populate schedule object
-						Location location = new Location(schedule.LocationID); // create new location object and pass id from the schedule object
-						locationList.Populate(location); //poulate the location object
-						if (Convert.ToInt32(location.Capacity) >= total)
+						if (Convert.ToInt32(section.Capacity) >= total)
 						{
 							/* if the loccation capicty greater or equal to toatal var then add student to the section */
 							SectionStudent sectionStudent = new SectionStudent(sectionId, studentID); // create new sectionStudent object
