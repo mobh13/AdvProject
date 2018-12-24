@@ -35,10 +35,13 @@ namespace Desktop
         //on load, populate the taught course list and set the combobox to it
         private void DeleteTaughtCourse_Load(object sender, EventArgs e)
         {
+            loadTCourses();
+        }
+        void loadTCourses()
+        {
             taughtCourses.Populate();
             this.cmbTaughtID.DataSource = taughtCourses.List;
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //prompts a validation message to ensure selection
@@ -66,7 +69,7 @@ namespace Desktop
                 {
                     MessageBox.Show("An error has occured. Record was not deleted.");
                 }
-                
+                loadTCourses();
             }
         }
     }

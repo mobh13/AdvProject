@@ -24,11 +24,14 @@ namespace Desktop
 
         private void DeleteSchedule_Load(object sender, EventArgs e)
         {
-            //populating all the schedules in the combobox
+            loadSchedules();
+        }
+        //populating all the schedules in the combobox
+        void loadSchedules()
+        {
             schedules.Populate();
             this.cmbSchedules.DataSource = schedules.List;
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             //closing the form
@@ -46,6 +49,7 @@ namespace Desktop
                 //creates an object from the selected combobox and passed to the delete method
                 Schedule sch = (Schedule) this.cmbSchedules.SelectedItem;
                 schedules.Delete(sch);
+                loadSchedules();
                 if (sch.getValid())
                 {
                     MessageBox.Show("Schedule has been deleted successfully!");

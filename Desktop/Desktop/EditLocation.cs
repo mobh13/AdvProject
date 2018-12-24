@@ -42,15 +42,12 @@ namespace Desktop
         {
             //foreach loop that checks all controls and whether if they are empty or not.
             bool isEmpty =  false;
-            foreach (Control ctl in this.Controls)
+            foreach (Control ctl in this.Controls.OfType<TextBox>())
             {
-                if (ctl.Name == "TextBox" || ctl.Name == "ComboBox")
-                {
                     if (ctl.Text == "" || ctl.Text == null)
                     {
                         isEmpty = true;
                     }
-                }
             }
             //checks the boolean and see if any controls are empty
             if (isEmpty == false)

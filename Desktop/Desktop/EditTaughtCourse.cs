@@ -31,6 +31,8 @@ namespace Desktop
             this.cmbCourse.SelectedIndex = -1;
 
             this.txtYear.Text = "";
+
+            this.cmbSemester.SelectedIndex = -1;
         }
 
         private void cmbTaughtCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,43 +86,55 @@ namespace Desktop
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //create an object and set properties
-            TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtCourse.SelectedItem;
-            tCourse.Semester = this.cmbSemester.SelectedItem.ToString();
-            tCourse.CourseID = this.cmbCourse.SelectedItem.ToString();
-            //checks if the capacity entered is a number by checking each character in the number
-            Boolean isValid = false;
-            foreach (char c in this.txtYear.Text.ToString())
+            //foreach loop that checks all controls and whether if they are empty or not.
+            bool isEmpty = false;
+            foreach (Control ctl in this.Controls.OfType<ComboBox>())
             {
-                if (c < '0' || c > '9')
+                if (ctl.Text == "" || ctl.Text == null)
                 {
-                    isValid = false;
+                    isEmpty = true;
+                }
+            }
+            if (isEmpty == false)
+            {
+                //create an object and set properties
+                TaughtCourse tCourse = (TaughtCourse)this.cmbTaughtCourse.SelectedItem;
+                tCourse.Semester = this.cmbSemester.SelectedItem.ToString();
+                tCourse.CourseID = this.cmbCourse.SelectedItem.ToString();
+                //checks if the capacity entered is a number by checking each character in the number
+                Boolean isValid = false;
+                foreach (char c in this.txtYear.Text.ToString())
+                {
+                    if (c < '0' || c > '9')
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
+                }
+                //if valid, set the year. if not, set the default value
+                if (isValid)
+                {
+                    tCourse.Year = this.txtYear.Text.ToString();
                 }
                 else
                 {
-                    isValid = true;
+                    tCourse.Year = "0000";
+                    MessageBox.Show("Year entered is invalid.");
                 }
-            }
-            //if valid, set the year. if not, set the default value
-            if (isValid)
-            {
-                tCourse.Year = this.txtYear.Text.ToString();
-            }
-            else
-            {
-                tCourse.Year = "0000";
-                MessageBox.Show("Year entered is invalid.");
-            }
-            //updates the created taught course object 
-            taughtCourses.Update(tCourse);
-            if (tCourse.getValid() == true)
-            {
-                MessageBox.Show("Taught Course have been updated successfully.");
-            }
-            else
-            {
-                MessageBox.Show("An error has occured. Record was not updated.");
-            }
+                //updates the created taught course object 
+                taughtCourses.Update(tCourse);
+                if (tCourse.getValid() == true)
+                {
+                    MessageBox.Show("Taught Course have been updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured. Record was not updated.");
+                }
+           }
         }
     }
 }

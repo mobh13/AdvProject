@@ -39,5 +39,8 @@ namespace Desktop
         {
             this.Close();
         }
-    }
+        private void Locations_Load(object sender, EventArgs e)
+        {
+        }
+        }
 }
