@@ -11,6 +11,10 @@ using DB;
 
 namespace Desktop
 {
+    /*
+    The Add Course class
+    Contains all methods for creating a course to the Courses table
+    */
     public partial class AddCourse : Form
     {
         CourseList courseList;
@@ -19,11 +23,13 @@ namespace Desktop
             InitializeComponent();
         }
 
+        //Responsible to instantiate the courseList object
         private void AddCourse_Load(object sender, EventArgs e)
         {
             courseList = new CourseList();
         }
 
+        //Responsible of submitting the course with all its details to the database
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             Course course = new Course();
@@ -34,8 +40,10 @@ namespace Desktop
             MessageBox.Show("Course Added Successfully!");
         }
 
+        //Used to clear all the textboses and refilling required data
         private void ButtonClear_Click(object sender, EventArgs e)
         {
+            //for loop to clear the controls which are textboxes
             foreach (Control ctr in Controls)
             {
                 if (ctr is TextBox)
@@ -45,6 +53,7 @@ namespace Desktop
             }
         }
 
+        //Used to exit the current opened form
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();

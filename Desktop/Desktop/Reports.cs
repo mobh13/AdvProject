@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
+    /*
+    The Reports class
+    Contains all methods for opening the forms related to wanted Reports functionalities
+    */
     public partial class Reports : Form
     {
         public Reports()
@@ -17,6 +21,7 @@ namespace Desktop
             InitializeComponent();
         }
 
+        //Instantaites and opens the Total Scheduled Hours form
         private void TotalScheduledHoursBtn_Click(object sender, EventArgs e)
         {
             Form totalHoursForm = new TotalHours();
@@ -24,6 +29,7 @@ namespace Desktop
             totalHoursForm.Location = this.Location;
         }
 
+        //Instantaites and opens the Average Grades form
         private void AverageGradesBtn_Click(object sender, EventArgs e)
         {
             Form averageGradeForm = new AverageGrade();
@@ -31,6 +37,7 @@ namespace Desktop
             averageGradeForm.Location = this.Location;
         }
 
+        //Exit this opened form
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();

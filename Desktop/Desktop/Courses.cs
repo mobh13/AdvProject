@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
+    /*
+    The Courses class
+    Contains all methods for opening the forms related to Course functionalities
+    */
     public partial class Courses : Form
     {
         public Courses()
@@ -17,6 +21,7 @@ namespace Desktop
             InitializeComponent();
         }
 
+        //Instantaites and opens the Add Course form 
         private void ButtonAddCourse_Click(object sender, EventArgs e)
         {
             Form addCourseForm = new AddCourse();
@@ -24,6 +29,7 @@ namespace Desktop
             addCourseForm.Show();
         }
 
+        //Instantaites and opens the Edit Course form 
         private void ButtonEditCourse_Click(object sender, EventArgs e)
         {
             Form editCourseForm = new EditCourse();
@@ -32,9 +38,15 @@ namespace Desktop
 
         }
 
+        //Exit the current page
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Courses_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
