@@ -24,15 +24,27 @@ namespace Web.instructor
 		protected string sectionId;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-        /*
-		 * check if the user session exist and Account session value is Instructor
-		 */
-			if (Session["User"] != null && Session["Account"].ToString() == "Instructor")
+			if(Request.QueryString["cls"] == null)
+			{
+				/* check if there is no query string then */
+				Response.Write("Error No class requested"); // show error message
+				Response.End(); // stop page excution
+			}
+			else
+			{
+				sectionList = new SectionList(); // this is needed to check if the section id is valid so we instantiate it before the rest
+				sectionList.Filter("SectionID", Request.QueryString["cls"]); //  filter the section with the section id to check if the section id exist
+				
+			}
+			
+			/*
+			 * check if the user session exist and Account session value is Instructor and the sectionID is valid
+			 */
+			if (Session["User"] != null && Session["Account"].ToString() == "Instructor" && sectionList.List.Count != 0)
 			{
 	    	/*
 			 * instantiate classes when the page loads 
 		     */
-				sectionList = new SectionList();
 				sectionStudentList = new SectionStudentList();
 				studentList = new StudentList();
 				taughtCoursesList = new TaughtCourseList();
@@ -56,16 +68,22 @@ namespace Web.instructor
 			/*
 			 * else if the user session exist but the account session value is not student show error message 
 			 */
-				Response.Write("Error You are not allowed to be here");
-				Response.End();
+				Response.Write("Error You are not allowed to be here");// show error message
+				Response.End();// stop page excution
+			}
+			else if (Session["User"] != null && Session["Account"].ToString() == "Instructor" && sectionList.List.Count == 0)
+			{
+				/* else if the user session exist and Account session value is Instructor and the sectionID is not valid */
+				Response.Write("Error Class not found");// show error message
+				Response.End();// stop page excution
 			}
 			else
 			{
 			/*
 			 * else show error message
 			 */
-				Response.Write("Error please log in before trying to Access this page..!");
-				Response.End();
+				Response.Write("Error please log in before trying to Access this page..!");// show error message
+				Response.End();// stop page excution
 			}
 		}
 		/* Method: GenerateTable
@@ -100,12 +118,32 @@ namespace Web.instructor
 
 		}
 		protected void SubmitMarks_Click(object sender, EventArgs e)
-		{
-			/* this method is called when the submit mark button is clicked*/
-			GridViewRow row = detailsGridView.SelectedRow; // decalre a gridview var and assign it to the selected row in the my classes grid view
-			SectionStudent sectionStudent = new SectionStudent(sectionId, row.Cells[1].Text.ToString()); //declare sectionstudent object and pass the section id as id and student id as a joinID
-			sectionStudent.Grade = Mark.Text; // set the sectionStudent grade as the mark text box value
-			sectionStudentList.Update(sectionStudent); // update the section student record with the new information
+		{   /* this method is called when the submit mark button is clicked*/
+			double test; // create a dummy double var 
+
+			/*validate if the input can be converted to a double , this method returns true if the 
+			 * result can be converted and false if not. assign the result of this method to the 
+			 * createe bool var called Isvalid
+			 * 
+			 * this is an input validation for the mark input
+			 */
+			bool IsValid = double.TryParse(Mark.Text, out test);
+
+			if (IsValid)
+			{
+				/* if the input is valid and can be converted to double then */
+				GridViewRow row = detailsGridView.SelectedRow; // decalre a gridview var and assign it to the selected row in the my classes grid view
+				SectionStudent sectionStudent = new SectionStudent(sectionId, row.Cells[1].Text.ToString()); //declare sectionstudent object and pass the section id as id and student id as a joinID
+				sectionStudent.Grade = Mark.Text; // set the sectionStudent grade as the mark text box value
+				sectionStudentList.Update(sectionStudent); // update the section student record with the new information
+			}
+			else
+			{
+				/* else show error message in a popup */
+				ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Error", "alert('Please enter a valid mark !')", true); // show a message in a popup
+
+			}
+
 
 		}
 	}

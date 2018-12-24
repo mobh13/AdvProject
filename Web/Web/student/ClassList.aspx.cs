@@ -155,7 +155,9 @@ namespace Web.student
 					{
 						/* forEach element in the scheduleList */
 
-						exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID()); //check if the student has a class in that day and time
+						// exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID()); //check if the student has a class in that day and time --  //this is the 12 parameter method 
+						exist = scheduleList.Exist("Section", "SectionID", "SectionID", "SectionStudent", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());//check if the student has a class in that day and time -- this is the less parameters method
+
 						scheduleID = schedule.getID(); // get the schedule id
 						while (Convert.ToInt32(schedule.Duration) > 1 && !exist)
 
@@ -165,7 +167,10 @@ namespace Web.student
 							 */
 							int newTime = Convert.ToInt32(schedule.Time) + 1; // get the new time by the adding 1 to the schedule time
 							schedule.Time = newTime.ToString(); // assign the new time to the schedule object time
-							exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());//check if the student has a class in that day and time
+
+							// exist = scheduleList.Exist("Section", "Schedule.SectionID", "Section.SectionID", "SectionStudent", "Section.SectionID", "SectionStudent.SectionID", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID()); //check if the student has a class in that day and time --  //this is the 12 parameter method 
+							exist = scheduleList.Exist("Section", "SectionID", "SectionID", "SectionStudent", "Day", schedule.Day, "Time", schedule.Time, "StudentID", student.getID());//check if the student has a class in that day and time -- this is the less parameters method
+
 							int duration = Convert.ToInt32(schedule.Duration) - 1; // decrease the duration by 1
 							schedule.Duration = duration.ToString(); // assign the new duration to the schedule object
 						}
