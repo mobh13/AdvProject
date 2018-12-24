@@ -73,18 +73,46 @@ namespace Desktop
         //Responsible of updating the student with all its details to the database
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            //Taking all the details from text boxes (submitted by user) and fill it in an Student object
-            Student student = (Student)comboBoxID.SelectedItem;
-            student.FirstName = textBoxFname.Text;
-            student.LastName = textBoxlName.Text;
-            student.EnrollmentDate = textBoxEdate.Text;
-            student.Password = textBoxPasswd.Text;
-            //Update the student
-            studentList.Update(student);
-            //Show confirmation message
-            MessageBox.Show("Student Updated Successfully!");
-            //Re-populate the ID combobox
-            PopulateStudents();
+            //Check if there is an empty field
+            bool isValid = true;
+            foreach (Control ctr in Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    if (ctr.Text == "" || ctr.Text is null)
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+
+            //Check if there is an empty field that wasn't put
+            if (isValid)
+            {
+                //Taking all the details from text boxes (submitted by user) and fill it in an Student object
+                Student student = (Student)comboBoxID.SelectedItem;
+                student.FirstName = textBoxFname.Text;
+                student.LastName = textBoxlName.Text;
+                student.EnrollmentDate = textBoxEdate.Text;
+                student.Password = textBoxPasswd.Text;
+                //Update the student
+                studentList.Update(student);
+                if (student.getValid())
+                {
+                    //Show confirmation message
+                    MessageBox.Show("Student Updated Successfully!");
+                    //Show confirmation message
+                    PopulateStudents();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured");
+                }
+            } else
+            {
+                MessageBox.Show("A field is empty");
+            }
+
         }
     }
 }

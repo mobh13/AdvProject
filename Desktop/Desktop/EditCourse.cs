@@ -71,16 +71,44 @@ namespace Desktop
         //Responsible of updating the course with all its details to the database
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            //Taking all the details from text boxes (submitted by user) and fill it in an course object
-            Course course = (Course)comboBoxID.SelectedItem;
-            course.Title = textBoxTitle.Text;
-            course.Credits = textBoxCredits.Text;
-            //Update the course
-            courseList.Update(course);
-            //Show confirmation message
-            MessageBox.Show("Course Updated Successfully!");
-            //Re-populate the ID combobox
-            PopulateCourses();
+            //Check if there is an empty field
+            bool isValid = true;
+            foreach (Control ctr in Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    if (ctr.Text == "" || ctr.Text is null)
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+
+            //Check if there is an empty field that wasn't put
+            if (isValid)
+            {
+                //Taking all the details from text boxes (submitted by user) and fill it in an course object
+                Course course = (Course)comboBoxID.SelectedItem;
+                course.Title = textBoxTitle.Text;
+                course.Credits = textBoxCredits.Text;
+                //Update the course
+                courseList.Update(course);
+                if (course.getValid())
+                {
+                    //Show confirmation message
+                    MessageBox.Show("Course Updated Successfully!");
+                    //Show confirmation message
+                    PopulateCourses();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured");
+                }
+            } else
+            {
+                MessageBox.Show("A field is empty");
+            }
+                
         }
     }
 }

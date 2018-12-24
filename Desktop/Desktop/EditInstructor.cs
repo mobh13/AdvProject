@@ -73,18 +73,48 @@ namespace Desktop
         //Responsible of updating the instructor with all its details to the database
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            //Taking all the details from text boxes (submitted by user) and fill it in an Instructor object
-            Instructor instructor = (Instructor)comboBoxID.SelectedItem;
-            instructor.FirstName = textBoxFname.Text;
-            instructor.LastName = textBoxlName.Text;
-            instructor.HireDate = textBoxHdate.Text;
-            instructor.Password = textBoxPasswd.Text;
-            //Update the instructor
-            instructorList.Update(instructor);
-            //Show confirmation message
-            MessageBox.Show("Instructor Updated Successfully!");
-            //Re-populate the ID combobox
-            PopulateInstructors();
+            //Check if there is an empty field
+            bool isValid = true;
+            foreach (Control ctr in Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    if (ctr.Text == "" || ctr.Text is null)
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+
+            //Check if there is an empty field that wasn't put
+            if (isValid)
+            {
+                //Taking all the details from text boxes (submitted by user) and fill it in an Instructor object
+                Instructor instructor = (Instructor)comboBoxID.SelectedItem;
+                instructor.FirstName = textBoxFname.Text;
+                instructor.LastName = textBoxlName.Text;
+                instructor.HireDate = DateTime.Parse(textBoxHdate.Text).ToString("yyyy-MM-dd HH:mm:ss.fff");
+                instructor.Password = textBoxPasswd.Text;
+                //Update the instructor
+                instructorList.Update(instructor);
+                if (instructor.getValid())
+                {
+                    //Show confirmation message
+                    MessageBox.Show("Instructor Updated Successfully!");
+                    //Show confirmation message
+                    PopulateInstructors();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured");
+                }
+            }
+            else
+            {
+                MessageBox.Show("A field is empty");
+            }
+
         }
+
     }
 }
