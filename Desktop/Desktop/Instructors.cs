@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
+    /*
+    The Instructors class
+    Contains all methods for opening the forms related to Insteructor functionalities
+    */
     public partial class Instructors : Form
     {
         public Instructors()
@@ -17,6 +21,7 @@ namespace Desktop
             InitializeComponent();
         }
 
+        //Instantaites and opens the Add Instructor form 
         private void ButtonAddInstructor_Click(object sender, EventArgs e)
         {
             Form addInstructorForm = new AddInstructor();
@@ -24,6 +29,7 @@ namespace Desktop
             addInstructorForm.Show();
         }
 
+        //Instantaites and opens the Edit Instructor form 
         private void ButtonEditInstructor_Click(object sender, EventArgs e)
         {
             Form editInstructorForm = new EditInstructor();
@@ -31,6 +37,7 @@ namespace Desktop
             editInstructorForm.Show();
         }
 
+        //Instantaites and opens the Delete Instructor form 
         private void ButtonDeleteInstructor_Click(object sender, EventArgs e)
         {
             Form deleteInstructorForm = new DeleteInstructor();
@@ -38,6 +45,7 @@ namespace Desktop
             deleteInstructorForm.Show();
         }
 
+        //Exit currently opened form 
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();

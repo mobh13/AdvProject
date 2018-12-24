@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
+    /*
+    The Studetns class
+    Contains all methods for opening the forms related to Student functionalities
+    */
     public partial class Students : Form
     {
         public Students()
@@ -17,6 +21,7 @@ namespace Desktop
             InitializeComponent();
         }
 
+        //Instantaites and opens the Add Student form 
         private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
             Form addStudentForm = new AddStudent();
@@ -24,6 +29,7 @@ namespace Desktop
             addStudentForm.Show();
         }
 
+        //Instantaites and opens the Edit Student form
         private void ButtonEditStudent_Click(object sender, EventArgs e)
         {
             Form editStudentForm = new EditStudent();
@@ -31,6 +37,7 @@ namespace Desktop
             editStudentForm.Show();
         }
 
+        //Instantaites and opens the Delete Student form
         private void ButtonDeleteStudent_Click(object sender, EventArgs e)
         {
             Form deleteStudentForm = new DeleteStudent();
@@ -38,6 +45,7 @@ namespace Desktop
             deleteStudentForm.Show();
         }
 
+        //Exit the current form
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();

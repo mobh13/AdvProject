@@ -42,5 +42,10 @@ namespace Desktop
         {
             this.Close();
         }
+
+        private void TaughtCourses_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
