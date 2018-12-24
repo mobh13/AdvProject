@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="ACEM-Mark Class" Language="C#" MasterPageFile="~/Masters/InstructorMaster.Master" AutoEventWireup="true" CodeBehind="MarkClass.aspx.cs" Inherits="Web.instructor.MarkClass" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-	<h3> Mark Class</h3>
 <h3> Mark Class</h3>
 
 	<p><b>Section ID:</b> <asp:Label ID="SectionIdLbl" runat="server" ></asp:Label></p>
