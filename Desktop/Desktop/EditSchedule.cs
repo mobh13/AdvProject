@@ -82,7 +82,7 @@ namespace Desktop
                 }
                 count = 0;
                 //for each loop to set the day 
-                foreach (String day in cmbDays.Items)
+                foreach (string day in cmbDays.Items)
                 {
                     if (day == schedule.Day)
                     {
@@ -148,7 +148,7 @@ namespace Desktop
                 {
                     sch.SectionID = newSID;
                     sch.Time = newTime;
-                    Boolean isValid = true;
+                    bool isValid = true;
                     //checks if the duration enters is valid by comparing each character and setting a boolean to false
                     foreach (char c in newDuration.ToString())
                     {
@@ -169,7 +169,7 @@ namespace Desktop
                     }
                     sch.Day = newDay;
                     //loop to check if the instructor is busy during the whole schedule. Using the start time and the duration.
-                    Boolean chkInstructor = false;
+                    bool chkInstructor = false;
                     int checkTime = Convert.ToInt32(sch.Time);
                     int schDuration = Convert.ToInt32(sch.Duration);
                     while (schDuration >= 1 & !chkInstructor)
@@ -183,7 +183,7 @@ namespace Desktop
                     if (!chkInstructor)
                     {
                         //checks if the location is busy at the time and day
-                        Boolean chkLocation = schedules.Exist("Day", sch.Day.ToString(), "Time",
+                        bool chkLocation = schedules.Exist("Day", sch.Day.ToString(), "Time",
                             sch.Time.ToString(), "LocationID", sch.LocationID.ToString());
                         if (!chkLocation)
                         {

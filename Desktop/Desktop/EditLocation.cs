@@ -57,7 +57,7 @@ namespace Desktop
                 //assigngs the varibles
                 loc.Name = this.txtName.Text.ToString();
                 //checks if the capacity entered is a number
-                Boolean isValid = true;
+                bool isValid = true;
                 //loops each character in the string to check if only contains numbers
                 foreach (char c in this.txtCapacity.Text.ToString())
                 {
