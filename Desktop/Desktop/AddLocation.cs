@@ -28,7 +28,7 @@ namespace Desktop
             loc.setID(this.txtLocationID.Text.ToString());
             loc.Name = this.txtName.Text.ToString();
             //checks if the capacity entered is a number
-            Boolean isValid = true;
+            bool isValid = true;
             //a foreach loop for every character in the string entered
             foreach (char c in this.txtCapacity.Text.ToString())
             {

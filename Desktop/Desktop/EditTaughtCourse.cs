@@ -102,7 +102,7 @@ namespace Desktop
                 tCourse.Semester = this.cmbSemester.SelectedItem.ToString();
                 tCourse.CourseID = this.cmbCourse.SelectedItem.ToString();
                 //checks if the capacity entered is a number by checking each character in the number
-                Boolean isValid = false;
+                bool isValid = false;
                 foreach (char c in this.txtYear.Text.ToString())
                 {
                     if (c < '0' || c > '9')
